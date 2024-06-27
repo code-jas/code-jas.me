@@ -2,36 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-   --foreground-rgb: 0, 0, 0;
-   --background-start-rgb: 214, 219, 220;
-   --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: light) {
-   :root {
-      --foreground-rgb: 255, 255, 255;
-      --background-start-rgb: 0, 0, 0;
-      --background-end-rgb: 0, 0, 0;
-   }
-}
-/* 
+@import "prism.css";
+
 body {
-   color: rgb(var(--foreground-rgb));
-   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-      rgb(var(--background-start-rgb));
-} */
-
-html,
-body {
-  @apply bg-gray-100 text-gray-900;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  /* background-image: url("../../public/noise.png"); */
+  background-size: 200px 200px;
+  background-position: 0 0;
 }
 
-@layer utilities {
-   .text-balance {
-      text-wrap: balance;
-   }
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--incognito), "Inter", sans-serif;
+}
+
+.path {
+  stroke-dasharray: 500px 100px;
+  animation: animate 100s linear infinite alternate-reverse;
+}
+
+@keyframes animate {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 12433.8193359375;
+  }
 }

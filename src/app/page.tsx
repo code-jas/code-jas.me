@@ -1,9 +1,8 @@
 import React from 'react';
-import Layout from './layout';
 
 const HomePage: React.FC = () => {
    return (
-      <Layout>
+      <div className="path">
          <section id="services" style={{ height: '100vh', padding: '20px' }}>
             Services Content
          </section>
@@ -13,7 +12,7 @@ const HomePage: React.FC = () => {
          <section id="reviews" style={{ height: '100vh', padding: '20px' }}>
             Reviews Content
          </section>
-      </Layout>
+      </div>
    );
 };
 
