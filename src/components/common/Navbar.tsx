@@ -6,20 +6,24 @@ import MobileMenu from './MobileMenu';
 export default function Navbar() {
    const data = [
       {
+         title: 'Home',
+         href: '#home',
+      },
+      {
          title: 'About',
-         href: '/about',
+         href: '#about',
       },
       {
          title: 'Projects',
-         href: '/projects',
+         href: '#projects',
       },
       {
-         title: 'Blog',
-         href: '/blog',
+         title: 'Technologies',
+         href: '#technologies',
       },
       {
-         title: 'Photos',
-         href: '/photos',
+         title: 'Contact',
+         href: '#contact',
       },
    ];
 
@@ -34,12 +38,12 @@ export default function Navbar() {
                <ul className="flex items-center gap-x-8">
                   {data.map((link, id) => (
                      <li key={id}>
-                        <Link
+                        <a
                            href={link.href}
                            className="font-incognito dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900 duration-300 text-base"
                         >
                            {link.title}
-                        </Link>
+                        </a>
                      </li>
                   ))}
                </ul>
