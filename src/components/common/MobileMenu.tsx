@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { HiBeaker, HiBookmarkAlt, HiCamera, HiOutlineX, HiUser } from 'react-icons/hi';
+import { IoMenu } from 'react-icons/io5';
 
 export default function MobileMenu() {
    const [navShow, setNavShow] = useState(false);
@@ -46,9 +47,9 @@ export default function MobileMenu() {
          <button
             aria-label="Toggle Menu"
             onClick={onToggleNav}
-            className="md:hidden dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-md p-2"
+            className="md:hidden dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 hover:bg-border-dark rounded-full p-2"
          >
-            <RxHamburgerMenu className="text-xl" />
+            <IoMenu className="text-xl" />
          </button>
          <div
             className={`md:hidden fixed left-0 top-0 z-10 h-full w-full transform duration-[600ms] ease-[cubic-bezier(0.7,0,0,1)] dark:bg-zinc-900 bg-white ${

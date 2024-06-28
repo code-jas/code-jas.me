@@ -6,19 +6,38 @@ html {
   scroll-behavior: smooth;
 }
 
-@import "prism.css";
+:root {
+  --primary: #0aa5ff;
+  --washed-blue: #808f98;
+  --secondary: #9747ff;
+  --pink: #febdff;
+  --green: #bdffd7;
+  --lavander: #bdc0ff;
+  --surface-2: #edf4f8;
+  --charcoal: #0064c8;
+  --dark: #282828;
+  --dark-60: '#636465';
+  --sky-blue: #bde3ff;
+  --surface-1: transparent;
+  --dark-50: #939393;
+  --dark-blue: #3b515f;
+}
+
+/* @import "prism.css"; */
 
 body {
   /* background-image: url("../../public/noise.png"); */
   background-size: 200px 200px;
   background-position: 0 0;
+  font-family: var(--tt-norms), sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--incognito), "Inter", sans-serif;
+  /* font-family: var(--incognito), "Inter", sans-serif; */
+  font-family: var(--tt-norms), sans-serif;
 }
 
 .path {

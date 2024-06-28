@@ -1,34 +1,51 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import Theme from './Theme';
 import MobileMenu from './MobileMenu';
+import '@/styles/navbar.css';
 
 export default function Navbar() {
+   const [isScrolledUp, setIsScrolledUp] = useState(true);
+   const [lastScrollY, setLastScrollY] = useState(0);
+
+   useEffect(() => {
+      const handleScroll = () => {
+         const currentScrollY = window.scrollY;
+         if (currentScrollY > lastScrollY) {
+            setIsScrolledUp(false);
+         } else {
+            setIsScrolledUp(true);
+         }
+         setLastScrollY(currentScrollY);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, [lastScrollY]);
+
    const data = [
-      {
-         title: 'Home',
-         href: '#home',
-      },
-      {
-         title: 'About',
-         href: '#about',
-      },
-      {
-         title: 'Projects',
-         href: '#projects',
-      },
-      {
-         title: 'Technologies',
-         href: '#technologies',
-      },
-      {
-         title: 'Contact',
-         href: '#contact',
-      },
+      { title: 'Home', href: '#home' },
+      { title: 'About', href: '#about' },
+      { title: 'Projects', href: '#projects' },
+      { title: 'Technologies', href: '#technologies' },
+      { title: 'Contact', href: '#contact' },
    ];
 
    return (
-      <header className="text-sm py-4 md:px-16 px-4 border-b dark:border-zinc-800 border-zinc-200 z-30 md:mb-28 mb-10">
+      <motion.header
+         initial={{ y: -100 }}
+         animate={{ y: isScrolledUp ? 0 : -100 }}
+         // transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+         transition={{ duration: 0.5 }}
+         className="fixed top-0 w-full text-sm py-4 md:px-16 px-4 z-30 bg-white dark:bg-black shadow-xs"
+      >
          <div className="max-w-6xl mx-auto flex items-center justify-between">
             <Link href="/">
                <Image src={'/vercel.svg'} width={35} height={35} alt="logo" />
@@ -38,12 +55,12 @@ export default function Navbar() {
                <ul className="flex items-center gap-x-8">
                   {data.map((link, id) => (
                      <li key={id}>
-                        <a
+                        <Link
                            href={link.href}
-                           className="font-incognito dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900 duration-300 text-base"
+                           className="underlined font-incognito dark:text-white text-dark dark:hover:text-primary hover:text-primary duration-300 text-base"
                         >
                            {link.title}
-                        </a>
+                        </Link>
                      </li>
                   ))}
                </ul>
@@ -54,6 +71,6 @@ export default function Navbar() {
                <MobileMenu />
             </div>
          </div>
-      </header>
+      </motion.header>
    );
 }

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 
-import { gitlabmono, incognito } from '@/app/assets/font/font';
+import { gitlabmono, incognito, ttNorms } from '@/app/assets/font/font';
 import { Providers } from './providers';
 import Navbar from '@/components/common/Navbar';
 
@@ -21,7 +21,7 @@ export default function RootLayout({
    return (
       <html lang="en" suppressHydrationWarning>
          <body
-            className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
+            className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} ${ttNorms.variable} font-tt-norms dark:bg-zinc-900 bg-white dark:text-white text-dark`}
          >
             <Providers>
                <Navbar />
