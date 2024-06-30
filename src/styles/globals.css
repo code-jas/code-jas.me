@@ -93,4 +93,22 @@ h4 {
 }
 
 
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #333;
+}
+
+/* Ensure the content area scrolls if it overflows */
+.modal-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
 /* Projects end  */

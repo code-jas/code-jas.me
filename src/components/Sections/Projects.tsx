@@ -8,75 +8,54 @@ const Projects: React.FC = () => {
       {
          title: 'Ph Festival',
          description:
-            'Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.',
+            'Experience the vibrancy of Filipino culture through its diverse and colorful festivals. Share our similarities, celebrate our differences.',
          techStacks: [
-            '/brand/next-js.svg',
-            '/brand/typescript.svg',
-            '/brand/redux.svg',
-            '/brand/css.svg',
-            '/brand/prisma.svg',
-            '/brand/vercel.svg',
+            { label: 'Next.js', icon: '/brand/next-js.svg' },
+            { label: 'TypeScript', icon: '/brand/typescript.svg' },
+            { label: 'Redux', icon: '/brand/redux.svg' },
+            { label: 'CSS', icon: '/brand/css.svg' },
+            { label: 'Prisma', icon: '/brand/prisma.svg' },
+            { label: 'Vercel', icon: '/brand/vercel.svg' },
          ],
          liveSiteLink: 'https://ph-festival.code-jas.me',
-         bgImage: '/grid-pattern.png',
+         bgImage: '/gradient-part-bg.png',
          coverImage: '/ph-festival-screenshot.png',
       },
       {
-         title: 'Yoom - Video Conferencing App',
+         title: 'Bookly',
          description:
-            'Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.',
-         techStacks: ['/vercel.svg'],
+            'A digital marketplace for secondhand books in the Philippines, making affordable literature accessible through an organized online platform.',
+         techStacks: [
+            { label: 'React', icon: '/brand/react.svg' },
+            { label: 'Vite', icon: '/brand/vite.svg' },
+            { label: 'Node.js', icon: '/brand/node-js.svg' },
+            { label: 'Sequelize', icon: '/brand/sequelize.svg' },
+            { label: 'Digital Ocean', icon: '/brand/digital-ocean.svg' },
+            { label: 'PostgreSQL', icon: '/brand/postgresql.svg' },
+            { label: 'Docker', icon: '/brand/docker.svg' },
+         ],
+
          liveSiteLink: 'https://example.com/live-site-link-2',
-         bgImage: '/grid-pattern.png',
-         coverImage: '/no-image.png',
+         bgImage: '/gradient-part-bg.png',
+         coverImage: 'COMINGSOON',
       },
    ];
    return (
-      <section id="projects" className="max-w-4xl mx-auto px-6">
-         <h4 className="callout">Works that matter</h4>
-         <h2 className="heading-2">
-            Helping companies produce digital solutions for over a decade
-         </h2>
-         <div className="text-block-85">
-            We have shipped <span className="text-span-7">more than 200</span> &nbsp;
-            <br />
-            digital products and services
+      <section id="projects" className=" mx-auto px-6">
+         <div className="max-w-4xl mx-auto">
+            <h4 className="callout">A Selection of My Recent Work</h4>
+            <h2 className="heading-2">
+               Discover my user-focused digital solutions that solve real-world problems and
+               streamline processes.
+            </h2>
          </div>
          <div className="mt-28">
-            {/* <div className="my-6">
-               <div className="grid grid-cols-2 gap-16  justify-between">
-                  <div className="relative w-auto h-60">
-                     <Link href={'#'} className="w-full h-full">
-                        <Image
-                           src={'/no-image.png'}
-                           alt="No image"
-                           fill
-                           sizes="100"
-                           className="object-cover w-full h-full"
-                        />
-                     </Link>
-                  </div>
-                  <div className="col-span-1 flex flex-col gap-y-2">
-                     <h3 className="text-block-74">Ph Festival</h3>
-                     <div className="text-block-75">
-                        The website you&apos;re currently exploring was crafted by me using Next.js,
-                        chosen for its speed and excellent SEO capabilities, aligning with my vision
-                        for a dynamic portfolio. To streamline data management, Firebase serves as
-                        the backend, providing a seamless repository for all portfolio items. As a
-                        continuous enhancement, I am implementing a light/dark mode switch for a
-                        personalized user experience. The design, conceptualized by me, was brought
-                        to life using Figma, ensuring a cohesive and visually appealing showcase of
-                        my work.
-                     </div>
-                     <div>Tech stacks</div>
-                     <Link href={'#'}>Button</Link>
-                  </div>
-               </div>
-            </div> */}
             <div>
-               {projects.map((project, index) => (
-                  <ProjectCard key={index} {...project} />
-               ))}
+               <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
+                  {projects.map((project, index) => (
+                     <ProjectCard key={index} {...project} />
+                  ))}
+               </div>
             </div>
          </div>
       </section>

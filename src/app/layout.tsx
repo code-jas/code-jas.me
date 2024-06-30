@@ -3,9 +3,7 @@ import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 
 import { gitlabmono, incognito, ttNorms } from '@/app/assets/font/font';
-import { Providers } from './providers';
-import Navbar from '@/components/Navbar';
-import CustomCursor from '@/components/CustomCursor';
+import ClientLayout from './ClientLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,12 +22,7 @@ export default function RootLayout({
          <body
             className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} ${ttNorms.variable} font-tt-norms dark:bg-zinc-900 bg-white dark:text-white text-dark`}
          >
-            <Providers>
-               <CustomCursor />
-               <Navbar />
-               {children}
-               {/* <Footer /> */}
-            </Providers>
+            <ClientLayout>{children}</ClientLayout>
          </body>
       </html>
    );

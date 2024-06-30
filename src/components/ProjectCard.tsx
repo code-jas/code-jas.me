@@ -1,44 +1,75 @@
-import Image from 'next/image'; // Assuming you are using Next.js for image optimization
-import Link from 'next/link'; // Assuming you are using Next.js for routing\
-import { MdOutlineArrowOutward } from 'react-icons/md';
+'use client';
 
-interface ProjectCardProps {
-   title: string;
-   description: string;
-   techStacks: string[];
-   liveSiteLink: string;
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Tooltip } from 'react-tooltip';
+import TechStacks from './TechStacks';
+import LiveSiteButton from './LivesiteButton';
+import { useDispatch } from 'react-redux';
+import { openModal } from '@/store/modalSlice';
+
+interface CardProps {
    bgImage: string;
    coverImage: string;
+   title: string;
+   description: string;
+   techStacks: { icon: string; label: string }[];
+   liveSiteLink: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const Card: React.FC<CardProps> = ({
+   bgImage,
+   coverImage,
    title,
    description,
    techStacks,
    liveSiteLink,
-   bgImage,
-   coverImage,
 }) => {
+   const dispatch = useDispatch();
+
+   const handleClick = () => {
+      dispatch(openModal());
+   };
+
    return (
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
-         <div className=" flex items-center justify-center">
-            <div className="flex justify-start items-start max-w-2xl rounded-2xl shadow-lg p-6 transition duration-700 overflow-hidden">
-               <div>
-                  <div className="relative flex items-center justify-center w-full overflow-hidden  h-[419.2px] mb-10">
-                     <div className="relative w-full h-full overflow-hidden rounded-3xl bg-sky-blue">
-                        <div className="w-full h-full">
-                           {/* <Image
-                              src={bgImage}
-                              alt="Background Image"
-                              fill
-                              sizes="100"
-                              className="object-cover w-full h-full"
-                           /> */}
-                        </div>
+      <div className="flex items-center justify-center">
+         <motion.div
+            className="flex justify-start items-start max-w-full md:max-w-xl lg:max-w-lg 2xl:max-w-xl rounded-2xl shadow-lg p-4 lg:p-6 transition duration-700 overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            onClick={handleClick}
+         >
+            <div>
+               <div className="relative flex items-center justify-center w-50 overflow-hidden h-[419.2px] mb-10">
+                  <div
+                     className="relative w-full h-full overflow-hidden rounded-3xl bg-white bg-cover bg-center"
+                     style={{
+                        backgroundImage: 'linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)',
+                     }}
+                  >
+                     <div className="w-full h-full">
+                        <Image
+                           src={bgImage}
+                           alt="Background Image"
+                           fill
+                           sizes="100"
+                           className="object-cover w-full h-full"
+                        />
                      </div>
-                     {/* w-[570px] h-[447.46px] */}
-                     <div className="w-[90%] h-80  z-10 absolute bottom-0 rounded-lg overflow-hidden">
-                        <div className="w-full h-full">
+                  </div>
+                  <motion.div
+                     className="w-[80%] h-64 z-10 absolute bottom-0 rounded-lg overflow-hidden"
+                     initial={{ width: '80%', height: '256px' }}
+                     whileHover={{ width: '100%', height: '100%' }}
+                     transition={{ duration: 0.3 }}
+                  >
+                     <div className="w-full h-full">
+                        {coverImage === 'COMINGSOON' ? (
+                           <div className="heading-2 text-center flex items-center justify-center w-full h-full bg-gray-100 text-dark-60">
+                              Coming Soon
+                           </div>
+                        ) : (
                            <Image
                               src={coverImage}
                               alt="Cover Image"
@@ -46,48 +77,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                               sizes="100"
                               className="w-full h-full object-cover"
                            />
-                        </div>
+                        )}
                      </div>
-                  </div>
-                  <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                     {title}
-                  </h1>
-                  <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2 text-block-75">
-                     {description}
-                  </p>
-                  <div className="flex items-center justify-between mt-7 mb-3">
-                     <div className="flex items-center">
-                        {techStacks.map((icon, index) => (
-                           <div
-                              key={index}
-                              className="border border-dark bg-gray-50 rounded-full p-2 flex justify-center items-center"
-                              style={{ transform: `translateX(${-5 - index * 5}px)` }}
-                           >
-                              <div className="w-8 h-8 flex items-center justify-center">
-                                 <Image
-                                    src={icon}
-                                    alt={`Tech Icon ${index}`}
-                                    width={30}
-                                    height={30}
-                                    className="object-contain"
-                                 />
-                              </div>
-                           </div>
-                        ))}
-                     </div>
-
-                     <div className="flex justify-center items-center gap-3">
-                        <p className="font-medium text-[20px] text-purple">Check Live Site</p>
-                        <Link href={liveSiteLink} target="_blank">
-                           <MdOutlineArrowOutward size={24} />
-                        </Link>
-                     </div>
-                  </div>
+                  </motion.div>
+               </div>
+               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">{title}</h1>
+               <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-3 text-block-75">
+                  {description}
+               </p>
+               <div className="flex items-center justify-between mt-7 mb-3">
+                  <TechStacks techStacks={techStacks} />
+                  <LiveSiteButton liveSiteLink={liveSiteLink} />
                </div>
             </div>
-         </div>
+         </motion.div>
       </div>
    );
 };
 
-export default ProjectCard;
+export default Card;
