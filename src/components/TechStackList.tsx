@@ -1,20 +1,16 @@
 // components/TechStackList.tsx
 
+import { TechStack } from '@/types/types';
 import TechTag from './TechTag';
 
-const techStacks = [
-   { label: 'Next.js', icon: '/brand/next-js.svg' },
-   { label: 'TypeScript', icon: '/brand/typescript.svg' },
-   { label: 'Redux', icon: '/brand/redux.svg' },
-   { label: 'CSS', icon: '/brand/css.svg' },
-   { label: 'Prisma', icon: '/brand/prisma.svg' },
-   { label: 'Vercel', icon: '/brand/vercel.svg' },
-];
+interface TechStackListProps {
+   techStacks: TechStack[];
+}
 
-const TechStackList = () => {
+const TechStackList: React.FC<TechStackListProps> = ({ techStacks }) => {
    return (
       <div className="flex flex-wrap gap-4">
-         {techStacks.map((tech) => (
+         {techStacks.map((tech: TechStack) => (
             <TechTag key={tech.label} label={tech.label} icon={tech.icon} />
          ))}
       </div>

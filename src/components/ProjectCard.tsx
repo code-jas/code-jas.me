@@ -2,43 +2,64 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { Tooltip } from 'react-tooltip';
 import TechStacks from './TechStacks';
 import LiveSiteButton from './LivesiteButton';
 import { useDispatch } from 'react-redux';
-import { openModal } from '@/store/modalSlice';
+import { openModal, setModalContent } from '@/store/modalSlice';
+import { Project } from '@/types/types';
 
-interface CardProps {
-   bgImage: string;
-   coverImage: string;
-   title: string;
-   description: string;
-   techStacks: { icon: string; label: string }[];
-   liveSiteLink: string;
-}
-
-const Card: React.FC<CardProps> = ({
-   bgImage,
-   coverImage,
+const Card: React.FC<Project> = ({
    title,
+   projectType,
    description,
+   informations,
    techStacks,
    liveSiteLink,
+   bgImage,
+   coverImage,
+   mockupImage,
 }) => {
    const dispatch = useDispatch();
+   const coverImageControls = useAnimation();
 
    const handleClick = () => {
+      dispatch(
+         setModalContent({
+            title,
+            projectType,
+            description,
+            informations,
+            techStacks,
+            liveSiteLink,
+            bgImage,
+            coverImage,
+            mockupImage,
+         }),
+      );
       dispatch(openModal());
+   };
+
+   const handleMouseEnter = () => {
+      coverImageControls.start({ width: '100%', height: '100%' });
+   };
+
+   const handleMouseLeave = () => {
+      coverImageControls.start({ width: '80%', height: '256px' });
    };
 
    return (
       <div className="flex items-center justify-center">
          <motion.div
             className="flex justify-start items-start max-w-full md:max-w-xl lg:max-w-lg 2xl:max-w-xl rounded-2xl shadow-lg p-4 lg:p-6 transition duration-700 overflow-hidden"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
+            whileHover={{
+               boxShadow: '0 10px 15px rgba(0, 0, 0, 0.1), 0 20px 25px rgba(0, 0, 0, 0.1)',
+            }}
+            transition={{ duration: 0.1 }}
             onClick={handleClick}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
          >
             <div>
                <div className="relative flex items-center justify-center w-50 overflow-hidden h-[419.2px] mb-10">
@@ -61,7 +82,7 @@ const Card: React.FC<CardProps> = ({
                   <motion.div
                      className="w-[80%] h-64 z-10 absolute bottom-0 rounded-lg overflow-hidden"
                      initial={{ width: '80%', height: '256px' }}
-                     whileHover={{ width: '100%', height: '100%' }}
+                     animate={coverImageControls}
                      transition={{ duration: 0.3 }}
                   >
                      <div className="w-full h-full">
