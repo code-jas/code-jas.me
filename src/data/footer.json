@@ -1,0 +1,18 @@
+{
+    "builtWith": [
+      {
+        "name": "Next.js",
+        "url": "https://nextjs.org",
+        "icon": "/brand/next-js.svg",
+        "class": "icon-container next-icon"
+      },
+      {
+        "name": "Vercel",
+        "url": "https://vercel.com",
+        "icon": "/brand/vercel.svg",
+        "class": "icon-container vercel-icon"
+      }
+    ],
+    "copyright": "John Angelo Silvestre"
+  }
+  

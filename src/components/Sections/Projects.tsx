@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
 import ProjectCard from '../ProjectCard';
-import { projects } from '@/data/data';
+import projectsData from '../../data/projects.json';
 
 const Projects: React.FC = () => {
    return (
@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
          <div className="mt-28">
             <div>
                <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
-                  {projects.map((project, index) => (
+                  {projectsData.projects.map((project, index) => (
                      <ProjectCard key={index} {...project} />
                   ))}
                </div>

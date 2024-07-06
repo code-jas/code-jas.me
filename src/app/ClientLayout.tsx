@@ -4,6 +4,7 @@ import { Providers } from './providers';
 import CustomCursor from '@/components/CustomCursor';
 import Navbar from '@/components/Navbar';
 import FullPageModal from '@/components/FullPageModal';
+import Footer from '@/components/Footer';
 
 const ClientLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
    return (
@@ -12,7 +13,7 @@ const ClientLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => 
          <FullPageModal />
          <Navbar />
          {children}
-         {/* <Footer /> */}
+         <Footer />
       </Providers>
    );
 };

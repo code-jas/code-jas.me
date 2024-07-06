@@ -116,3 +116,30 @@ h4 {
 
 
 
+/* Footer */
+
+.icon-container {
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.vercel-icon {
+  background-color: white;
+}
+
+.dark .vercel-icon {
+  background-color: black;
+}
+.dark .vercel-icon img {
+  filter: brightness(0) invert(1);
+  scale: 0.7;
+}
+
+
+.vercel-icon {
+  background-color: white;
+}
+
+.dark .next-icon img {
+  filter: brightness(0) invert(1);
+}
