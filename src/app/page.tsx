@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { About, Home, Projects, Contact } from '@/components/Sections';
 import Experience from '@/components/Sections/Experience';
+import Technologies from '@/components/Sections/Technologies';
 
 const HomePage: React.FC = () => {
    const controls = useAnimation();
@@ -35,6 +36,7 @@ const HomePage: React.FC = () => {
             <About />
             <Experience />
             <Projects />
+            <Technologies />
             <Contact />
          </motion.div>
       </>

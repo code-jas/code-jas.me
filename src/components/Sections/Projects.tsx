@@ -6,7 +6,7 @@ import projectsData from '../../data/projects.json';
 
 const Projects: React.FC = () => {
    return (
-      <section id="projects" className=" mx-auto px-6">
+      <section id="projects" className=" mx-auto px-6 py-36">
          <div className="max-w-4xl mx-auto">
             <h4 className="callout">A Selection of My Recent Work</h4>
             <h2 className="heading-2">
