@@ -5,6 +5,8 @@ import { motion, useAnimation } from 'framer-motion';
 import { About, Home, Projects, Contact } from '@/components/Sections';
 import Experience from '@/components/Sections/Experience';
 import Technologies from '@/components/Sections/Technologies';
+import GridPattern from '@/components/GridPatterns';
+import { cn } from '@/lib/utils';
 
 const HomePage: React.FC = () => {
    const controls = useAnimation();
@@ -30,8 +32,18 @@ const HomePage: React.FC = () => {
 
    return (
       <>
-         <div className="absolute top-0 left-0 bg-grid-pattern -z-10"></div>
-         <motion.div animate={controls} initial={{ y: 0 }} className="font-tt-norms relative">
+         <div className="absolute top-0 left-0 h-[1300px] w-full">
+            <GridPattern
+               width={100}
+               height={100}
+               x={-1}
+               y={-1}
+               className={cn(
+                  '[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] ',
+               )}
+            />
+         </div>
+         <motion.div animate={controls} initial={{ y: 0 }} className="z-10 font-tt-norms relative">
             <Home />
             <About />
             <Experience />

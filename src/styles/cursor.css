@@ -1,12 +1,12 @@
 .f-cursor path {
-    fill: #F97068;
-    stroke: #E5DADA;
-    stroke-width: 3px;
-    stroke-linejoin: round;
+   fill: #f97068;
+   stroke: #e5dada;
+   stroke-width: 3px;
+   stroke-linejoin: round;
 }
-  
+
 .f-cursor svg {
-    float: left;
+   float: left;
 }
 /* 
 .bubble {
@@ -23,4 +23,3 @@
     align-items: center;
     color: white;
 } */
-  

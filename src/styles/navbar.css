@@ -1,23 +1,23 @@
 .underlined {
-    position: relative;
-    display: inline-block;
+   position: relative;
+   display: inline-block;
 }
 
 .underlined::after {
-    color: var(--primary);
-    bottom: -4px;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 0;
-    position: absolute;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .25s ease;
-    width: 100%;
+   color: var(--primary);
+   bottom: -4px;
+   content: '';
+   display: block;
+   height: 2px;
+   left: 0;
+   position: absolute;
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: transform 0.25s ease;
+   width: 100%;
 }
 
 .underlined:hover::after {
-    background-color: currentColor;
-    transform: scaleX(1);
+   background-color: currentColor;
+   transform: scaleX(1);
 }

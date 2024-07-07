@@ -38,6 +38,10 @@ const config: Config = {
             'sky-blue': '#bde3ff',
             'surface-1': 'transparent',
             'dark-blue': '#3b515f',
+            tomato: '#f24e1e',
+            'red-light': '#ff7262',
+            'blue-green': '#0acf83',
+            purple: '#a259ff',
          },
       },
       animation: {

@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion';
+import React, { useLayoutEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import '@/styles/segment.css';
 
 interface Option {
    label: string;
@@ -11,27 +13,71 @@ interface SegmentedControlProps {
    onChange: (value: string) => void;
 }
 
-const SegmentedControl: React.FC<SegmentedControlProps> = ({ options, value, onChange }) => {
+const SegmentedControl: React.FC<SegmentedControlProps> = ({ value, options, onChange }) => {
+   const selectionRef = useRef<HTMLSpanElement>(null);
+
+   useLayoutEffect(() => {
+      updatePillPosition();
+      window.addEventListener('resize', updatePillPosition);
+
+      return () => {
+         window.removeEventListener('resize', updatePillPosition);
+      };
+   }, [value]);
+
+   const updatePillPosition = () => {
+      const selectedOption = document.querySelector(
+         `input[name="segmentedControl"][value="${value}"]`,
+      );
+      if (selectedOption && selectionRef.current) {
+         const inputElement = selectedOption as HTMLInputElement;
+         const optionParent = inputElement.parentElement;
+         if (optionParent) {
+            selectionRef.current.style.transform = `translateX(${optionParent.offsetLeft}px)`;
+            selectionRef.current.style.width = `${optionParent.offsetWidth - 8}px`;
+         }
+      }
+   };
+
    return (
-      <div className="flex mb-4 p-2 bg-gray-200 rounded">
+      <div className="ios13-segmented-control relative bg-gray-200 rounded-lg p-1 inline-flex">
+         <span
+            ref={selectionRef}
+            className="selection absolute bg-white shadow-md rounded-lg transition-transform duration-200 h-[80%] ease-in-out"
+         ></span>
+
          {options.map((option) => (
-            <motion.div
-               key={option.value}
-               className={`p-2 cursor-pointer mx-1 ${
-                  value === option.value ? 'bg-blue-500 text-white rounded' : 'text-gray-700'
-               }`}
-               onClick={() => onChange(option.value)}
-               whileHover={{ scale: 1.1 }}
-               whileTap={{ scale: 0.9 }}
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               transition={{ duration: 0.5 }}
-            >
-               {option.label}
-            </motion.div>
+            <div key={option.value} className="option relative cursor-pointer">
+               <input
+                  type="radio"
+                  id={option.value}
+                  name="segmentedControl"
+                  value={option.value}
+                  checked={value === option.value}
+                  onChange={() => onChange(option.value)}
+                  className="absolute inset-0 opacity-0"
+               />
+               <label
+                  htmlFor={option.value}
+                  className="block text-center py-2 px-4 text-black font-medium text-sm leading-5 relative z-10"
+               >
+                  <span>{option.label}</span>
+               </label>
+            </div>
          ))}
       </div>
    );
+};
+
+SegmentedControl.propTypes = {
+   value: PropTypes.string.isRequired,
+   options: PropTypes.arrayOf(
+      PropTypes.shape({
+         value: PropTypes.string.isRequired,
+         label: PropTypes.string.isRequired,
+      }).isRequired,
+   ).isRequired,
+   onChange: PropTypes.func.isRequired,
 };
 
 export default SegmentedControl;

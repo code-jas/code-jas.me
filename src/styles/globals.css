@@ -3,143 +3,152 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
 
 :root {
-  --primary: #0aa5ff;
-  --washed-blue: #808f98;
-  --secondary: #9747ff;
-  --pink: #febdff;
-  --green: #bdffd7;
-  --lavander: #bdc0ff;
-  --surface-2: #edf4f8;
-  --charcoal: #0064c8;
-  --dark: #282828;
-  --dark-60: '#636465';
-  --sky-blue: #bde3ff;
-  --surface-1: transparent;
-  --dark-50: #939393;
-  --dark-blue: #3b515f;
+   --primary: #0aa5ff;
+   --washed-blue: #808f98;
+   --secondary: #9747ff;
+   --pink: #febdff;
+   --green: #bdffd7;
+   --lavander: #bdc0ff;
+   --surface-2: #edf4f8;
+   --charcoal: #0064c8;
+   --dark: #282828;
+   --dark-60: '#636465';
+   --sky-blue: #bde3ff;
+   --surface-1: transparent;
+   --dark-50: #939393;
+   --dark-blue: #3b515f;
 }
 
 /* @import "prism.css"; */
 
 body {
-  /* background-image: url("../../public/noise.png"); */
-  background-size: 200px 200px;
-  background-position: 0 0;
-  font-family: var(--tt-norms), sans-serif;
+   /* background-image: url("../../public/noise.png"); */
+   background-size: 200px 200px;
+   background-position: 0 0;
+   font-family: var(--tt-norms), sans-serif;
 }
-* { 
-  /* cursor: none; */
+* {
+   /* cursor: none; */
 }
 
 h1,
 h2,
 h3,
 h4 {
-  /* font-family: var(--incognito), "Inter", sans-serif; */
-  font-family: var(--tt-norms), sans-serif;
+   /* font-family: var(--incognito), "Inter", sans-serif; */
+   font-family: var(--tt-norms), sans-serif;
 }
 
 .bg-grid-pattern {
-  background-image: url('/grid-pattern.png')  !important;
-  background-repeat: repeat;
-  background-size: cover; /* Adjust as needed */
-  width: 100%;
-  height: 100%;
+   background-image: url('/grid-pattern.png') !important;
+   background-repeat: repeat;
+   background-size: cover; /* Adjust as needed */
+   width: 100%;
+   height: 100%;
 }
-
 
 /* Projects start */
 
-.callout { 
-  color: var(--primary);
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 140%;
+.callout {
+   color: var(--primary);
+   font-size: 22px;
+   font-weight: 600;
+   line-height: 140%;
 }
 
-.heading-2 { 
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 1.4;
+.heading-2 {
+   font-size: 40px;
+   font-weight: 500;
+   line-height: 1.4;
 }
 
 .text-block-85 {
-  color: #939393;
-  text-align: left;
-  padding-top: 16px;
-  font-weight: 500;
-  line-height: 1.7;
+   color: #939393;
+   text-align: left;
+   padding-top: 16px;
+   font-weight: 500;
+   line-height: 1.7;
 }
 
 .text-span-7 {
-  color: var(--primary);
-  font-weight: 500;
+   color: var(--primary);
+   font-weight: 500;
 }
 
 .text-block-74 {
-  color: #282828;
-  font-weight: 500;
-  text-decoration: none;
+   color: #282828;
+   font-weight: 500;
+   text-decoration: none;
 }
 
 .text-block-75 {
-  color: #777;
-  /* font-size: 14px; */
-  text-decoration: none;
+   color: #777;
+   /* font-size: 14px; */
+   text-decoration: none;
 }
 
-
-
 .btn {
-  background-color: #000;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 4px;
-  text-align: center;
+   background-color: #000;
+   color: #fff;
+   padding: 8px 16px;
+   border-radius: 4px;
+   text-align: center;
 }
 
 .btn:hover {
-  background-color: #333;
+   background-color: #333;
 }
 
 /* Ensure the content area scrolls if it overflows */
 .modal-content {
-  flex-grow: 1;
-  overflow-y: auto;
+   flex-grow: 1;
+   overflow-y: auto;
 }
 /* Projects end  */
-
-
-
 
 /* Footer */
 
 .icon-container {
-  padding: 4px;
-  border-radius: 50%;
+   padding: 4px;
+   border-radius: 50%;
 }
 
 .vercel-icon {
-  background-color: white;
+   background-color: white;
 }
 
 .dark .vercel-icon {
-  background-color: black;
+   background-color: black;
 }
 .dark .vercel-icon img {
-  filter: brightness(0) invert(1);
-  scale: 0.7;
+   filter: brightness(0) invert(1);
+   scale: 0.7;
 }
 
-
 .vercel-icon {
-  background-color: white;
+   background-color: white;
 }
 
 .dark .next-icon img {
-  filter: brightness(0) invert(1);
+   filter: brightness(0) invert(1);
+}
+
+.ios13-segmented-control {
+   --background: rgba(239, 239, 240, 1);
+}
+
+.ios13-segmented-control .selection {
+   background: rgba(255, 255, 255, 1);
+   border: 0.5px solid rgba(0, 0, 0, 0.04);
+   box-shadow:
+      0 3px 8px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px 0 rgba(0, 0, 0, 0.04);
+   border-radius: 7px;
+   z-index: 2;
+   will-change: transform;
+   transition: transform 0.2s ease;
 }

@@ -1,0 +1,15 @@
+.ios13-segmented-control {
+   --background: rgba(239, 239, 240, 1);
+}
+
+.ios13-segmented-control .selection {
+   background: rgba(255, 255, 255, 1);
+   border: 0.5px solid rgba(0, 0, 0, 0.04);
+   box-shadow:
+      0 3px 8px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px 0 rgba(0, 0, 0, 0.04);
+   border-radius: 7px;
+   z-index: 1; /* Ensure this is behind the text */
+   will-change: transform;
+   transition: transform 0.2s ease;
+}

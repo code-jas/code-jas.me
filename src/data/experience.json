@@ -1,0 +1,24 @@
+[
+   {
+      "company": "Centralized Cloud Computing International Inc.",
+      "roles": [
+         {
+            "title": "Full Stack Developer",
+            "startDate": "August 2023",
+            "endDate": "Present",
+            "descriptions": [
+               "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+               "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            ]
+         },
+         {
+            "title": "Student Intern",
+            "startDate": "March 2023",
+            "endDate": "August 2023",
+            "descriptions": [
+               "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            ]
+         }
+      ]
+   }
+]
