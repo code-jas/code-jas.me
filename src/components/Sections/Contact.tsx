@@ -1,9 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Dock, DockIcon } from '../Dock';
-import { FaDiscord, FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import DotPattern from '../DotPatterns';
+import SocialDock from '../SocialDock';
 
 const Contact: React.FC = () => {
    return (
@@ -31,33 +30,7 @@ const Contact: React.FC = () => {
             <p className="text-dark-50 text-center py-4 font-medium leading-relaxed">
                Connect with me on my socials.
             </p>
-            <Dock
-               className="m-0 mx-auto w-max border-none dark:border-none"
-               distance={50}
-               magnification={50}
-            >
-               <DockIcon className="text-dark hover:text-[#0e76a8]">
-                  <Link href={'https://www.linkedin.com/in/johnangelo-silvestre/'} target="_blank">
-                     <FaLinkedin className="h-6 w-6" />
-                  </Link>
-               </DockIcon>
-
-               <DockIcon className="text-dark hover:text-[#5865F2]">
-                  <Link href={'https://discordapp.com/users/742020338270863450'} target="_blank">
-                     <FaDiscord className="h-6 w-6" />
-                  </Link>
-               </DockIcon>
-               <DockIcon className="text-dark hover:text-[#24292e]">
-                  <Link href={'https://github.com/code-jas'} target="_blank">
-                     <FaGithub className="h-6 w-6" />
-                  </Link>
-               </DockIcon>
-               <DockIcon className="text-dark hover:text-[#1877F2]">
-                  <Link href={'https://www.facebook.com/angelobsilvestre'} target="_blank">
-                     <FaFacebook className="h-6 w-6" />
-                  </Link>
-               </DockIcon>
-            </Dock>
+            <SocialDock />
          </div>
          <DotPattern
             width={20}

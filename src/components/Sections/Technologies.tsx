@@ -9,7 +9,7 @@ const Technologies: React.FC = () => {
    const [selectedValue, setSelectedValue] = useState('cards');
    const options = [
       { label: 'Cards', value: 'cards' },
-      { label: 'Icons', value: 'clouds' },
+      { label: 'Clouds', value: 'clouds' },
    ];
 
    const slugs = [

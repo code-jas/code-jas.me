@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import experienceData from '@/data/experience.json';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { LinkPreview } from '../LinkPreview';
 
 const Experience: React.FC = () => {
    const calculateWorkDuration = (startDate: string, endDate: string): string => {
@@ -26,7 +27,7 @@ const Experience: React.FC = () => {
    return (
       <section id="experience" className="mx-auto px-6 py-36 flex flex-col gap-16">
          <div className="max-w-4xl mx-auto text-center">
-            <h4 className="callout">Work Experience</h4>
+            <h4 className="callout mb-4">Work Experience</h4>
             <h2 className="heading-2">Highlights of My Professional Journey</h2>
          </div>
          {experienceData.map((company, index) => {
@@ -39,15 +40,17 @@ const Experience: React.FC = () => {
                      className="flex flex-col justify-start shrink-0 w-1/2 sticky top-4"
                      style={{ zIndex: 10 }}
                   >
-                     <p className="text-2xl font-semibold bg-white">{company.company}</p>
+                     <LinkPreview url={company.url}>
+                        <p className="text-2xl font-semibold bg-white">{company.company}</p>
+                     </LinkPreview>
                   </motion.div>
                   <div className="w-1/2 flex flex-col gap-12">
                      {company.roles.map((role, roleIndex) => (
                         <div key={roleIndex} className="flex flex-col gap-2">
                            <div className="flex flex-col justify-start shrink-0">
-                              <p className="text-xl font-semibold">{role.title}</p>
+                              <p className="text-2xl font-semibold leading-relaxed">{role.title}</p>
                            </div>
-                           <div className="flex flex-col justify-start shrink-0 text-block-75 font-medium">
+                           <div className="flex flex-col justify-start shrink-0  text-dark-60 text-md font-medium leading-loose">
                               <p>
                                  {role.startDate} - {role.endDate} <span> • </span>
                                  {calculateWorkDuration(role.startDate, role.endDate)}
@@ -56,7 +59,10 @@ const Experience: React.FC = () => {
                            <div className="flex flex-col justify-start gap-4 shrink-0 font-medium mt-4">
                               {role.descriptions.length > 0 &&
                                  role.descriptions.map((description, idx) => (
-                                    <p key={idx} className="">
+                                    <p
+                                       key={idx}
+                                       className="text-dark-60 text-lg font-medium leading-loose"
+                                    >
                                        {description}
                                     </p>
                                  ))}

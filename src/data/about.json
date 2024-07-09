@@ -1,0 +1,35 @@
+{
+   "content": [
+      {
+         "title": "How My Creative Journey Began",
+         "text": [
+            " I started my creative journey in high school, using Photoshop to create graphic designs, edit and retouch photos, and design print and marketing materials. The magic of transforming ideas into captivating visuals sparked my passion for visual art and design."
+         ],
+         "image": "/about-01.jpg"
+      },
+      {
+         "title": "Jumping into Web Development",
+         "text": [
+            "One day, while diving deep into the design world, I discovered UI/UX design in web applications, which immediately caught my interest. I began studying how to design simple applications and became curious about bringing these designs to life, leading me to explore web development driven by my love for visual expression and design.",
+            "I started with HTML, CSS, and JavaScript, then advanced to frameworks like React and Vue, and also learned Android development. Eventually, I expanded my skills to back-end technologies like Node.js and Java Spring. This comprehensive knowledge helped me secure my first full-time job as a full-stack developer, a pivotal moment in my career."
+         ],
+         "image": "/about-02.jpg"
+      },
+      {
+         "title": "What I’m Focused on Now",
+         "text": [
+            "These days, I work as a Full Stack Developer at Centralized Cloud Computing International Inc., where I help deliver digital solutions for our clients’ web and mobile applications.",
+            "In my free time, I enjoy creative coding and reading, always exploring new technologies and honing my coding skills. I also love spending time with my friends and family, savoring life’s pleasures away from the computer screen when I’m not deeply immersed in coding or working out."
+         ],
+         "image": "/about-03.jpg"
+      },
+      {
+         "title": "My Roadmap Ahead",
+         "text": [
+            "My aim is to lead large-scale and secure projects, mentor junior developers, and make critical architectural decisions. I strive to oversee development teams effectively, contribute impactful tech strategies aligned with business goals, and help establish the company as a leader in its field.",
+            "To achieve this, I am passionate about continuously thinking of and developing innovative digital solutions. My focus is on creating as many valuable projects as possible, honing my skills, and expanding my knowledge. By doing so, I can lay a solid foundation for leading major initiatives and driving technological advancements within the organization."
+         ],
+         "image": "/about-04.jpg"
+      }
+   ]
+}

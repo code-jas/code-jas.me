@@ -3,6 +3,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import Link from 'next/link';
 import { MdOutlineArrowOutward } from 'react-icons/md';
+import { LinkPreview } from './LinkPreview';
 
 const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) => {
    const controls = useAnimation();
@@ -25,9 +26,10 @@ const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) =>
    };
 
    return (
-      <Link href={liveSiteLink} target="_blank">
+      // <Link href={liveSiteLink} target="_blank">
+      <LinkPreview url={liveSiteLink}>
          <motion.div
-            className="relative flex justify-center items-center gap-2 rounded-full px-3 py-2 overflow-hidden "
+            className="relative flex justify-center items-center gap-2 rounded-full px-3 py-2 text-dark overflow-hidden "
             onHoverStart={handleHoverStart}
             onHoverEnd={handleHoverEnd}
             whileHover={{ scale: 1.05 }}
@@ -39,7 +41,7 @@ const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) =>
                animate={controls}
                transition={{ duration: 0.3, ease: [0.1, 0, 0, 1] }}
             />
-            <p className="relative z-10 font-medium text-[20px] text-purple">Check Live Site</p>
+            <p className="relative z-10 font-medium text-[20px]">Check Live Site</p>
             <motion.div animate={linkControls} className="relative z-10">
                <MdOutlineArrowOutward size={24} />
             </motion.div>
@@ -47,7 +49,8 @@ const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) =>
                <MdOutlineArrowOutward size={24} />
             </motion.div> */}
          </motion.div>
-      </Link>
+      </LinkPreview>
+      // </Link>
    );
 };
 

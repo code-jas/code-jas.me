@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
 import Image from 'next/image';
 
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
             <div
                className="relative mt-10 avatar-container"
                onMouseEnter={() => setHovered(true)}
-               onMouseLeave={() => setHovered(false)}
+               onMouseLeave={() => setTimeout(() => setHovered(false), 500)}
             >
                <Image
                   src="/avatar.png"
@@ -45,43 +45,50 @@ const Home: React.FC = () => {
                   height={550}
                   className="relative z-10 avatar"
                />
-               {hovered && (
-                  <>
-                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="absolute top-0 left-[-150px] w-40 p-3 bg-blue-green text-white rounded-lg shadow-lg"
-                     >
-                        Hi there! I&apos;m a Full Stack Developer.
-                     </motion.div>
-                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="absolute top-0 right-[-150px] w-60 p-3 bg-tomato text-white rounded-lg shadow-lg"
-                     >
-                        Passionate about creating seamless user experiences.
-                     </motion.div>
-                     <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="absolute top-64 left-[-250px] w-60 p-3 bg-primary text-white rounded-lg shadow-lg"
-                     >
-                        Always curious and seeking continuous improvement through learning.
-                     </motion.div>
-                     <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="absolute top-56 right-[-262px] w-40 p-3 bg-purple text-white rounded-lg shadow-lg"
-                     >
-                        Driven by a love for solving problems with digital solutions.
-                     </motion.div>
-                  </>
-               )}
+               <AnimatePresence>
+                  {hovered && (
+                     <>
+                        <motion.div
+                           initial={{ opacity: 0, x: -50 }}
+                           animate={{ opacity: 1, x: 0 }}
+                           exit={{ opacity: 0, x: -50 }}
+                           transition={{ duration: 0.5 }}
+                           className="absolute top-0 left-[-150px] w-40 p-3 bg-blue-green text-white rounded-lg shadow-lg"
+                        >
+                           Hi there! I&apos;m a Full Stack Developer.
+                        </motion.div>
+                        <motion.div
+                           initial={{ opacity: 0, x: 50 }}
+                           animate={{ opacity: 1, x: 0 }}
+                           exit={{ opacity: 0, x: 50 }}
+                           transition={{ duration: 0.5 }}
+                           className="absolute top-0 right-[-150px] w-60 p-3 bg-tomato text-white rounded-lg shadow-lg"
+                        >
+                           Passionate about creating seamless user experiences.
+                        </motion.div>
+                        <motion.div
+                           initial={{ opacity: 0, y: 50 }}
+                           animate={{ opacity: 1, y: 0 }}
+                           exit={{ opacity: 0, y: 50 }}
+                           transition={{ duration: 0.5 }}
+                           className="absolute top-64 left-[-250px] w-60 p-3 bg-primary text-white rounded-lg shadow-lg"
+                        >
+                           Always curious and seeking continuous improvement through learning.
+                        </motion.div>
+                        <motion.div
+                           initial={{ opacity: 0, y: 50 }}
+                           animate={{ opacity: 1, y: 0 }}
+                           exit={{ opacity: 0, y: 50 }}
+                           transition={{ duration: 0.5 }}
+                           className="absolute top-56 right-[-262px] w-40 p-3 bg-purple text-white rounded-lg shadow-lg"
+                        >
+                           Driven by a love for solving problems with digital solutions.
+                        </motion.div>
+                     </>
+                  )}
+               </AnimatePresence>
             </div>
+            );
          </div>
          <div
             className="z-10 pointer-events-none absolute inset-y-0 bottom-0 w-full bg-gradient-to-t"

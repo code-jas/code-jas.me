@@ -33,6 +33,7 @@ export default function Navbar() {
    const data = [
       { title: 'Home', href: '#home' },
       { title: 'About', href: '#about' },
+      { title: 'Experience', href: '#experience' },
       { title: 'Projects', href: '#projects' },
       { title: 'Technologies', href: '#technologies' },
       { title: 'Contact', href: '#contact' },
