@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
 import ProjectCard from '../ProjectCard';
-import projectsData from '../../data/projects.json';
 import { ProjectSection } from '@/types/profile';
 
 interface ProjectsProps {
