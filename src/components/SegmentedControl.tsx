@@ -17,6 +17,20 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({ value, options, onC
    const selectionRef = useRef<HTMLSpanElement>(null);
 
    useLayoutEffect(() => {
+      const updatePillPosition = () => {
+         const selectedOption = document.querySelector(
+            `input[name="segmentedControl"][value="${value}"]`,
+         );
+         if (selectedOption && selectionRef.current) {
+            const inputElement = selectedOption as HTMLInputElement;
+            const optionParent = inputElement.parentElement;
+            if (optionParent) {
+               selectionRef.current.style.transform = `translateX(${optionParent.offsetLeft}px)`;
+               selectionRef.current.style.width = `${optionParent.offsetWidth - 8}px`;
+            }
+         }
+      };
+
       updatePillPosition();
       window.addEventListener('resize', updatePillPosition);
 
