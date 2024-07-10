@@ -153,9 +153,7 @@ h4 {
    transition: transform 0.2s ease;
 }
 
-
-
-.highlight  {
+.highlight {
    /* background-color: var(--primary); */
    color: white;
    padding: 4px 8px;

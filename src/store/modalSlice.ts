@@ -1,5 +1,5 @@
 // store/modalSlice.ts
-import { Project } from '@/types/types';
+import { Project } from '@/types/profile';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface ModalState {

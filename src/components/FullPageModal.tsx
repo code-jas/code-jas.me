@@ -26,7 +26,7 @@ const headerVariants = {
    exit: { y: '-20vh', opacity: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
 };
 
-const FullPageModal = () => {
+const FullPageModal: React.FC = () => {
    const dispatch = useDispatch();
    const { isOpen, content } = useSelector((state: RootState) => state.modal);
    const [showModal, setShowModal] = useState(isOpen);
