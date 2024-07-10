@@ -1,15 +1,61 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { HomeSection } from '@/types/profile';
 
-const Home: React.FC = () => {
+interface HomeProps {
+   home: HomeSection;
+}
+
+const Home: React.FC<HomeProps> = ({ home }) => {
+   const { header, subheader, avatar, hoverMessages } = home;
    const [hovered, setHovered] = useState(false);
+
+   const textClass = 'text-white rounded-lg shadow-lg';
+   const bubbleMessages = [
+      {
+         key: 'message1',
+         initial: { opacity: 0, x: -50 },
+         animate: { opacity: 1, x: 0 },
+         exit: { opacity: 0, x: -50 },
+         transition: { duration: 0.5 },
+         className: `absolute top-0 left-[-150px] w-40 p-3 bg-blue-green ${textClass}`,
+         message: hoverMessages[0],
+      },
+      {
+         key: 'message2',
+         initial: { opacity: 0, x: 50 },
+         animate: { opacity: 1, x: 0 },
+         exit: { opacity: 0, x: 50 },
+         transition: { duration: 0.5 },
+         className: `absolute top-0 right-[-150px] w-60 p-3 bg-tomato ${textClass}`,
+         message: hoverMessages[1],
+      },
+      {
+         key: 'message3',
+         initial: { opacity: 0, y: 50 },
+         animate: { opacity: 1, y: 0 },
+         exit: { opacity: 0, y: 50 },
+         transition: { duration: 0.5 },
+         className: `absolute top-64 left-[-250px] w-60 p-3 bg-primary ${textClass}`,
+         message: hoverMessages[2],
+      },
+      {
+         key: 'message4',
+         initial: { opacity: 0, y: 50 },
+         animate: { opacity: 1, y: 0 },
+         exit: { opacity: 0, y: 50 },
+         transition: { duration: 0.5 },
+         className: `absolute top-56 right-[-262px] w-40 p-3 bg-purple ${textClass}`,
+         message: hoverMessages[3],
+      },
+   ];
 
    return (
       <section id="home" className="relative">
          <div className="relative flex flex-col items-center justify-center py-12 my-24 mx-auto max-w-5xl overflow-hidden">
             <div className="text-5xl font-bold leading-tight relative">
-               Hey, I&apos;m John Angelo!
+               {header}
                <div className="absolute right-3 top-2 flex items-center justify-center py-11">
                   <motion.svg
                      xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +77,7 @@ const Home: React.FC = () => {
                </div>
             </div>
             <div className="text-5xl font-bold leading-tight text-center max-w-3xl text-dark">
-               Explore my digital world and discover my passions!
+               {subheader}
             </div>
             <div
                className="relative mt-10 avatar-container"
@@ -39,53 +85,28 @@ const Home: React.FC = () => {
                onMouseLeave={() => setTimeout(() => setHovered(false), 500)}
             >
                <Image
-                  src="/avatar.png"
+                  src={avatar}
                   alt="3D Avatar"
                   width={400}
                   height={550}
                   className="relative z-10 avatar"
                />
                <AnimatePresence>
-                  {hovered && (
-                     <>
-                        <motion.div
-                           initial={{ opacity: 0, x: -50 }}
-                           animate={{ opacity: 1, x: 0 }}
-                           exit={{ opacity: 0, x: -50 }}
-                           transition={{ duration: 0.5 }}
-                           className="absolute top-0 left-[-150px] w-40 p-3 bg-blue-green text-white rounded-lg shadow-lg"
-                        >
-                           Hi there! I&apos;m a Full Stack Developer.
-                        </motion.div>
-                        <motion.div
-                           initial={{ opacity: 0, x: 50 }}
-                           animate={{ opacity: 1, x: 0 }}
-                           exit={{ opacity: 0, x: 50 }}
-                           transition={{ duration: 0.5 }}
-                           className="absolute top-0 right-[-150px] w-60 p-3 bg-tomato text-white rounded-lg shadow-lg"
-                        >
-                           Passionate about creating seamless user experiences.
-                        </motion.div>
-                        <motion.div
-                           initial={{ opacity: 0, y: 50 }}
-                           animate={{ opacity: 1, y: 0 }}
-                           exit={{ opacity: 0, y: 50 }}
-                           transition={{ duration: 0.5 }}
-                           className="absolute top-64 left-[-250px] w-60 p-3 bg-primary text-white rounded-lg shadow-lg"
-                        >
-                           Always curious and seeking continuous improvement through learning.
-                        </motion.div>
-                        <motion.div
-                           initial={{ opacity: 0, y: 50 }}
-                           animate={{ opacity: 1, y: 0 }}
-                           exit={{ opacity: 0, y: 50 }}
-                           transition={{ duration: 0.5 }}
-                           className="absolute top-56 right-[-262px] w-40 p-3 bg-purple text-white rounded-lg shadow-lg"
-                        >
-                           Driven by a love for solving problems with digital solutions.
-                        </motion.div>
-                     </>
-                  )}
+                  {hovered &&
+                     bubbleMessages.map(
+                        ({ key, initial, animate, exit, transition, className, message }) => (
+                           <motion.div
+                              key={key}
+                              initial={initial}
+                              animate={animate}
+                              exit={exit}
+                              transition={transition}
+                              className={className}
+                           >
+                              {message}
+                           </motion.div>
+                        ),
+                     )}
                </AnimatePresence>
             </div>
             );

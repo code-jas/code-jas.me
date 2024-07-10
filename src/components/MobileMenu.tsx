@@ -5,16 +5,25 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { LuHome, LuMenu, LuUser2, LuBraces, LuContact2, LuX } from 'react-icons/lu';
 import { AiOutlineExperiment } from 'react-icons/ai';
+import { Navbar } from '@/types/profile';
+import { IconType } from 'react-icons';
+import React from 'react';
 
-export default function MobileMenu() {
+interface MobileMenuProps {
+   data: Navbar[];
+}
+
+const MobileMenu: React.FC<MobileMenuProps> = ({ data }) => {
    const [navShow, setNavShow] = useState(false);
-   const data = [
-      { title: 'Home', href: '#home', icon: LuHome },
-      { title: 'About', href: '#about', icon: LuUser2 },
-      { title: 'Projects', href: '#projects', icon: AiOutlineExperiment },
-      { title: 'Technologies', href: '#technologies', icon: LuBraces },
-      { title: 'Contact', href: '#contact', icon: LuContact2 },
-   ];
+
+   const icons: { [key: string]: IconType } = {
+      Home: LuHome,
+      About: LuUser2,
+      Experience: AiOutlineExperiment,
+      Projects: AiOutlineExperiment,
+      Technologies: LuBraces,
+      Contact: LuContact2,
+   };
 
    const onToggleNav = () => {
       setNavShow((status) => {
@@ -50,9 +59,7 @@ export default function MobileMenu() {
                <button
                   aria-label="Toggle Menu"
                   onClick={onToggleNav}
-                  className={`md:hidden rounded-full p-2 duration-500 ${
-                     !navShow ? '-rotate-[360deg]' : null
-                  }`}
+                  className={`md:hidden rounded-full p-2 duration-500 ${!navShow ? '-rotate-[360deg]' : null}`}
                >
                   <LuX className="text-xl" />
                </button>
@@ -71,10 +78,12 @@ export default function MobileMenu() {
                         className="flex items-center gap-x-4 font-incognito font-semibold text-xl dark:shadow-line-dark shadow-line-light p-6"
                         onClick={onToggleNav}
                      >
-                        <link.icon
-                           className="text-zinc-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300"
-                           aria-hidden="true"
-                        />
+                        {icons[link.title] &&
+                           React.createElement(icons[link.title], {
+                              className:
+                                 'text-zinc-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300',
+                              'aria-hidden': 'true',
+                           })}
                         {link.title}
                      </Link>
                   </motion.div>
@@ -83,4 +92,6 @@ export default function MobileMenu() {
          </motion.div>
       </>
    );
-}
+};
+
+export default MobileMenu;

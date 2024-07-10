@@ -152,3 +152,12 @@ h4 {
    will-change: transform;
    transition: transform 0.2s ease;
 }
+
+
+
+.highlight  {
+   /* background-color: var(--primary); */
+   color: white;
+   padding: 4px 8px;
+   border-radius: 4px;
+}

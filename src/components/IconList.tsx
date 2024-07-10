@@ -17,7 +17,7 @@ const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
    const fallbackHex = theme === 'light' ? '#6e6e73' : '#ffffff';
    const minContrastRatio = theme === 'dark' ? 2 : 1.2;
 
-   console.log('icon', icon);
+   // console.log('icon', icon);
    return (
       <div
          key={icon.slug}

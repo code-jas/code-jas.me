@@ -1,0 +1,242 @@
+{
+   "navbar": [
+      { "title": "Home", "href": "#home", "isActive": true },
+      { "title": "About", "href": "#about", "isActive": true },
+      { "title": "Experience", "href": "#experience", "isActive": true },
+      { "title": "Projects", "href": "#projects", "isActive": true },
+      { "title": "Technologies", "href": "#technologies", "isActive": true },
+      { "title": "Contact", "href": "#contact", "isActive": true }
+   ],
+   "home": {
+      "header": "Hey, I'm John Angelo!",
+      "subheader": "Explore my digital world and discover my passions!",
+      "avatar": "/avatar.png",
+      "hoverMessages": [
+         "Hi there! I'm a Full Stack Developer.",
+         "Passionate about creating seamless user experiences.",
+         "Always curious and seeking continuous improvement through learning.",
+         "Driven by a love for solving problems with digital solutions."
+      ]
+   },
+   "about": {
+      "header": "About me",
+      "subheader": "Web development is my innovative space, where I push boundaries and explore new horizons, and turn creative ideas into reality",
+      "content": [
+         {
+            "title": "How My Creative Journey Began",
+            "text": [
+               "I started my creative journey in high school, using Photoshop to create graphic designs, edit and retouch photos, and design print and marketing materials. The magic of <span class='highlight bg-tomato'>transforming ideas into captivating visuals</span> sparked my passion for visual art and design."
+            ],
+            "image": "/about-01.jpg"
+         },
+         {
+            "title": "Jumping into Web Development",
+            "text": [
+               "One day, while diving deep into the design world, I discovered UI/UX design in web applications, which immediately caught my interest. I began studying how to design simple applications and became curious about bringing these designs to life, <span class='highlight bg-blue-green'>leading me to explore web development driven by my curiosity, creativity, and willingness to learn.</span>",
+               "I started with HTML, CSS, and JavaScript, then advanced to frameworks like React and Vue, and also learned Android development. Eventually, I expanded my skills to back-end technologies like Node.js and Java Spring. This comprehensive knowledge helped me secure my first full-time job as a full-stack developer, a pivotal moment in my career."
+            ],
+            "image": "/about-02.jpg"
+         },
+         {
+            "title": "What I’m Focused on Now",
+            "text": [
+               "These days, I work as a Full Stack Developer at Centralized Cloud Computing International Inc., where I <span class='highlight bg-purple'>help deliver digital solutions for our clients’ web and mobile applications.</span>",
+               "In my free time, I enjoy creative coding and reading, always exploring new technologies and honing my coding skills. I also love spending time with my friends and family, savoring life’s pleasures away from the computer screen when I’m not deeply immersed in coding or working out."
+            ],
+            "image": "/about-03.jpg"
+         },
+         {
+            "title": "My Roadmap Ahead",
+            "text": [
+               "My aim is to <span class='highlight bg-primary'>lead large-scale and secure projects, mentor junior developers, and make critical architectural decisions</span>. I strive to oversee development teams effectively, contribute impactful tech strategies aligned with business goals, and help establish the company as a leader in its field.",
+               "To achieve this, I am passionate about continuously thinking of and developing innovative digital solutions. My focus is on creating as many valuable projects as possible, honing my skills, and expanding my knowledge. By doing so, I can lay a solid foundation for leading major initiatives and driving technological advancements within the organization."
+            ],
+            "image": "/about-04.jpg"
+         }
+      ]
+   },
+   "experience": {
+      "header": "Experience",
+      "subheader": "Highlights of My Professional Journey",
+      "timeline": [
+         {
+            "company": "Centralized Cloud Computing International Inc.",
+            "url": "https://centralizedinc.com/",
+            "roles": [
+               {
+                  "title": "Full Stack Developer",
+                  "startDate": "August 2023",
+                  "endDate": "Present",
+                  "descriptions": [
+                     "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                     "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                  ]
+               },
+               {
+                  "title": "Student Intern",
+                  "startDate": "March 2023",
+                  "endDate": "August 2023",
+                  "descriptions": [
+                     "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   "projects": {
+      "header": "A Selection of My Recent Work",
+      "subheader": "Discover my user-focused digital solutions that solve real-world problems and streamline processes.",
+      "projects": [
+         {
+            "id": 2,
+            "title": "Bookly",
+            "projectType": ["Web App", "E-commerce", "Marketplace", "Bookstore"],
+            "description": "A digital marketplace for secondhand books in the Philippines, making affordable literature accessible through an organized online platform.",
+            "informations": [
+               "Built using React, Vite, Tailwind CSS, Node.js, Sequelize, and PostgreSQL, ensuring a robust and scalable platform.",
+               "Deployed on Digital Ocean with Docker for seamless and efficient hosting.",
+               "Supports dynamic roles for Admin, Buyer, and Seller, enhancing user experience.",
+               "Real-time notifications and updates implemented using Socket.io.",
+               "Efficient state management for a responsive user interface.",
+               "Designed with Figma, focusing on intuitive and visually appealing UI/UX.",
+               "Secure authentication with options for social media integration.",
+               "Admins can manage book listings, including adding, editing, and removing books.",
+               "Buyers and Sellers can manage their orders seamlessly, with real-time updates.",
+               "Advanced search and filtering options for easy book discovery."
+            ],
+            "techStacks": [
+               { "label": "React", "icon": "/brand/react.svg" },
+               { "label": "Vite", "icon": "/brand/vite.svg" },
+               { "label": "Node.js", "icon": "/brand/node-js.svg" },
+               { "label": "Sequelize", "icon": "/brand/sequelize.svg" },
+               { "label": "Digital Ocean", "icon": "/brand/digital-ocean.svg" },
+               { "label": "PostgreSQL", "icon": "/brand/postgresql.svg" },
+               { "label": "Docker", "icon": "/brand/docker.svg" }
+            ],
+            "liveSiteLink": "https://example.com/live-site-link-2",
+            "bgImage": "/gradient-part-bg.png",
+            "coverImage": "COMINGSOON",
+            "mockupImage": "/test.jpg"
+         },
+         {
+            "id": 1,
+            "title": "Ph Festival",
+            "projectType": ["Web App", "Cultural Showcase", "Festival Guide", "Educational Blog"],
+            "description": "Experience the vibrancy of Filipino culture through its diverse and colorful festivals. Share our similarities, celebrate our differences.",
+            "informations": [
+               "Ph Festival is my first web application project from college.",
+               "I designed it using Figma to ensure a visually appealing and user-friendly interface.",
+               "The goal was to showcase Philippine festivals with a focus on aesthetics and user experience.",
+               "This application educates readers about various annual festivals in the Philippines.",
+               "The app features vibrant galleries, timelines, detailed pages, animations, search, and filters for an enhanced experience.",
+               "Developed using Next.js, Tailwind CSS, Redux, Prisma, and MongoDB.",
+               "Focused on better structure, state management, data fetching, UI enhancements, and responsiveness."
+            ],
+            "techStacks": [
+               { "label": "Next.js", "icon": "/brand/next-js.svg" },
+               { "label": "TypeScript", "icon": "/brand/typescript.svg" },
+               { "label": "Redux", "icon": "/brand/redux.svg" },
+               { "label": "CSS", "icon": "/brand/css.svg" },
+               { "label": "Prisma", "icon": "/brand/prisma.svg" },
+               { "label": "Vercel", "icon": "/brand/vercel.svg" }
+            ],
+            "liveSiteLink": "https://ph-festival.code-jas.me",
+            "bgImage": "/gradient-part-bg.png",
+            "coverImage": "/ph-festival-screenshot.png",
+            "mockupImage": "/ph-festival-mockup.jpg"
+         }
+      ]
+   },
+   "technologies": {
+      "header": "Technologies & Skills",
+      "subheader": "Empowering development with these essential tools and frameworks.",
+      "technologies": [
+         [
+            "typescript",
+            "javascript",
+            "react",
+            "redux",
+            "vite",
+            "vuedotjs",
+            "nextdotjs",
+            "nuxtdotjs",
+            "tailwindcss",
+            "material-ui",
+            "antdesign",
+            "html5",
+            "css3",
+            "flutter",
+            "figma",
+            "vercel"
+         ],
+         [
+            "nodedotjs",
+            "express",
+            "python",
+            "prisma",
+            "mysql",
+            "postgresql",
+            "mongodb",
+            "firebase",
+            "docker",
+            "digitalocean",
+            "git",
+            "github",
+            "gitlab",
+            "visualstudiocode"
+         ]
+      ]
+   },
+   "contact": {
+      "header": "Let's keep in touch",
+      "description": "Eager to share my tech insights and business know-how as I continue learning and applying my skills. Let’s connect!",
+      "email": "johnangelo.silvestre04@gmail.com",
+      "emailButtonLabel": "Send Email",
+      "emailButtonClasses": "text-white bg-primary rounded-full px-8 p-3 font-medium transition duration-400 hover:bg-charcoal",
+      "socialMessage": "Connect with me on my socials.",
+      "social": [
+         {
+            "url": "https://www.linkedin.com/in/johnangelo-silvestre/",
+            "icon": "FaLinkedin",
+            "hoverColor": "hover:text-[#0e76a8]",
+            "preview": true
+         },
+         {
+            "url": "https://discordapp.com/users/742020338270863450",
+            "icon": "FaDiscord",
+            "hoverColor": "hover:text-[#5865F2]",
+            "preview": true
+         },
+         {
+            "url": "https://github.com/code-jas",
+            "icon": "FaGithub",
+            "hoverColor": "hover:text-[#24292e]",
+            "preview": true
+         },
+         {
+            "url": "https://www.facebook.com/angelobsilvestre",
+            "icon": "FaFacebook",
+            "hoverColor": "hover:text-[#1877F2]",
+            "preview": true
+         }
+      ]
+   },
+   "footer": {
+      "builtWith": [
+         {
+            "name": "Next.js",
+            "url": "https://nextjs.org",
+            "icon": "/brand/next-js.svg",
+            "class": "icon-container next-icon"
+         },
+         {
+            "name": "Vercel",
+            "url": "https://vercel.com",
+            "icon": "/brand/vercel.svg",
+            "class": "icon-container vercel-icon"
+         }
+      ],
+      "copyright": "John Angelo Silvestre"
+   }
+}

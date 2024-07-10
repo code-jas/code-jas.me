@@ -7,6 +7,7 @@ import Experience from '@/components/Sections/Experience';
 import Technologies from '@/components/Sections/Technologies';
 import GridPattern from '@/components/GridPatterns';
 import { cn } from '@/lib/utils';
+import data from '@/data/data.json';
 
 const HomePage: React.FC = () => {
    const controls = useAnimation();
@@ -31,7 +32,7 @@ const HomePage: React.FC = () => {
    }, [controls]);
 
    return (
-      <>
+      <main>
          <div className="absolute top-0 left-0 h-[1300px] w-full">
             <GridPattern
                width={100}
@@ -44,14 +45,14 @@ const HomePage: React.FC = () => {
             />
          </div>
          <motion.div animate={controls} initial={{ y: 0 }} className="z-10 font-tt-norms relative">
-            <Home />
-            <About />
-            <Experience />
-            <Projects />
-            <Technologies />
-            <Contact />
+            <Home home={data.home} />
+            <About about={data.about} />
+            <Experience experience={data.experience} />
+            <Projects projects={data.projects} />
+            <Technologies tech={data.technologies} />
+            <Contact contact={data.contact} />
          </motion.div>
-      </>
+      </main>
    );
 };
 

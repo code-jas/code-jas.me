@@ -4,49 +4,18 @@ import React, { useState } from 'react';
 import IconList from '../IconList';
 import IconCloud from '../IconCloud';
 import SegmentedControl from '../SegmentedControl';
+import { TechnologiesSection } from '@/types/profile';
 
-const Technologies: React.FC = () => {
+interface TechnologiesProps {
+   tech: TechnologiesSection;
+}
+
+const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
+   const { header, subheader, technologies } = tech;
    const [selectedValue, setSelectedValue] = useState('cards');
    const options = [
       { label: 'Cards', value: 'cards' },
       { label: 'Clouds', value: 'clouds' },
-   ];
-
-   const slugs = [
-      [
-         'typescript',
-         'javascript',
-         'react',
-         'redux',
-         'vite',
-         'vuedotjs',
-         'nextdotjs',
-         'nuxtdotjs',
-         'tailwindcss',
-         'material-ui',
-         'antdesign',
-         'html5',
-         'css3',
-         'flutter',
-         'figma',
-         'vercel',
-      ],
-      [
-         'nodedotjs',
-         'express',
-         'python',
-         'prisma',
-         'mysql',
-         'postgresql',
-         'mongodb',
-         'firebase',
-         'docker',
-         'digitalocean',
-         'git',
-         'github',
-         'gitlab',
-         'visualstudiocode',
-      ],
    ];
 
    return (
@@ -72,11 +41,11 @@ const Technologies: React.FC = () => {
          <div className="w-full">
             {selectedValue === 'cards' ? (
                <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20 ">
-                  <IconList iconSlugs={slugs} />
+                  <IconList iconSlugs={technologies} />
                </div>
             ) : (
                <div className="relative flex flex-col  max-w-2xl mx-auto items-center justify-center overflow-hidden  px-20 pb-12 pt-8 ">
-                  <IconCloud iconSlugs={slugs.flatMap((slugs) => slugs)} />
+                  <IconCloud iconSlugs={technologies.flatMap((slugs) => slugs)} />
                </div>
             )}
          </div>

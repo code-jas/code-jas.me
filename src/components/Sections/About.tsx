@@ -1,19 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
-import aboutData from '@/data/about.json';
+import { AboutSection } from '@/types/profile';
 
-const About: React.FC = () => {
+interface AboutProps {
+   about: AboutSection;
+}
+
+const About: React.FC<AboutProps> = ({ about }) => {
+   const { header, subheader, content } = about;
    return (
       <section id="about" className="mx-auto px-6 py-12 flex flex-col gap-16">
          <div className="max-w-4xl mx-auto">
-            <h4 className="callout mb-4">About me</h4>
-            <h2 className="heading-2">
-               Web development is my innovative space, where I push boundaries and explore new
-               horizons, and turn creative ideas into reality
-            </h2>
+            <h4 className="callout mb-4">{header}</h4>
+            <h2 className="heading-2">{subheader}</h2>
          </div>
          <div className="max-w-4xl mx-auto">
-            {aboutData.content.map((item, index) => (
+            {content.map((item, index) => (
                <div key={index} className="flex flex-col md:flex-row my-8 gap-6">
                   {index % 2 === 0 ? (
                      <>
@@ -22,13 +24,8 @@ const About: React.FC = () => {
                               {item.title}
                            </h4>
                            <div className="flex flex-col gap-5">
-                              {item.text.map((p, i) => (
-                                 <p
-                                    key={i}
-                                    className="text-dark-60 text-lg font-medium leading-loose"
-                                 >
-                                    {p}
-                                 </p>
+                              {item.text.map((paragraph, i) => (
+                                 <p key={i} dangerouslySetInnerHTML={{ __html: paragraph }} />
                               ))}
                            </div>
                         </div>
@@ -62,13 +59,8 @@ const About: React.FC = () => {
                               {item.title}
                            </h4>
                            <div className="flex flex-col gap-5">
-                              {item.text.map((p, i) => (
-                                 <p
-                                    key={i}
-                                    className="text-dark-60 text-lg font-medium leading-loose"
-                                 >
-                                    {p}
-                                 </p>
+                              {item.text.map((paragraph, i) => (
+                                 <p key={i} dangerouslySetInnerHTML={{ __html: paragraph }} />
                               ))}
                            </div>
                         </div>

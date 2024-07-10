@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { BiLogoGithub } from 'react-icons/bi';
-import footer from '@/data/footer.json';
+import data from '@/data/data.json';
 
 export default function Footer() {
    return (
@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="flex md:flex-row flex-col items-center gap-x-2">
                <h3 className="font-inter">Built with:</h3>
                <ul className="flex items-center gap-x-2 text-sm dark:text-zinc-600 text-zinc-400 md:mt-0 mt-3">
-                  {footer.builtWith.map((item, index) => (
+                  {data.footer.builtWith.map((item, index) => (
                      <li key={index}>
                         <a
                            href={item.url}
@@ -34,7 +34,8 @@ export default function Footer() {
 
             <div className="flex flex-col lg:items-end items-center lg:text-start text-center">
                <small className="text-zinc-500">
-                  Copyright &copy; {footer.copyright} {new Date().getFullYear()} All rights Reserved
+                  Copyright &copy; {data.footer.copyright} {new Date().getFullYear()} All rights
+                  Reserved
                </small>
             </div>
          </div>

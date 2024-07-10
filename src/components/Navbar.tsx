@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Theme from './Theme';
 import MobileMenu from './MobileMenu';
 import '@/styles/navbar.css';
+import profile from '@/data/data.json';
 
 export default function Navbar() {
    const [isScrolledUp, setIsScrolledUp] = useState(true);
@@ -30,20 +31,10 @@ export default function Navbar() {
       };
    }, [lastScrollY]);
 
-   const data = [
-      { title: 'Home', href: '#home' },
-      { title: 'About', href: '#about' },
-      { title: 'Experience', href: '#experience' },
-      { title: 'Projects', href: '#projects' },
-      { title: 'Technologies', href: '#technologies' },
-      { title: 'Contact', href: '#contact' },
-   ];
-
    return (
       <motion.header
          initial={{ y: -100 }}
          animate={{ y: isScrolledUp ? 0 : -100 }}
-         // transition={{ type: 'spring', stiffness: 300, damping: 30 }}
          transition={{ duration: 0.5 }}
          className="fixed top-0 w-full text-sm py-4 md:px-16 px-4 z-30 bg-white dark:bg-black shadow-xs"
       >
@@ -54,22 +45,24 @@ export default function Navbar() {
 
             <nav className="md:block hidden">
                <ul className="flex items-center gap-x-8">
-                  {data.map((link, id) => (
-                     <li key={id}>
-                        <Link
-                           href={link.href}
-                           className="cursor-none underlined font-incognito dark:text-white text-dark dark:hover:text-primary hover:text-primary duration-300 text-base"
-                        >
-                           {link.title}
-                        </Link>
-                     </li>
-                  ))}
+                  {profile.navbar
+                     .filter((link) => link.isActive)
+                     .map((link, id) => (
+                        <li key={id}>
+                           <Link
+                              href={link.href}
+                              className="cursor-none underlined font-incognito dark:text-white text-dark dark:hover:text-primary hover:text-primary duration-300 text-base"
+                           >
+                              {link.title}
+                           </Link>
+                        </li>
+                     ))}
                </ul>
             </nav>
 
             <div className="flex items-center gap-x-4">
                <Theme />
-               <MobileMenu />
+               <MobileMenu data={profile.navbar.filter((link) => link.isActive)} />
             </div>
          </div>
       </motion.header>

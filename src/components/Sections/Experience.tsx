@@ -1,9 +1,15 @@
-import React, { useMemo } from 'react';
-import experienceData from '@/data/experience.json';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { LinkPreview } from '../LinkPreview';
+import { ExperienceSection } from '@/types/profile';
 
-const Experience: React.FC = () => {
+interface ExperienceProps {
+   experience: ExperienceSection;
+}
+
+const Experience: React.FC<ExperienceProps> = ({ experience }) => {
+   const { header, subheader, timeline } = experience;
+
    const calculateWorkDuration = (startDate: string, endDate: string): string => {
       const start = new Date(startDate);
       const end = endDate.toLowerCase() === 'present' ? new Date() : new Date(endDate);
@@ -27,10 +33,10 @@ const Experience: React.FC = () => {
    return (
       <section id="experience" className="mx-auto px-6 py-36 flex flex-col gap-16">
          <div className="max-w-4xl mx-auto text-center">
-            <h4 className="callout mb-4">Work Experience</h4>
-            <h2 className="heading-2">Highlights of My Professional Journey</h2>
+            <h4 className="callout mb-4">{header}</h4>
+            <h2 className="heading-2">{subheader}</h2>
          </div>
-         {experienceData.map((company, index) => {
+         {timeline.map((company, index) => {
             return (
                <div
                   key={index}
