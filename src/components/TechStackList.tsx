@@ -1,6 +1,6 @@
 // components/TechStackList.tsx
 
-import { TechStack } from '@/types/types';
+import { TechStack } from '@/types/profile';
 import TechTag from './TechTag';
 
 interface TechStackListProps {
