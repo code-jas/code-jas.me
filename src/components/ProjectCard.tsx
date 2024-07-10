@@ -8,9 +8,10 @@ import TechStacks from './TechStacks';
 import LiveSiteButton from './LivesiteButton';
 import { useDispatch } from 'react-redux';
 import { openModal, setModalContent } from '@/store/modalSlice';
-import { Project } from '@/types/types';
+import { Project } from '@/types/profile';
 
 const Card: React.FC<Project> = ({
+   id,
    title,
    projectType,
    description,
@@ -27,6 +28,7 @@ const Card: React.FC<Project> = ({
    const handleClick = () => {
       dispatch(
          setModalContent({
+            id,
             title,
             projectType,
             description,
