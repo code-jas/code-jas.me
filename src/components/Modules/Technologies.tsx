@@ -5,6 +5,7 @@ import IconList from '../UI/Icons/IconList';
 import IconCloud from '../UI/Icons/IconCloud';
 import { TechnologiesSection } from '@/types/profile';
 import { SegmentedControl } from '../UI/Buttons';
+import { H1, H4, H5, Paragraph } from '../UI/Common/Typography';
 
 interface TechnologiesProps {
    tech: TechnologiesSection;
@@ -24,11 +25,11 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
          className="bg-surface flex flex-col items-center justify-center py-12"
       >
          <div className="max-w-4xl mx-auto text-center">
-            <h4 className="text-center text-5xl font-medium text-primary py-4">{header}</h4>
-            <h2 className="text-center font-medium text-xl  text-dark leading-relaxed">
-               {subheader}
-            </h2>
-            <div className="my-4">
+            <H1 variant="branding" className="text-center ">
+               {header}
+            </H1>
+            <H4 className="text-center">{subheader}</H4>
+            <div className="my-6">
                <SegmentedControl
                   options={options}
                   value={selectedValue}

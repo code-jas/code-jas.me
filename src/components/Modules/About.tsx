@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { AboutSection } from '@/types/profile';
+import { H2, H4, Paragraph } from '../UI/Common/Typography';
 
 interface AboutProps {
    about: AboutSection;
@@ -11,8 +12,8 @@ const About: React.FC<AboutProps> = ({ about }) => {
    return (
       <section id="about" className="mx-auto px-6 py-12 flex flex-col gap-16">
          <div className="max-w-4xl mx-auto">
-            <h4 className="callout mb-4">{header}</h4>
-            <h2 className="heading-2">{subheader}</h2>
+            <H4 variant="branding">{header}</H4>
+            <H2>{subheader}</H2>
          </div>
          <div className="max-w-4xl mx-auto">
             {content.map((item, index) => (
@@ -20,12 +21,14 @@ const About: React.FC<AboutProps> = ({ about }) => {
                   {index % 2 === 0 ? (
                      <>
                         <div className="md:w-1/2 p-6">
-                           <h4 className="text-primary text-2xl font-semibold leading-relaxed my-4">
-                              {item.title}
-                           </h4>
+                           <H4 className="leading-relaxed my-4">{item.title}</H4>
                            <div className="flex flex-col gap-5">
                               {item.text.map((paragraph, i) => (
-                                 <p key={i} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                                 <Paragraph
+                                    // className='fl'
+                                    key={i}
+                                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                                 />
                               ))}
                            </div>
                         </div>
@@ -51,12 +54,13 @@ const About: React.FC<AboutProps> = ({ about }) => {
                            />
                         </div>
                         <div className="md:w-1/2 p-6 order-1 md:order-2">
-                           <h4 className="text-primary text-2xl font-semibold leading-relaxed my-4">
-                              {item.title}
-                           </h4>
+                           <H4 className="leading-relaxed my-4">{item.title}</H4>
                            <div className="flex flex-col gap-5">
                               {item.text.map((paragraph, i) => (
-                                 <p key={i} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                                 <Paragraph
+                                    key={i}
+                                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                                 />
                               ))}
                            </div>
                         </div>

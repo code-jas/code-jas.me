@@ -16,7 +16,10 @@ type LinkPreviewProps = {
    height?: number;
    quality?: number;
    layout?: string;
-} & ({ isStatic: true; imageSrc: string } | { isStatic?: false; imageSrc?: never });
+   isStatic?: boolean;
+   imageSrc?: string;
+};
+//  & ({ isStatic: true; imageSrc: string } | { isStatic?: false; imageSrc?: never });
 
 const LinkPreview = ({
    children,

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 // Type for Title component props
 type TitleProps = {
-   variant?: 'primary' | 'secondary' | 'branding';
+   variant?: 'primary' | 'secondary' | 'tertiary' | 'branding';
    as?: React.ElementType;
    className?: string;
    id?: string;
@@ -24,6 +24,7 @@ const fontSize = {
 const titleColors = {
    primary: 'text-primary',
    secondary: 'text-secondary',
+   tertiary: 'text-tertiary',
    branding: 'text-branding-primary',
 };
 

@@ -7,6 +7,7 @@ import LiveSiteButton from '../Buttons/LivesiteButton';
 import TechStackList from '../Lists/TechStackList';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { H1, H4, H5, Paragraph } from '../Common/Typography';
 
 const backgroundVariants = {
    hidden: { opacity: 0 },
@@ -80,7 +81,11 @@ const FullPageModal: React.FC = () => {
                         <MdClose className="h-6 w-6" />
                         <span className="sr-only">Close</span>
                      </button>
-                     <LiveSiteButton liveSiteLink="#" />
+                     <LiveSiteButton
+                        liveSiteLink={content.liveSiteLink}
+                        staticPreview={content.staticPreview ?? false}
+                        srcPreview={content.srcPreview ?? ''}
+                     />
                   </div>
                </motion.div>
                <motion.div
@@ -92,18 +97,18 @@ const FullPageModal: React.FC = () => {
                >
                   <div className="flex justify-center flex-col py-8 px-20">
                      <div className="flex-grow overflow-auto">
-                        <h1 className="text-5xl font-bold">{content.title}</h1>
-                        <h2 className="text-block-75 font-bold mt-2">
+                        <H1>{content.title}</H1>
+                        <Paragraph className="mt-2">
                            {content &&
                               content.projectType.length > 0 &&
                               content.projectType.join(', ')}
-                        </h2>
+                        </Paragraph>
                         {content &&
                            content.informations.length > 0 &&
                            content.informations.map((info, idx) => (
-                              <p key={idx} className="text-block-75 mt-4 text-lg">
+                              <Paragraph key={idx} className="font-normal mt-4">
                                  {info}
-                              </p>
+                              </Paragraph>
                            ))}
                      </div>
                      <div>

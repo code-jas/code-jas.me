@@ -54,6 +54,8 @@ export interface Project {
    bgImage: string;
    coverImage: string;
    mockupImage?: string;
+   staticPreview?: boolean;
+   srcPreview?: string;
 }
 
 export interface ProjectSection {
@@ -71,6 +73,8 @@ export interface TechnologiesSection {
 export interface Social {
    url: string;
    icon: string;
+   static: boolean;
+   imgSrc: string;
    hoverColor: string;
    preview: boolean;
 }

@@ -31,7 +31,13 @@ const SocialDock: React.FC<SocialDockProps> = ({ social }) => {
          {social.map((link, index) => (
             <DockIcon key={index} className={`text-dark ${link.hoverColor}`}>
                {link.preview ? (
-                  <LinkPreview url={link.url} target="_blank">
+                  <LinkPreview
+                     key={index}
+                     url={link.url}
+                     isStatic={link.static}
+                     imageSrc={link.imgSrc}
+                     target="_blank"
+                  >
                      {renderIcon(link.icon)}
                   </LinkPreview>
                ) : (

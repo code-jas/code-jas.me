@@ -21,6 +21,8 @@ const Card: React.FC<Project> = ({
    bgImage,
    coverImage,
    mockupImage,
+   staticPreview,
+   srcPreview,
 }) => {
    const dispatch = useDispatch();
    const coverImageControls = useAnimation();
@@ -38,6 +40,8 @@ const Card: React.FC<Project> = ({
             bgImage,
             coverImage,
             mockupImage,
+            staticPreview,
+            srcPreview,
          }),
       );
       dispatch(openModal());
@@ -108,7 +112,11 @@ const Card: React.FC<Project> = ({
                <Paragraph className="line-clamp-3">{description}</Paragraph>
                <div className="flex items-center justify-between mt-7 mb-3">
                   <TechStacks techStacks={techStacks} />
-                  <LiveSiteButton liveSiteLink={liveSiteLink} />
+                  <LiveSiteButton
+                     liveSiteLink={liveSiteLink}
+                     staticPreview={staticPreview ?? false}
+                     srcPreview={srcPreview ?? ''}
+                  />
                </div>
             </div>
          </motion.div>

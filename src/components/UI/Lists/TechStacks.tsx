@@ -54,7 +54,7 @@ const TechStacks: React.FC<TechStackIconProps> = ({ techStacks }) => {
                </div>
                <Tooltip
                   id={`techstack-tooltip-${index}`}
-                  className="!bg-surface-01 !text-primary  !shadow-xs"
+                  className="!bg-surface-01 !text-primary  !shadow-lg"
                   place="top"
                />
             </motion.div>
@@ -73,7 +73,7 @@ const TechStacks: React.FC<TechStackIconProps> = ({ techStacks }) => {
                </div>
                <Tooltip
                   id="techstack-tooltip-more"
-                  className="!bg-surface-01 !text-primary !shadow-xs"
+                  className="!bg-white !text-primary !shadow-xs"
                   place="top"
                />
             </motion.div>

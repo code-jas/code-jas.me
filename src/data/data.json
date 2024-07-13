@@ -117,7 +117,10 @@
             "liveSiteLink": "https://example.com/live-site-link-2",
             "bgImage": "/gradient-part-bg.png",
             "coverImage": "COMINGSOON",
-            "mockupImage": "/test.jpg"
+            "mockupImage": "/test.jpg",
+            "staticPreview": true,
+            "srcPreview": "/link-preview/bookly.png"
+
          },
          {
             "id": 1,
@@ -200,24 +203,32 @@
             "url": "https://www.linkedin.com/in/johnangelo-silvestre/",
             "icon": "FaLinkedin",
             "hoverColor": "hover:text-[#0e76a8]",
+            "static": true,
+            "imgSrc": "/link-preview/linkedin-preview.png",
             "preview": true
          },
          {
             "url": "https://discordapp.com/users/742020338270863450",
             "icon": "FaDiscord",
             "hoverColor": "hover:text-[#5865F2]",
+            "static": false,
+            "imgSrc": "/link-preview/github.svg",
             "preview": true
          },
          {
             "url": "https://github.com/code-jas",
             "icon": "FaGithub",
             "hoverColor": "hover:text-[#24292e]",
+            "static": false,
+            "imgSrc": "/link-preview/github.svg",
             "preview": true
          },
          {
             "url": "https://www.facebook.com/angelobsilvestre",
             "icon": "FaFacebook",
             "hoverColor": "hover:text-[#1877F2]",
+            "static": true,
+            "imgSrc": "/link-preview/fb-preview.png",
             "preview": true
          }
       ]

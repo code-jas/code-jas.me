@@ -3,8 +3,13 @@
 import { motion, useAnimation } from 'framer-motion';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { LinkPreview } from '../Misc';
+import { H5 } from '../Common/Typography';
 
-const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) => {
+const LiveSiteButton: React.FC<{
+   liveSiteLink: string;
+   staticPreview?: boolean;
+   srcPreview?: string;
+}> = ({ liveSiteLink, staticPreview, srcPreview }) => {
    const controls = useAnimation();
    const linkControls = useAnimation();
 
@@ -25,12 +30,17 @@ const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) =>
    };
 
    return (
-      <LinkPreview url={liveSiteLink}>
+      <LinkPreview
+         url={liveSiteLink}
+         target="_blank"
+         isStatic={staticPreview}
+         imageSrc={srcPreview}
+      >
          <motion.div
             className="relative flex justify-center items-center gap-2 rounded-full px-3 py-2 text-dark overflow-hidden "
             onHoverStart={handleHoverStart}
             onHoverEnd={handleHoverEnd}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1 }}
             onClick={handleClick}
          >
             <motion.div
@@ -39,7 +49,7 @@ const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) =>
                animate={controls}
                transition={{ duration: 0.3, ease: [0.1, 0, 0, 1] }}
             />
-            <p className="relative z-10 font-medium text-[20px]">Check Live Site</p>
+            <H5 className="relative z-10">Check Live Site</H5>
             <motion.div animate={linkControls} className="relative z-10">
                <MdOutlineArrowOutward size={24} />
             </motion.div>
