@@ -1,6 +1,5 @@
 'use client';
 
-// components/CustomCursor.tsx
 import React, { useEffect, useState } from 'react';
 import '@/styles/cursor.css';
 

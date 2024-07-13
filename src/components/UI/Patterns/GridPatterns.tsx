@@ -2,7 +2,7 @@ import { useId } from 'react';
 
 import { cn } from '@/lib/utils';
 
-interface GridPatternProps {
+interface GridPatternsProps {
    width?: any;
    height?: any;
    x?: any;
@@ -13,7 +13,7 @@ interface GridPatternProps {
    [key: string]: any;
 }
 
-export function GridPattern({
+export function GridPatterns({
    width = 40,
    height = 40,
    x = -1,
@@ -22,7 +22,7 @@ export function GridPattern({
    squares,
    className,
    ...props
-}: GridPatternProps) {
+}: GridPatternsProps) {
    const id = useId();
 
    return (
@@ -69,4 +69,4 @@ export function GridPattern({
    );
 }
 
-export default GridPattern;
+export default GridPatterns;

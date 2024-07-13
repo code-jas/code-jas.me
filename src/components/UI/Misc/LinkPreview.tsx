@@ -18,7 +18,7 @@ type LinkPreviewProps = {
    layout?: string;
 } & ({ isStatic: true; imageSrc: string } | { isStatic?: false; imageSrc?: never });
 
-export const LinkPreview = ({
+const LinkPreview = ({
    children,
    url,
    target = '_self',
@@ -149,3 +149,5 @@ export const LinkPreview = ({
       </>
    );
 };
+
+export default LinkPreview;

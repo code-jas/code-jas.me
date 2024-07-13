@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -7,7 +8,6 @@ import { LuHome, LuMenu, LuUser2, LuBraces, LuContact2, LuX } from 'react-icons/
 import { AiOutlineExperiment } from 'react-icons/ai';
 import { Navbar } from '@/types/profile';
 import { IconType } from 'react-icons';
-import React from 'react';
 
 interface MobileMenuProps {
    data: Navbar[];

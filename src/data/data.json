@@ -25,14 +25,14 @@
          {
             "title": "How My Creative Journey Began",
             "text": [
-               "I started my creative journey in high school, using Photoshop to create graphic designs, edit and retouch photos, and design print and marketing materials. The magic of <span class='highlight bg-tomato'>transforming ideas into captivating visuals</span> sparked my passion for visual art and design."
+               "I started my creative journey in high school, using Photoshop to create graphic designs, edit and retouch photos, and design print and marketing materials. The magic of <span class='highlight bg-accent-red'>transforming ideas into captivating visuals</span> sparked my passion for visual art and design."
             ],
             "image": "/about-01.jpg"
          },
          {
             "title": "Jumping into Web Development",
             "text": [
-               "One day, while diving deep into the design world, I discovered UI/UX design in web applications, which immediately caught my interest. I began studying how to design simple applications and became curious about bringing these designs to life, <span class='highlight bg-blue-green'>leading me to explore web development driven by my curiosity, creativity, and willingness to learn.</span>",
+               "One day, while diving deep into the design world, I discovered UI/UX design in web applications, which immediately caught my interest. I began studying how to design simple applications and became curious about bringing these designs to life, <span class='highlight bg-accent-green'>leading me to explore web development driven by my curiosity, creativity, and willingness to learn.</span>",
                "I started with HTML, CSS, and JavaScript, then advanced to frameworks like React and Vue, and also learned Android development. Eventually, I expanded my skills to back-end technologies like Node.js and Java Spring. This comprehensive knowledge helped me secure my first full-time job as a full-stack developer, a pivotal moment in my career."
             ],
             "image": "/about-02.jpg"
@@ -40,7 +40,7 @@
          {
             "title": "What I’m Focused on Now",
             "text": [
-               "These days, I work as a Full Stack Developer at Centralized Cloud Computing International Inc., where I <span class='highlight bg-purple'>help deliver digital solutions for our clients’ web and mobile applications.</span>",
+               "These days, I work as a Full Stack Developer at Centralized Cloud Computing International Inc., where I <span class='highlight bg-accent-purple'>help deliver digital solutions for our clients’ web and mobile applications.</span>",
                "In my free time, I enjoy creative coding and reading, always exploring new technologies and honing my coding skills. I also love spending time with my friends and family, savoring life’s pleasures away from the computer screen when I’m not deeply immersed in coding or working out."
             ],
             "image": "/about-03.jpg"
@@ -193,7 +193,7 @@
       "description": "Eager to share my tech insights and business know-how as I continue learning and applying my skills. Let’s connect!",
       "email": "johnangelo.silvestre04@gmail.com",
       "emailButtonLabel": "Send Email",
-      "emailButtonClasses": "text-white bg-primary rounded-full px-8 p-3 font-medium transition duration-400 hover:bg-charcoal",
+      "emailButtonClasses": "text-white bg-primary rounded-full px-8 p-3 font-medium transition duration-400 hover:bg-surface",
       "socialMessage": "Connect with me on my socials.",
       "social": [
          {

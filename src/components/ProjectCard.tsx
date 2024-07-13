@@ -3,12 +3,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
-import { Tooltip } from 'react-tooltip';
-import TechStacks from './TechStacks';
-import LiveSiteButton from './LivesiteButton';
+import TechStacks from './UI/Lists/TechStacks';
 import { useDispatch } from 'react-redux';
 import { openModal, setModalContent } from '@/store/modalSlice';
 import { Project } from '@/types/profile';
+import LiveSiteButton from './UI/Buttons/LivesiteButton';
+import { H3, H4, Paragraph } from './UI/Common/Typography';
 
 const Card: React.FC<Project> = ({
    id,
@@ -89,7 +89,7 @@ const Card: React.FC<Project> = ({
                   >
                      <div className="w-full h-full">
                         {coverImage === 'COMINGSOON' ? (
-                           <div className="heading-2 text-center flex items-center justify-center w-full h-full bg-gray-100 text-dark-60">
+                           <div className="heading-2 text-center flex items-center justify-center w-full h-full bg-gray-100 text-dark-10">
                               Coming Soon
                            </div>
                         ) : (
@@ -104,10 +104,8 @@ const Card: React.FC<Project> = ({
                      </div>
                   </motion.div>
                </div>
-               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">{title}</h1>
-               <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-3 text-block-75">
-                  {description}
-               </p>
+               <H4 className="line-clamp-1 mb-1">{title}</H4>
+               <Paragraph className="line-clamp-3">{description}</Paragraph>
                <div className="flex items-center justify-between mt-7 mb-3">
                   <TechStacks techStacks={techStacks} />
                   <LiveSiteButton liveSiteLink={liveSiteLink} />

@@ -4,10 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import Theme from './Theme';
-import MobileMenu from './MobileMenu';
-import '@/styles/navbar.css';
 import profile from '@/data/data.json';
+import '@/styles/navbar.css';
+import { MobileMenu, Theme } from '.';
 
 export default function Navbar() {
    const [isScrolledUp, setIsScrolledUp] = useState(true);

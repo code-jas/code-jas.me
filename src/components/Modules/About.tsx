@@ -30,7 +30,6 @@ const About: React.FC<AboutProps> = ({ about }) => {
                            </div>
                         </div>
                         <div className="relative md:w-1/2 h-[560px] p-6 overflow-hidden rounded-2xl">
-                           {/* <div className="relative w-[404px] h-[560px]"> */}
                            <Image
                               src={item.image}
                               alt={item.title}
@@ -38,13 +37,11 @@ const About: React.FC<AboutProps> = ({ about }) => {
                               sizes="100"
                               className="object-cover"
                            />
-                           {/* </div> */}
                         </div>
                      </>
                   ) : (
                      <>
                         <div className="relative md:w-1/2 h-[560px] p-6 overflow-hidden rounded-2xl order-2 md:order-1">
-                           {/* <div className=" w-[404px] h-[560px]"> */}
                            <Image
                               src={item.image}
                               alt={item.title}
@@ -52,7 +49,6 @@ const About: React.FC<AboutProps> = ({ about }) => {
                               sizes="100"
                               className="object-cover"
                            />
-                           {/* </div> */}
                         </div>
                         <div className="md:w-1/2 p-6 order-1 md:order-2">
                            <h4 className="text-primary text-2xl font-semibold leading-relaxed my-4">

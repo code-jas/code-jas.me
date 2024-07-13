@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaLinkedin, FaDiscord, FaGithub, FaFacebook } from 'react-icons/fa';
-import { LinkPreview } from './LinkPreview'; // Adjust the import path as needed
 import { Dock, DockIcon } from './Dock';
 import { Social } from '@/types/profile';
+import LinkPreview from './LinkPreview';
 
 interface SocialDockProps {
    social: Social[];

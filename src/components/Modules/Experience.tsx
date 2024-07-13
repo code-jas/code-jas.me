@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LinkPreview } from '../LinkPreview';
 import { ExperienceSection } from '@/types/profile';
+import { LinkPreview } from '../UI/Misc';
+import { H2, H4, Paragraph } from '../UI/Common/Typography';
+import { PiChartBarHorizontal } from 'react-icons/pi';
 
 interface ExperienceProps {
    experience: ExperienceSection;
@@ -33,8 +35,10 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
    return (
       <section id="experience" className="mx-auto px-6 py-36 flex flex-col gap-16">
          <div className="max-w-4xl mx-auto text-center">
-            <h4 className="callout mb-4">{header}</h4>
-            <h2 className="heading-2">{subheader}</h2>
+            <H4 variant="branding" className="mb-1">
+               {header}
+            </H4>
+            <H2>{subheader}</H2>
          </div>
          {timeline.map((company, index) => {
             return (
@@ -54,23 +58,18 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
                      {company.roles.map((role, roleIndex) => (
                         <div key={roleIndex} className="flex flex-col gap-2">
                            <div className="flex flex-col justify-start shrink-0">
-                              <p className="text-2xl font-semibold leading-relaxed">{role.title}</p>
+                              <H4 className="text-2xl leading-relaxed">{role.title}</H4>
                            </div>
-                           <div className="flex flex-col justify-start shrink-0  text-dark-60 text-md font-medium leading-loose">
-                              <p>
+                           <div className="flex flex-col justify-start shrink-0">
+                              <Paragraph className="text-[16px]">
                                  {role.startDate} - {role.endDate} <span> • </span>
                                  {calculateWorkDuration(role.startDate, role.endDate)}
-                              </p>
+                              </Paragraph>
                            </div>
-                           <div className="flex flex-col justify-start gap-4 shrink-0 font-medium mt-4">
+                           <div className="flex flex-col justify-start gap-4 shrink-0 mt-4">
                               {role.descriptions.length > 0 &&
                                  role.descriptions.map((description, idx) => (
-                                    <p
-                                       key={idx}
-                                       className="text-dark-60 text-lg font-medium leading-loose"
-                                    >
-                                       {description}
-                                    </p>
+                                    <Paragraph key={idx}>{description}</Paragraph>
                                  ))}
                            </div>
                         </div>

@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import React from 'react';
-import Image from 'next/image';
 import ProjectCard from '../ProjectCard';
 import { ProjectSection } from '@/types/profile';
+import { H2, H4 } from '../UI/Common/Typography';
 
 interface ProjectsProps {
    projects: ProjectSection;
@@ -13,8 +12,10 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
    return (
       <section id="projects" className=" mx-auto px-6 py-36">
          <div className="max-w-4xl mx-auto">
-            <h4 className="callout">{header}</h4>
-            <h2 className="heading-2">{subheader}</h2>
+            <H4 variant="branding" className="mb-1">
+               {header}
+            </H4>
+            <H2>{subheader}</H2>
          </div>
          <div className="mt-28">
             <div>

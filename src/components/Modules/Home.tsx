@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { HomeSection } from '@/types/profile';
+import { H1 } from '../UI/Common/Typography';
 
 interface HomeProps {
    home: HomeSection;
@@ -19,7 +20,7 @@ const Home: React.FC<HomeProps> = ({ home }) => {
          animate: { opacity: 1, x: 0 },
          exit: { opacity: 0, x: -50 },
          transition: { duration: 0.5 },
-         className: `absolute top-0 left-[-150px] w-40 p-3 bg-blue-green ${textClass}`,
+         className: `absolute top-0 left-[-150px] w-40 p-3 bg-accent-green ${textClass}`,
          message: hoverMessages[0],
       },
       {
@@ -28,7 +29,7 @@ const Home: React.FC<HomeProps> = ({ home }) => {
          animate: { opacity: 1, x: 0 },
          exit: { opacity: 0, x: 50 },
          transition: { duration: 0.5 },
-         className: `absolute top-0 right-[-150px] w-60 p-3 bg-tomato ${textClass}`,
+         className: `absolute top-0 right-[-150px] w-60 p-3 bg-accent-red ${textClass}`,
          message: hoverMessages[1],
       },
       {
@@ -46,7 +47,7 @@ const Home: React.FC<HomeProps> = ({ home }) => {
          animate: { opacity: 1, y: 0 },
          exit: { opacity: 0, y: 50 },
          transition: { duration: 0.5 },
-         className: `absolute top-56 right-[-262px] w-40 p-3 bg-purple ${textClass}`,
+         className: `absolute top-56 right-[-262px] w-40 p-3 bg-accent-purple ${textClass}`,
          message: hoverMessages[3],
       },
    ];
@@ -54,8 +55,8 @@ const Home: React.FC<HomeProps> = ({ home }) => {
    return (
       <section id="home" className="relative">
          <div className="relative flex flex-col items-center justify-center py-12 my-24 mx-auto max-w-5xl overflow-hidden">
-            <div className="text-5xl font-bold leading-tight relative">
-               {header}
+            <div className="relative">
+               <H1>{header}</H1>
                <div className="absolute right-3 top-2 flex items-center justify-center py-11">
                   <motion.svg
                      xmlns="http://www.w3.org/2000/svg"
@@ -76,9 +77,7 @@ const Home: React.FC<HomeProps> = ({ home }) => {
                   </motion.svg>
                </div>
             </div>
-            <div className="text-5xl font-bold leading-tight text-center max-w-3xl text-dark">
-               {subheader}
-            </div>
+            <H1 className="text-center max-w-3xl">{subheader}</H1>
             <div
                className="relative mt-10 avatar-container"
                onMouseEnter={() => setHovered(true)}

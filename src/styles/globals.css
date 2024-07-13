@@ -7,26 +7,21 @@ html {
 }
 
 :root {
-   --primary: #0aa5ff;
-   --washed-blue: #808f98;
-   --secondary: #9747ff;
-   --pink: #febdff;
-   --green: #bdffd7;
-   --lavander: #bdc0ff;
-   --surface-2: #edf4f8;
+   --clr-branding-primary: #0aa5ff;
+   --clr-txt-primary: #282828;
+   --clr-txt-secondary: #636465;
+   --clr-txt-tertiary: #939393;
+   --surface-01:#edf4f8;
+   --surface-02: #bde3ff;
+   --accent-red: #f24e1e;
+   --accent-orange: #ff7262;
+   --accent-green: #0acf83;
+   --accent-purple: #a259ff;
    --charcoal: #0064c8;
-   --dark: #282828;
-   --dark-60: '#636465';
-   --sky-blue: #bde3ff;
-   --surface-1: transparent;
-   --dark-50: #939393;
-   --dark-blue: #3b515f;
 }
 
-/* @import "prism.css"; */
 
 body {
-   /* background-image: url("../../public/noise.png"); */
    background-size: 200px 200px;
    background-position: 0 0;
    font-family: var(--tt-norms), sans-serif;
@@ -35,11 +30,20 @@ body {
    /* cursor: none; */
 }
 
+
+.dark { 
+   --clr-txt-primary: #e72b2b;
+   --clr-txt-secondary: '#636465';
+   --clr-txt-tertiary: #939393;
+   --surface:#edf4f8;
+   --surface-10: #bde3ff;
+}
+
+
 h1,
 h2,
 h3,
 h4 {
-   /* font-family: var(--incognito), "Inter", sans-serif; */
    font-family: var(--tt-norms), sans-serif;
 }
 

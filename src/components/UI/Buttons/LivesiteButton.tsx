@@ -1,9 +1,8 @@
 'use client';
 
 import { motion, useAnimation } from 'framer-motion';
-import Link from 'next/link';
 import { MdOutlineArrowOutward } from 'react-icons/md';
-import { LinkPreview } from './LinkPreview';
+import { LinkPreview } from '../Misc';
 
 const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) => {
    const controls = useAnimation();
@@ -26,7 +25,6 @@ const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) =>
    };
 
    return (
-      // <Link href={liveSiteLink} target="_blank">
       <LinkPreview url={liveSiteLink}>
          <motion.div
             className="relative flex justify-center items-center gap-2 rounded-full px-3 py-2 text-dark overflow-hidden "
@@ -45,12 +43,8 @@ const LiveSiteButton: React.FC<{ liveSiteLink: string }> = ({ liveSiteLink }) =>
             <motion.div animate={linkControls} className="relative z-10">
                <MdOutlineArrowOutward size={24} />
             </motion.div>
-            {/* <motion.div animate={linkControls} className="relative z-10">
-               <MdOutlineArrowOutward size={24} />
-            </motion.div> */}
          </motion.div>
       </LinkPreview>
-      // </Link>
    );
 };
 

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { BiLogoGithub } from 'react-icons/bi';
 import data from '@/data/data.json';
 
 export default function Footer() {

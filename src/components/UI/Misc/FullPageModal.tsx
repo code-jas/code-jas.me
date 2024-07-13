@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '@/store/modalSlice';
 import { RootState } from '@/store/store';
 import { MdClose } from 'react-icons/md';
-import LiveSiteButton from './LivesiteButton';
-import TechStackList from './TechStackList';
+import LiveSiteButton from '../Buttons/LivesiteButton';
+import TechStackList from '../Lists/TechStackList';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 

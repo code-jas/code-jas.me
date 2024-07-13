@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import DotPattern from '../DotPatterns';
-import SocialDock from '../SocialDock';
 import { ContactSection } from '@/types/profile';
+import { SocialDock } from '../UI/Misc';
+import { DotPatterns } from '../UI/Patterns';
 
 interface ContactProps {
    contact: ContactSection;
@@ -27,7 +27,7 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
       >
          <div className="z-10 max-w-screen-sm mx-auto">
             <h1 className="text-center text-5xl font-medium dark:text-white">{header}</h1>
-            <p className="whitespace-pre-wrap text-center font-medium text-lg text-dark-60 dark:text-white py-3">
+            <p className="whitespace-pre-wrap text-center font-medium text-lg text-dark-10 dark:text-white py-3">
                {description}
             </p>
             <div className="flex flex-col items-center my-6 space-y-4">
@@ -36,12 +36,12 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
                </Link>
             </div>
 
-            <p className="text-dark-50 text-center py-4 font-medium leading-relaxed">
+            <p className="text-dark-20 text-center py-4 font-medium leading-relaxed">
                {socialMessage}
             </p>
             <SocialDock social={social} />
          </div>
-         <DotPattern
+         <DotPatterns
             width={20}
             height={20}
             className={cn('[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]')}

@@ -1,10 +1,8 @@
 'use client';
 import React from 'react';
 import { Providers } from './providers';
-import CustomCursor from '@/components/CustomCursor';
-import Navbar from '@/components/Navbar';
-import FullPageModal from '@/components/FullPageModal';
-import Footer from '@/components/Footer';
+import { CustomCursor, FullPageModal } from '@/components/UI/Misc';
+import { Footer, Navbar } from '@/components/UI/Common';
 
 const ClientLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
    return (

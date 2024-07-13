@@ -36,7 +36,7 @@ const TechStacks: React.FC<TechStackIconProps> = ({ techStacks }) => {
          {displayedStacks.map((stack, index) => (
             <motion.div
                key={index}
-               className="border border-dark-60 bg-gray-50 rounded-full p-2 flex justify-center items-center"
+               className="border border-dark-10 bg-gray-50 rounded-full p-2 flex justify-center items-center"
                initial={{ translateX: `${-5 - index * 5}px` }}
                whileHover={{ scale: 1.2 }}
                transition={{ type: 'spring', stiffness: 300 }}
@@ -54,14 +54,14 @@ const TechStacks: React.FC<TechStackIconProps> = ({ techStacks }) => {
                </div>
                <Tooltip
                   id={`techstack-tooltip-${index}`}
-                  className="!bg-surface-2 !text-dark !font-normal !shadow-xs"
+                  className="!bg-surface-01 !text-primary  !shadow-xs"
                   place="top"
                />
             </motion.div>
          ))}
          {remainingStacks > 0 && (
             <motion.div
-               className="border border-dark-60 bg-gray-50 rounded-full p-2 flex justify-center items-center"
+               className="border border-dark-10 bg-gray-50 rounded-full p-2 flex justify-center items-center"
                initial={{ translateX: `${-5 - displayedStacks.length * 5}px` }}
                whileHover={{ scale: 1.2 }}
                transition={{ type: 'spring', stiffness: 300 }}
@@ -73,7 +73,7 @@ const TechStacks: React.FC<TechStackIconProps> = ({ techStacks }) => {
                </div>
                <Tooltip
                   id="techstack-tooltip-more"
-                  className="!bg-surface-2 !text-dark !font-normal !shadow-xs"
+                  className="!bg-surface-01 !text-primary !shadow-xs"
                   place="top"
                />
             </motion.div>

@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import IconList from '../IconList';
-import IconCloud from '../IconCloud';
-import SegmentedControl from '../SegmentedControl';
+import IconList from '../UI/Icons/IconList';
+import IconCloud from '../UI/Icons/IconCloud';
 import { TechnologiesSection } from '@/types/profile';
+import { SegmentedControl } from '../UI/Buttons';
 
 interface TechnologiesProps {
    tech: TechnologiesSection;
@@ -21,14 +21,12 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
    return (
       <section
          id="technologies"
-         className="bg-surface-2 flex flex-col items-center justify-center py-12"
+         className="bg-surface flex flex-col items-center justify-center py-12"
       >
          <div className="max-w-4xl mx-auto text-center">
-            <h4 className="text-center text-5xl font-medium text-primary py-4">
-               Technologies & Skills
-            </h4>
+            <h4 className="text-center text-5xl font-medium text-primary py-4">{header}</h4>
             <h2 className="text-center font-medium text-xl  text-dark leading-relaxed">
-               Empowering development with these essential tools and frameworks.
+               {subheader}
             </h2>
             <div className="my-4">
                <SegmentedControl
