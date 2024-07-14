@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExperienceSection } from '@/types/profile';
-import { LinkPreview } from '../UI/Misc';
+import { BlurFade, LinkPreview } from '../UI/Misc';
 import { H2, H4, Paragraph } from '../UI/Common/Typography';
 import { PiChartBarHorizontal } from 'react-icons/pi';
+import { SectionBlock } from '../UI/Common';
 
 interface ExperienceProps {
    experience: ExperienceSection;
@@ -33,7 +34,7 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
    };
 
    return (
-      <section id="experience" className="mx-auto px-6 py-36 flex flex-col gap-16">
+      <SectionBlock id="experience">
          <div className="max-w-4xl mx-auto text-center">
             <H4 variant="branding" className="mb-1">
                {header}
@@ -47,29 +48,37 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
                   className="flex place-content-start items-start flex-none flex-row gap-2 h-auto overflow-visible p-0 relative w-full max-w-4xl mx-auto"
                >
                   <motion.div
-                     className="flex flex-col justify-start shrink-0 w-1/2 sticky top-4"
+                     className="flex flex-col justify-start  w-1/2 sticky top-4"
                      style={{ zIndex: 10 }}
                   >
-                     <LinkPreview url={company.url}>
-                        <p className="text-2xl font-semibold bg-white">{company.company}</p>
-                     </LinkPreview>
+                     <BlurFade duration={1} inView>
+                        <LinkPreview url={company.url}>
+                           <p className="text-2xl font-semibold bg-white">{company.company}</p>
+                        </LinkPreview>
+                     </BlurFade>
                   </motion.div>
                   <div className="w-1/2 flex flex-col gap-12">
                      {company.roles.map((role, roleIndex) => (
                         <div key={roleIndex} className="flex flex-col gap-2">
                            <div className="flex flex-col justify-start shrink-0">
-                              <H4 className="text-2xl leading-relaxed">{role.title}</H4>
+                              <BlurFade duration={0.6} inView>
+                                 <H4 className="text-2xl leading-relaxed">{role.title}</H4>
+                              </BlurFade>
                            </div>
                            <div className="flex flex-col justify-start shrink-0">
-                              <Paragraph className="text-[16px]">
-                                 {role.startDate} - {role.endDate} <span> • </span>
-                                 {calculateWorkDuration(role.startDate, role.endDate)}
-                              </Paragraph>
+                              <BlurFade duration={0.6} inView>
+                                 <Paragraph className="text-[16px]">
+                                    {role.startDate} - {role.endDate} <span> • </span>
+                                    {calculateWorkDuration(role.startDate, role.endDate)}
+                                 </Paragraph>
+                              </BlurFade>
                            </div>
                            <div className="flex flex-col justify-start gap-4 shrink-0 mt-4">
                               {role.descriptions.length > 0 &&
                                  role.descriptions.map((description, idx) => (
-                                    <Paragraph key={idx}>{description}</Paragraph>
+                                    <BlurFade key={idx} duration={0.8 + idx * 0.2} inView>
+                                       <Paragraph key={idx}>{description}</Paragraph>
+                                    </BlurFade>
                                  ))}
                            </div>
                         </div>
@@ -78,7 +87,7 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
                </div>
             );
          })}
-      </section>
+      </SectionBlock>
    );
 };
 

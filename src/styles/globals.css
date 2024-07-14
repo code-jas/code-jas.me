@@ -11,7 +11,7 @@ html {
    --clr-txt-primary: #282828;
    --clr-txt-secondary: #636465;
    --clr-txt-tertiary: #939393;
-   --surface-01:#edf4f8;
+   --surface-01:#e7f2f9;
    --surface-02: #bde3ff;
    --accent-red: #f24e1e;
    --accent-orange: #ff7262;
@@ -107,12 +107,14 @@ h4 {
    background-color: #333;
 }
 
-/* Ensure the content area scrolls if it overflows */
-.modal-content {
-   flex-grow: 1;
-   overflow-y: auto;
-}
-/* Projects end  */
+/* Full page modal */
+.glass-blur {
+   background-color: rgba(255, 255, 255, 0.7); /* White background with transparency */
+   backdrop-filter: blur(40px); /* Blur effect */
+   -webkit-backdrop-filter: blur(40px); /* Blur effect for Safari */
+   border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border to enhance glass effect */
+ }
+ 
 
 /* Footer */
 

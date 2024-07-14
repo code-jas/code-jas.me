@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { HomeSection } from '@/types/profile';
 import { H1 } from '../UI/Common/Typography';
+import { SectionBlock } from '../UI/Common';
+import { BlurFade } from '../UI/Misc';
 
 interface HomeProps {
    home: HomeSection;
@@ -53,10 +55,10 @@ const Home: React.FC<HomeProps> = ({ home }) => {
    ];
 
    return (
-      <section id="home" className="relative">
+      <SectionBlock id="home" variant="plain" className="relative">
          <div className="relative flex flex-col items-center justify-center py-12 my-24 mx-auto max-w-5xl overflow-hidden">
             <div className="relative">
-               <H1>{header}</H1>
+               <H1 duration={0.2}>{header}</H1>
                <div className="absolute right-3 top-2 flex items-center justify-center py-11">
                   <motion.svg
                      xmlns="http://www.w3.org/2000/svg"
@@ -77,19 +79,23 @@ const Home: React.FC<HomeProps> = ({ home }) => {
                   </motion.svg>
                </div>
             </div>
-            <H1 className="text-center max-w-3xl">{subheader}</H1>
+            <H1 duration={0.3} className="text-center max-w-3xl">
+               {subheader}
+            </H1>
             <div
                className="relative mt-10 avatar-container"
                onMouseEnter={() => setHovered(true)}
                onMouseLeave={() => setTimeout(() => setHovered(false), 500)}
             >
-               <Image
-                  src={avatar}
-                  alt="3D Avatar"
-                  width={400}
-                  height={550}
-                  className="relative z-10 avatar"
-               />
+               <BlurFade delay={0.4} inView>
+                  <Image
+                     src={avatar}
+                     alt="3D Avatar"
+                     width={400}
+                     height={550}
+                     className="relative z-10 avatar"
+                  />
+               </BlurFade>
                <AnimatePresence>
                   {hovered &&
                      bubbleMessages.map(
@@ -116,8 +122,8 @@ const Home: React.FC<HomeProps> = ({ home }) => {
                background:
                   'linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.7) 20%, transparent 35%)',
             }}
-         ></div>
-      </section>
+         />
+      </SectionBlock>
    );
 };
 

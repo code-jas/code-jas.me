@@ -6,6 +6,8 @@ import IconCloud from '../UI/Icons/IconCloud';
 import { TechnologiesSection } from '@/types/profile';
 import { SegmentedControl } from '../UI/Buttons';
 import { H1, H4, H5, Paragraph } from '../UI/Common/Typography';
+import { SectionBlock } from '../UI/Common';
+import { BlurFade } from '../UI/Misc';
 
 interface TechnologiesProps {
    tech: TechnologiesSection;
@@ -20,35 +22,43 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
    ];
 
    return (
-      <section
+      <SectionBlock
          id="technologies"
-         className="bg-surface flex flex-col items-center justify-center py-12"
+         className="bg-surface-01 items-center justify-center !py-12 !px-0 gap-0"
       >
          <div className="max-w-4xl mx-auto text-center">
             <H1 variant="branding" className="text-center ">
                {header}
             </H1>
-            <H4 className="text-center">{subheader}</H4>
-            <div className="my-6">
-               <SegmentedControl
-                  options={options}
-                  value={selectedValue}
-                  onChange={setSelectedValue}
-               />
+            <H4 duration={0.6} className="text-center">
+               {subheader}
+            </H4>
+            <BlurFade inView duration={0.8}>
+               <div className="my-6">
+                  <SegmentedControl
+                     options={options}
+                     value={selectedValue}
+                     onChange={setSelectedValue}
+                  />
+               </div>
+            </BlurFade>
+         </div>
+         <BlurFade inView duration={1}>
+            <div className="w-full">
+               {selectedValue === 'cards' ? (
+                  <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20 ">
+                     <IconList iconSlugs={technologies} />
+                  </div>
+               ) : (
+                  <div className="relative flex flex-col  max-w-2xl mx-auto items-center justify-center overflow-hidden  px-20 pb-12 pt-8 ">
+                     <IconCloud iconSlugs={technologies.flatMap((slugs) => slugs)} />
+                  </div>
+               )}
             </div>
-         </div>
-         <div className="w-full">
-            {selectedValue === 'cards' ? (
-               <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20 ">
-                  <IconList iconSlugs={technologies} />
-               </div>
-            ) : (
-               <div className="relative flex flex-col  max-w-2xl mx-auto items-center justify-center overflow-hidden  px-20 pb-12 pt-8 ">
-                  <IconCloud iconSlugs={technologies.flatMap((slugs) => slugs)} />
-               </div>
-            )}
-         </div>
-      </section>
+         </BlurFade>
+         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-surface-01 dark:from-background"></div>
+         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-surface-01 dark:from-background"></div>
+      </SectionBlock>
    );
 };
 

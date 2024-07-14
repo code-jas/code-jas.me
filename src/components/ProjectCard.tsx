@@ -9,6 +9,7 @@ import { openModal, setModalContent } from '@/store/modalSlice';
 import { Project } from '@/types/profile';
 import LiveSiteButton from './UI/Buttons/LivesiteButton';
 import { H3, H4, Paragraph } from './UI/Common/Typography';
+import { BlurFade } from './UI/Misc';
 
 const Card: React.FC<Project> = ({
    id,
@@ -110,14 +111,16 @@ const Card: React.FC<Project> = ({
                </div>
                <H4 className="line-clamp-1 mb-1">{title}</H4>
                <Paragraph className="line-clamp-3">{description}</Paragraph>
-               <div className="flex items-center justify-between mt-7 mb-3">
-                  <TechStacks techStacks={techStacks} />
-                  <LiveSiteButton
-                     liveSiteLink={liveSiteLink}
-                     staticPreview={staticPreview ?? false}
-                     srcPreview={srcPreview ?? ''}
-                  />
-               </div>
+               <BlurFade duration={0.6} inView>
+                  <div className="flex items-center justify-between mt-7 mb-3">
+                     <TechStacks techStacks={techStacks} />
+                     <LiveSiteButton
+                        liveSiteLink={liveSiteLink}
+                        staticPreview={staticPreview ?? false}
+                        srcPreview={srcPreview ?? ''}
+                     />
+                  </div>
+               </BlurFade>
             </div>
          </motion.div>
       </div>

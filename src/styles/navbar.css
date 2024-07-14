@@ -4,7 +4,7 @@
 }
 
 .underlined::after {
-   color: var(--primary);
+   color: var(--clr-branding-primary);
    bottom: -4px;
    content: '';
    display: block;

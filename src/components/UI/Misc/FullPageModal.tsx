@@ -8,11 +8,12 @@ import TechStackList from '../Lists/TechStackList';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { H1, H4, H5, Paragraph } from '../Common/Typography';
+import BlurFade from './BlurFade';
 
 const backgroundVariants = {
    hidden: { opacity: 0 },
-   visible: { opacity: 1, transition: { duration: 0.2 } },
-   exit: { opacity: 0, transition: { duration: 0.3 } },
+   visible: { opacity: 1, transition: { duration: 0.1 } },
+   exit: { opacity: 0, transition: { duration: 0.2 } },
 };
 
 const modalVariants = {
@@ -59,7 +60,7 @@ const FullPageModal: React.FC = () => {
       <AnimatePresence>
          {showModal && (
             <motion.div
-               className="fixed inset-0 bg-white dark:bg-zinc-900 z-50 flex flex-col overflow-auto"
+               className="fixed inset-0 glass-blur dark:bg-zinc-900 z-50 flex flex-col overflow-auto"
                variants={backgroundVariants}
                initial="hidden"
                animate="visible"
@@ -72,21 +73,23 @@ const FullPageModal: React.FC = () => {
                   animate="visible"
                   exit="exit"
                >
-                  <div className="sticky top-0 z-50 flex items-center justify-between rounded-full border border-gray-30 bg-white p-4 my-6">
-                     <button
-                        type="button"
-                        className="group h-10 w-10 flex items-center justify-center font-medium text-base border-[1px] border-gray-30 rounded-3xl"
-                        onClick={handleClose}
-                     >
-                        <MdClose className="h-6 w-6" />
-                        <span className="sr-only">Close</span>
-                     </button>
-                     <LiveSiteButton
-                        liveSiteLink={content.liveSiteLink}
-                        staticPreview={content.staticPreview ?? false}
-                        srcPreview={content.srcPreview ?? ''}
-                     />
-                  </div>
+                  <BlurFade duration={0.4} inView inViewMargin="50px">
+                     <div className="sticky top-0 z-50 flex items-center justify-between rounded-full border border-gray-30 bg-white p-4 my-6">
+                        <button
+                           type="button"
+                           className="group h-10 w-10 flex items-center justify-center font-medium text-base border-[1px] border-gray-30 rounded-3xl"
+                           onClick={handleClose}
+                        >
+                           <MdClose className="h-6 w-6" />
+                           <span className="sr-only">Close</span>
+                        </button>
+                        <LiveSiteButton
+                           liveSiteLink={content.liveSiteLink}
+                           staticPreview={content.staticPreview ?? false}
+                           srcPreview={content.srcPreview ?? ''}
+                        />
+                     </div>
+                  </BlurFade>
                </motion.div>
                <motion.div
                   className="w-full max-w-5xl mx-auto"
@@ -97,8 +100,8 @@ const FullPageModal: React.FC = () => {
                >
                   <div className="flex justify-center flex-col py-8 px-20">
                      <div className="flex-grow overflow-auto">
-                        <H1>{content.title}</H1>
-                        <Paragraph className="mt-2">
+                        <H1 duration={0.6}>{content.title}</H1>
+                        <Paragraph className="font-normal mt-2">
                            {content &&
                               content.projectType.length > 0 &&
                               content.projectType.join(', ')}
@@ -106,7 +109,7 @@ const FullPageModal: React.FC = () => {
                         {content &&
                            content.informations.length > 0 &&
                            content.informations.map((info, idx) => (
-                              <Paragraph key={idx} className="font-normal mt-4">
+                              <Paragraph duration={0.6 + idx * 0.1} key={idx} className="mt-4">
                                  {info}
                               </Paragraph>
                            ))}

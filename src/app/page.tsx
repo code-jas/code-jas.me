@@ -7,6 +7,7 @@ import data from '@/data/data.json';
 import { About, Home, Projects, Contact, Experience, Technologies } from '@/components/Modules';
 import { GridPatterns } from '@/components/UI/Patterns';
 import { H1, H2, H3, H4, H5, H6, Paragraph } from '@/components/UI/Common/Typography';
+import { BlurFade } from '@/components/UI/Misc';
 
 const HomePage: React.FC = () => {
    const controls = useAnimation();
@@ -32,17 +33,19 @@ const HomePage: React.FC = () => {
 
    return (
       <main>
-         <div className="absolute top-0 left-0 h-[1300px] w-full">
-            <GridPatterns
-               width={100}
-               height={100}
-               x={-1}
-               y={-1}
-               className={cn(
-                  '[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] ',
-               )}
-            />
-         </div>
+         <BlurFade duration={0.1}>
+            <div className="absolute top-0 left-0 h-[1300px] w-full">
+               <GridPatterns
+                  width={100}
+                  height={100}
+                  x={-1}
+                  y={-1}
+                  className={cn(
+                     '[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] ',
+                  )}
+               />
+            </div>
+         </BlurFade>
          <motion.div animate={controls} initial={{ y: 0 }} className="z-10 font-tt-norms relative">
             <Home home={data.home} />
             <Projects projects={data.projects} />

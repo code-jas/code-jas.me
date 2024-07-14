@@ -3,7 +3,6 @@
 import { motion, useAnimation } from 'framer-motion';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { LinkPreview } from '../Misc';
-import { H5 } from '../Common/Typography';
 
 const LiveSiteButton: React.FC<{
    liveSiteLink: string;
@@ -37,7 +36,7 @@ const LiveSiteButton: React.FC<{
          imageSrc={srcPreview}
       >
          <motion.div
-            className="relative flex justify-center items-center gap-2 rounded-full px-3 py-2 text-dark overflow-hidden "
+            className="relative flex justify-center items-center gap-2 rounded-full px-3 py-2 text-dark overflow-hidden"
             onHoverStart={handleHoverStart}
             onHoverEnd={handleHoverEnd}
             whileHover={{ scale: 1.1 }}
@@ -49,7 +48,7 @@ const LiveSiteButton: React.FC<{
                animate={controls}
                transition={{ duration: 0.3, ease: [0.1, 0, 0, 1] }}
             />
-            <H5 className="relative z-10">Check Live Site</H5>
+            <h1 className="relative z-10 text-lg font-medium md:text-xl">Check Live Site</h1>
             <motion.div animate={linkControls} className="relative z-10">
                <MdOutlineArrowOutward size={24} />
             </motion.div>
