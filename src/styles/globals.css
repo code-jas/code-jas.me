@@ -11,6 +11,7 @@ html {
    --clr-txt-primary: #282828;
    --clr-txt-secondary: #636465;
    --clr-txt-tertiary: #939393;
+   --surface: #FFFFFF;
    --surface-01:#e7f2f9;
    --surface-02: #bde3ff;
    --accent-red: #f24e1e;
@@ -18,6 +19,14 @@ html {
    --accent-green: #0acf83;
    --accent-purple: #a259ff;
    --charcoal: #0064c8;
+}
+
+.dark { 
+   --clr-txt-primary: #e72b2b;
+   --clr-txt-secondary: '#636465';
+   --clr-txt-tertiary: #939393;
+   --surface:#1D1D1B;
+   --surface-01: #bde3ff;
 }
 
 
@@ -31,88 +40,26 @@ body {
 }
 
 
-.dark { 
-   --clr-txt-primary: #e72b2b;
-   --clr-txt-secondary: '#636465';
-   --clr-txt-tertiary: #939393;
-   --surface:#edf4f8;
-   --surface-10: #bde3ff;
-}
+
 
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
    font-family: var(--tt-norms), sans-serif;
 }
 
-.bg-grid-pattern {
-   background-image: url('/grid-pattern.png') !important;
-   background-repeat: repeat;
-   background-size: cover; /* Adjust as needed */
-   width: 100%;
-   height: 100%;
-}
 
-/* Projects start */
-
-.callout {
-   color: var(--primary);
-   font-size: 22px;
-   font-weight: 600;
-   line-height: 140%;
-}
-
-.heading-2 {
-   font-size: 40px;
-   font-weight: 500;
-   line-height: 1.4;
-}
-
-.text-block-85 {
-   color: #939393;
-   text-align: left;
-   padding-top: 16px;
-   font-weight: 500;
-   line-height: 1.7;
-}
-
-.text-span-7 {
-   color: var(--primary);
-   font-weight: 500;
-}
-
-.text-block-74 {
-   color: #282828;
-   font-weight: 500;
-   text-decoration: none;
-}
-
-.text-block-75 {
-   color: #777;
-   /* font-size: 14px; */
-   text-decoration: none;
-}
-
-.btn {
-   background-color: #000;
-   color: #fff;
-   padding: 8px 16px;
-   border-radius: 4px;
-   text-align: center;
-}
-
-.btn:hover {
-   background-color: #333;
-}
 
 /* Full page modal */
 .glass-blur {
-   background-color: rgba(255, 255, 255, 0.7); /* White background with transparency */
-   backdrop-filter: blur(40px); /* Blur effect */
-   -webkit-backdrop-filter: blur(40px); /* Blur effect for Safari */
-   border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border to enhance glass effect */
+   background-color: rgba(255, 255, 255, 0.7); 
+   backdrop-filter: blur(40px); 
+   -webkit-backdrop-filter: blur(40px); 
+   border: 1px solid rgba(255, 255, 255, 0.3); 
  }
  
 
@@ -143,18 +90,18 @@ h4 {
    filter: brightness(0) invert(1);
 }
 
-.ios13-segmented-control {
+.segmented-control {
    --background: rgba(239, 239, 240, 1);
 }
 
-.ios13-segmented-control .selection {
+.segmented-control .selection {
    background: rgba(255, 255, 255, 1);
    border: 0.5px solid rgba(0, 0, 0, 0.04);
    box-shadow:
       0 3px 8px 0 rgba(0, 0, 0, 0.12),
       0 3px 1px 0 rgba(0, 0, 0, 0.04);
    border-radius: 7px;
-   z-index: 2;
+   z-index: 1; /* Ensure this is behind the text */
    will-change: transform;
    transition: transform 0.2s ease;
 }

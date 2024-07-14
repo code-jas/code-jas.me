@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { openModal, setModalContent } from '@/store/modalSlice';
 import { Project } from '@/types/profile';
 import LiveSiteButton from './UI/Buttons/LivesiteButton';
-import { H3, H4, Paragraph } from './UI/Common/Typography';
+import { H2, H3, H4, Paragraph } from './UI/Common/Typography';
 import { BlurFade } from './UI/Misc';
 
 const Card: React.FC<Project> = ({
@@ -94,9 +94,9 @@ const Card: React.FC<Project> = ({
                   >
                      <div className="w-full h-full">
                         {coverImage === 'COMINGSOON' ? (
-                           <div className="heading-2 text-center flex items-center justify-center w-full h-full bg-gray-100 text-dark-10">
+                           <H2 className="text-center flex items-center justify-center w-full h-full bg-gray-100 text-dark-10">
                               Coming Soon
-                           </div>
+                           </H2>
                         ) : (
                            <Image
                               src={coverImage}

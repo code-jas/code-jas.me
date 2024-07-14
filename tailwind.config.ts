@@ -28,6 +28,7 @@ const config: Config = {
             dark: 'var(--clr-txt-primary)',
             'dark-10': 'var(--clr-txt-secondary)',
             'dark-20': 'var(--clr-txt-tertiary)',
+            surface: 'var(--surface)',
             'surface-01': 'var(--surface-01)',
             'surface-02': 'var(--surface-02)',
             'accent-red': 'var(--accent-red)',

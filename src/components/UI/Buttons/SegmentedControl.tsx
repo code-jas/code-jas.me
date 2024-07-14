@@ -1,6 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import '@/styles/segment.css';
 
 interface Option {
    label: string;
@@ -39,22 +38,8 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({ value, options, onC
       };
    }, [value]);
 
-   const updatePillPosition = () => {
-      const selectedOption = document.querySelector(
-         `input[name="segmentedControl"][value="${value}"]`,
-      );
-      if (selectedOption && selectionRef.current) {
-         const inputElement = selectedOption as HTMLInputElement;
-         const optionParent = inputElement.parentElement;
-         if (optionParent) {
-            selectionRef.current.style.transform = `translateX(${optionParent.offsetLeft}px)`;
-            selectionRef.current.style.width = `${optionParent.offsetWidth - 8}px`;
-         }
-      }
-   };
-
    return (
-      <div className="ios13-segmented-control relative bg-gray-200 rounded-lg p-1 inline-flex">
+      <div className="segmented-control relative bg-gray-200 rounded-lg p-1 inline-flex">
          <span
             ref={selectionRef}
             className="selection absolute bg-white shadow-md rounded-lg transition-transform duration-200 h-[80%] ease-in-out"

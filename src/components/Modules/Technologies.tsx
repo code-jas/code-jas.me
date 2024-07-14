@@ -24,7 +24,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
    return (
       <SectionBlock
          id="technologies"
-         className="bg-surface-01 items-center justify-center !py-12 !px-0 gap-0"
+         className="!bg-surface items-center justify-center !py-12 !px-0 gap-0"
       >
          <div className="max-w-4xl mx-auto text-center">
             <H1 variant="branding" className="text-center ">

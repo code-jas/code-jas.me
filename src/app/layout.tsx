@@ -29,7 +29,7 @@ export default function RootLayout({
             <link rel="icon" href="/src/app/favicon.ico" type="image/x-icon" />
          </Head>
          <body
-            className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} ${ttNorms.variable} font-tt-norms dark:bg-zinc-900 bg-white dark:text-white text-dark`}
+            className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} ${ttNorms.variable} font-tt-norms bg-surface text-primary`}
          >
             <ClientLayout>{children}</ClientLayout>
          </body>
