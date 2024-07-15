@@ -11,22 +11,33 @@ html {
    --clr-txt-primary: #282828;
    --clr-txt-secondary: #636465;
    --clr-txt-tertiary: #939393;
+   --surface-card: #FFFFFF;
    --surface: #FFFFFF;
-   --surface-01:#e7f2f9;
-   --surface-02: #bde3ff;
+   --surface-01:#f7f7f7;
+   --surface-02: #e7f2f9;
    --accent-red: #f24e1e;
    --accent-orange: #ff7262;
    --accent-green: #0acf83;
    --accent-purple: #a259ff;
-   --charcoal: #0064c8;
+   --bg-gradient-start: rgba(255, 255, 255, 1);
+   --bg-gradient-middle: rgba(255, 255, 255, 0.7);
+   --bg-gradient-end: transparent;
+   --border: #e6e9ee
 }
 
 .dark { 
-   --clr-txt-primary: #e72b2b;
-   --clr-txt-secondary: '#636465';
-   --clr-txt-tertiary: #939393;
-   --surface:#1D1D1B;
-   --surface-01: #bde3ff;
+   --clr-branding-primary: #33b8ff;
+   --clr-txt-primary: #FFFFFF;
+   --clr-txt-secondary: #a9adc1;
+   --clr-txt-tertiary: #9397a5;
+   --surface-card:#2e3039;
+   --surface:#1f2028;
+   --surface-01: #2e3039;
+   --surface-02: #3E3E3E;
+   --bg-gradient-start: rgba(31, 32, 40, 1);
+   --bg-gradient-middle: rgba(31, 32, 40, 0.7);
+   --bg-gradient-end: transparent;
+   --border: #4b4c53
 }
 
 

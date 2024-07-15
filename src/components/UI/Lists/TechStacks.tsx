@@ -36,7 +36,7 @@ const TechStacks: React.FC<TechStackIconProps> = ({ techStacks }) => {
          {displayedStacks.map((stack, index) => (
             <motion.div
                key={index}
-               className="border border-dark-10 bg-gray-50 rounded-full p-2 flex justify-center items-center"
+               className="border border-primary dark:border-dark-10 bg-surface-01 rounded-full p-2 flex justify-center items-center"
                initial={{ translateX: `${-5 - index * 5}px` }}
                whileHover={{ scale: 1.2 }}
                transition={{ type: 'spring', stiffness: 300 }}
@@ -61,7 +61,7 @@ const TechStacks: React.FC<TechStackIconProps> = ({ techStacks }) => {
          ))}
          {remainingStacks > 0 && (
             <motion.div
-               className="border border-dark-10 bg-gray-50 rounded-full p-2 flex justify-center items-center"
+               className="border border-primary dark:border-dark-10 bg-surface-01 rounded-full p-2 flex justify-center items-center"
                initial={{ translateX: `${-5 - displayedStacks.length * 5}px` }}
                whileHover={{ scale: 1.2 }}
                transition={{ type: 'spring', stiffness: 300 }}

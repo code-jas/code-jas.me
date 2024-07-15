@@ -119,8 +119,7 @@ const Home: React.FC<HomeProps> = ({ home }) => {
          <div
             className="z-10 pointer-events-none absolute inset-y-0 bottom-0 w-full bg-gradient-to-t"
             style={{
-               background:
-                  'linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.7) 20%, transparent 35%)',
+               background: `linear-gradient(to top, var(--bg-gradient-start) 10%, var(--bg-gradient-middle) 20%, var(--bg-gradient-end) 35%)`,
             }}
          />
       </SectionBlock>

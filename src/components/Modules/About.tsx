@@ -4,6 +4,7 @@ import { AboutSection } from '@/types/profile';
 import { H2, H4, Paragraph } from '../UI/Common/Typography';
 import { SectionBlock } from '../UI/Common';
 import { BlurFade } from '../UI/Misc';
+import { replaceHighlightPlaceholders } from '../UI/Misc/TextHighlightUtils';
 
 interface AboutProps {
    about: AboutSection;
@@ -26,11 +27,9 @@ const About: React.FC<AboutProps> = ({ about }) => {
                            <H4 className="leading-relaxed my-4">{item.title}</H4>
                            <div className="flex flex-col gap-5">
                               {item.text.map((paragraph, i) => (
-                                 <Paragraph
-                                    // className='fl'
-                                    key={i}
-                                    dangerouslySetInnerHTML={{ __html: paragraph }}
-                                 />
+                                 <Paragraph key={i}>
+                                    {replaceHighlightPlaceholders(paragraph)}
+                                 </Paragraph>
                               ))}
                            </div>
                         </div>

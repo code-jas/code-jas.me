@@ -28,6 +28,7 @@ const config: Config = {
             dark: 'var(--clr-txt-primary)',
             'dark-10': 'var(--clr-txt-secondary)',
             'dark-20': 'var(--clr-txt-tertiary)',
+            'surface-card': 'var(--surface-card)',
             surface: 'var(--surface)',
             'surface-01': 'var(--surface-01)',
             'surface-02': 'var(--surface-02)',
@@ -35,7 +36,6 @@ const config: Config = {
             'accent-orange': 'var(--accent-orange)',
             'accent-green': 'var(--accent-green)',
             'accent-purple': 'var(--accent-purple)',
-            charcoal: 'var(--charcoal)',
          },
          textColor: {
             primary: 'var(--clr-txt-primary)',
@@ -43,6 +43,9 @@ const config: Config = {
             tertiary: 'var(--clr-txt-tertiary)',
             quaternary: 'var(--clr-txt-quaternary)',
             'branding-primary': 'var(--clr-branding-primary)',
+         },
+         borderColor: {
+            primary: 'var(--border)',
          },
       },
       animation: {

@@ -35,7 +35,7 @@ export default function Navbar() {
          initial={{ y: -100 }}
          animate={{ y: isScrolledUp ? 0 : -100 }}
          transition={{ duration: 0.5 }}
-         className="fixed top-0 w-full text-sm py-4 md:px-16 px-4 z-30 bg-white dark:bg-black shadow-xs"
+         className="fixed top-0 w-full text-sm py-4 md:px-16 px-4 z-30 bg-surface shadow-xs"
       >
          <div className="max-w-6xl mx-auto flex items-center justify-between ">
             <Link href="/">
@@ -50,7 +50,7 @@ export default function Navbar() {
                         <li key={id}>
                            <Link
                               href={link.href}
-                              className="cursor-none underlined font-incognito dark:text-white text-dark dark:hover:text-primary hover:text-primary duration-300 text-base"
+                              className="cursor-none underlined font-incognito  text-primary hover:text-branding-primary duration-300 text-base"
                            >
                               {link.title}
                            </Link>

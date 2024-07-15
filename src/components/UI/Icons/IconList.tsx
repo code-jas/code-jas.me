@@ -12,18 +12,17 @@ export type IconCardProps = {
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
 const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
-   const bgHex = theme === 'light' ? 'bg-white' : 'bg-black';
+   // const bgHex = theme === 'light' ? 'bg-white' : 'bg-black';
    const fallbackHex = theme === 'light' ? '#6e6e73' : '#ffffff';
    const minContrastRatio = theme === 'dark' ? 2 : 1.2;
 
    return (
       <div
          key={icon.slug}
-         className={`flex flex-col items-center justify-center p-4 border rounded-lg shadow-md ${bgHex}`}
+         className={`flex flex-col items-center justify-center p-4 border border-primary rounded-lg shadow-md bg-surface`}
       >
          <div
             style={{
-               backgroundColor: bgHex,
                color: fallbackHex,
                borderRadius: '50%',
                padding: '10px',

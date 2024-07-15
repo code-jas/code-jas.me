@@ -24,7 +24,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
    return (
       <SectionBlock
          id="technologies"
-         className="!bg-surface items-center justify-center !py-12 !px-0 gap-0"
+         className="!bg-surface-01 items-center justify-center !py-12 !px-0 gap-0"
       >
          <div className="max-w-4xl mx-auto text-center">
             <H1 variant="branding" className="text-center ">
@@ -56,8 +56,8 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
                )}
             </div>
          </BlurFade>
-         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-surface-01 dark:from-background"></div>
-         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-surface-01 dark:from-background"></div>
+         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-surface-01"></div>
+         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-surface-01"></div>
       </SectionBlock>
    );
 };

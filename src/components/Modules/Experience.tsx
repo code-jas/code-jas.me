@@ -53,7 +53,7 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
                   >
                      <BlurFade duration={1} inView>
                         <LinkPreview url={company.url}>
-                           <p className="text-2xl font-semibold bg-white">{company.company}</p>
+                           <p className="text-2xl font-semibold bg-surface">{company.company}</p>
                         </LinkPreview>
                      </BlurFade>
                   </motion.div>
