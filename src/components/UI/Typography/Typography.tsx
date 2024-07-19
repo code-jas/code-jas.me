@@ -15,7 +15,7 @@ type TitleProps = {
 
 // Mapping of font sizes for different heading levels
 const fontSize = {
-   h1: 'text-5xl font-bold leading-tight',
+   h1: 'text-4xl md:text-5xl font-bold leading-none md:leading-tight',
    h2: 'text-3xl font-medium leading-snug md:text-[40px]',
    h3: 'text-2xl font-semibold md:text-3xl',
    h4: 'text-xl font-semibold leading-snug md:text-[22px]',
@@ -99,7 +99,7 @@ const Paragraph: React.FC<ParagraphProps> = ({
       <BlurFade duration={duration} inView={inView}>
          {React.createElement(as, {
             className: clsx(
-               'max-w-full text-lg font-medium leading-relaxed',
+               'max-w-full text-base md:text-lg font-medium leading-relaxed',
                textColorClassName,
                className,
             ),

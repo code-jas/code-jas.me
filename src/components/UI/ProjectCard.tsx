@@ -1,15 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
-import TechStacks from './UI/Lists/TechStacks';
+import TechStacks from './Lists/TechStacks';
 import { useDispatch } from 'react-redux';
 import { openModal, setModalContent } from '@/store/modalSlice';
 import { Project } from '@/types/profile';
-import LiveSiteButton from './UI/Buttons/LivesiteButton';
-import { H2, H3, H4, Paragraph } from './UI/Common/Typography';
-import { BlurFade } from './UI/Misc';
+import LiveSiteButton from './Buttons/LivesiteButton';
+import { H2, H3, H4, Paragraph } from './Typography/Typography';
+import { BlurFade } from './Misc';
+import useScreenSize from '@/hooks/useScreenSize';
 
 const Card: React.FC<Project> = ({
    id,
@@ -27,6 +28,18 @@ const Card: React.FC<Project> = ({
 }) => {
    const dispatch = useDispatch();
    const coverImageControls = useAnimation();
+   const screenSize = useScreenSize();
+   const isBelowSm = screenSize === 'default';
+
+   const [initialValues, setInitialValues] = useState(
+      isBelowSm ? { width: '100%', height: '100%' } : { width: '80%', height: '256px' },
+   );
+   useEffect(() => {
+      setInitialValues(
+         isBelowSm ? { width: '100%', height: '128px' } : { width: '80%', height: '256px' },
+      );
+      console.log('isBelow :>> ', isBelowSm);
+   }, [isBelowSm]);
 
    const handleClick = () => {
       dispatch(
@@ -53,7 +66,11 @@ const Card: React.FC<Project> = ({
    };
 
    const handleMouseLeave = () => {
-      coverImageControls.start({ width: '80%', height: '256px' });
+      if (isBelowSm) {
+         coverImageControls.start({ width: '100%', height: '100%' });
+      } else {
+         coverImageControls.start({ width: '80%', height: '256px' });
+      }
    };
 
    return (
@@ -69,7 +86,7 @@ const Card: React.FC<Project> = ({
             onMouseLeave={handleMouseLeave}
          >
             <div>
-               <div className="relative flex items-center justify-center w-50 overflow-hidden h-[419.2px] mb-10">
+               <div className="relative flex items-center justify-center w-50 overflow-hidden h-80 sm:h-[419.2px] mb-10">
                   <div
                      className="relative w-full h-full overflow-hidden rounded-3xl bg-white bg-cover bg-center"
                      style={{
@@ -87,8 +104,8 @@ const Card: React.FC<Project> = ({
                      </div>
                   </div>
                   <motion.div
-                     className="w-[80%] h-64 z-10 absolute bottom-0 rounded-lg overflow-hidden"
-                     initial={{ width: '80%', height: '256px' }}
+                     className="h-full sm:h-64 w-full  sm:w-20 z-10 absolute bottom-0 rounded-lg overflow-hidden"
+                     initial={initialValues}
                      animate={coverImageControls}
                      transition={{ duration: 0.3 }}
                   >
@@ -112,7 +129,7 @@ const Card: React.FC<Project> = ({
                <H4 className="line-clamp-1 mb-1">{title}</H4>
                <Paragraph className="line-clamp-3">{description}</Paragraph>
                <BlurFade duration={0.6} inView>
-                  <div className="flex items-center justify-between mt-7 mb-3">
+                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-y-5 md:gap-y-0 mt-7 mb-0 md:mb-3">
                      <TechStacks techStacks={techStacks} />
                      <LiveSiteButton
                         liveSiteLink={liveSiteLink}

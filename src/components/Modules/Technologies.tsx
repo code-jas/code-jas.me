@@ -5,7 +5,7 @@ import IconList from '../UI/Icons/IconList';
 import IconCloud from '../UI/Icons/IconCloud';
 import { TechnologiesSection } from '@/types/profile';
 import { SegmentedControl } from '../UI/Buttons';
-import { H1, H4, H5, Paragraph } from '../UI/Common/Typography';
+import { H1, H4, H5, Paragraph } from '../UI/Typography/Typography';
 import { SectionBlock } from '../UI/Common';
 import { BlurFade } from '../UI/Misc';
 
@@ -46,7 +46,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
          <BlurFade inView duration={1}>
             <div className="w-full">
                {selectedValue === 'cards' ? (
-                  <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20 ">
+                  <div className="relative flex h-full w-screen flex-col items-center justify-center overflow-hidden py-12 md:py-20 ">
                      <IconList iconSlugs={technologies} />
                   </div>
                ) : (
@@ -56,8 +56,8 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
                )}
             </div>
          </BlurFade>
-         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-surface-01"></div>
-         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-surface-01"></div>
+         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/5 md:w-1/3 bg-gradient-to-r !from-surface-01"></div>
+         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/5 md:w-1/3 bg-gradient-to-l !from-surface-01"></div>
       </SectionBlock>
    );
 };

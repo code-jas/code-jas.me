@@ -39,10 +39,10 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({ value, options, onC
    }, [value]);
 
    return (
-      <div className="segmented-control relative bg-gray-200 rounded-lg p-1 inline-flex">
+      <div className="segmented-control relative bg-gray-200 dark:bg-gray-500 rounded-lg p-1 inline-flex">
          <span
             ref={selectionRef}
-            className="selection absolute bg-white shadow-md rounded-lg transition-transform duration-200 h-[80%] ease-in-out"
+            className="selection absolute shadow-md rounded-lg transition-transform duration-200 h-[80%] ease-in-out"
          ></span>
 
          {options.map((option) => (
@@ -58,7 +58,7 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({ value, options, onC
                />
                <label
                   htmlFor={option.value}
-                  className="block text-center py-2 px-4 text-black font-medium text-sm leading-5 relative z-10"
+                  className="block text-center py-2 px-4 text-primary font-medium text-sm leading-5 relative z-10"
                >
                   <span>{option.label}</span>
                </label>

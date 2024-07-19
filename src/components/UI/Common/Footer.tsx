@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col lg:items-end items-center lg:text-start text-center">
-               <small className="text-zinc-500">
+               <small className="text-tertiary">
                   Copyright &copy; {data.footer.copyright} {new Date().getFullYear()} All rights
                   Reserved
                </small>

@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { ContactSection } from '@/types/profile';
 import { BlurFade, SocialDock } from '../UI/Misc';
 import { DotPatterns } from '../UI/Patterns';
-import { H1, H2, Paragraph } from '../UI/Common/Typography';
+import { H1, H2, Paragraph } from '../UI/Typography/Typography';
 import { SectionBlock } from '../UI/Common';
 
 interface ContactProps {

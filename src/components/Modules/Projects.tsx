@@ -1,7 +1,7 @@
 import React from 'react';
-import ProjectCard from '../ProjectCard';
+import ProjectCard from '../UI/ProjectCard';
 import { ProjectSection } from '@/types/profile';
-import { H2, H4 } from '../UI/Common/Typography';
+import { H2, H4 } from '../UI/Typography/Typography';
 import { SectionBlock } from '../UI/Common';
 import { FadeText } from '../UI/Misc/FadeText';
 import { BlurFade } from '../UI/Misc';
@@ -21,8 +21,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             <H2>{subheader}</H2>
          </div>
          <div>
-            <BlurFade inView duration={0.8}>
-               <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
+            <BlurFade inView duration={0.4}>
+               <div className="flex flex-wrap items-center justify-center p-0 sm:p-4 gap-x-24 gap-y-8 mt-10">
                   {projectData.map((project, index) => (
                      <ProjectCard key={index} {...project} />
                   ))}

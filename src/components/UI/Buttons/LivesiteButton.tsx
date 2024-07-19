@@ -36,7 +36,7 @@ const LiveSiteButton: React.FC<{
          imageSrc={srcPreview}
       >
          <motion.div
-            className="relative flex justify-center items-center gap-2 rounded-full px-3 py-2 text-dark overflow-hidden"
+            className="relative flex justify-center items-center gap-2 rounded-full px-0 md:px-3 p-0 md:py-2 text-dark overflow-hidden"
             onHoverStart={handleHoverStart}
             onHoverEnd={handleHoverEnd}
             whileHover={{ scale: 1.1 }}

@@ -2,9 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExperienceSection } from '@/types/profile';
 import { BlurFade, LinkPreview } from '../UI/Misc';
-import { H2, H4, Paragraph } from '../UI/Common/Typography';
+import { H2, H4, Paragraph } from '../UI/Typography/Typography';
 import { PiChartBarHorizontal } from 'react-icons/pi';
 import { SectionBlock } from '../UI/Common';
+import useScreenSize from '@/hooks/useScreenSize';
 
 interface ExperienceProps {
    experience: ExperienceSection;
@@ -13,10 +14,30 @@ interface ExperienceProps {
 const Experience: React.FC<ExperienceProps> = ({ experience }) => {
    const { header, subheader, timeline } = experience;
 
+   const parseDateString = (dateStr: string): Date => {
+      // Check if the date string is in "Month YYYY" format
+      const monthYearRegex =
+         /^(January|February|March|April|May|June|July|August|September|October|November|December) (\d{4})$/;
+      const match = dateStr.match(monthYearRegex);
+
+      if (match) {
+         const month = new Date(`${match[1]} 1, ${match[2]}`).getMonth();
+         const year = parseInt(match[2], 10);
+         return new Date(year, month, 1);
+      }
+
+      // Fall back to standard Date parsing
+      return new Date(dateStr);
+   };
+
    const calculateWorkDuration = (startDate: string, endDate: string): string => {
-      const start = new Date(startDate);
-      const end = endDate.toLowerCase() === 'present' ? new Date() : new Date(endDate);
+      const start = parseDateString(startDate);
+      const end = endDate.toLowerCase() === 'present' ? new Date() : parseDateString(endDate);
       const diff = end.getTime() - start.getTime();
+
+      // console.log('start :>> ', start);
+      // console.log('end :>> ', end);
+      // console.log('diff :>> ', diff);
 
       const diffDays = Math.floor(diff / (1000 * 3600 * 24));
       const diffMonths = Math.floor(diffDays / 30);
@@ -30,8 +51,12 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
       if (remainingMonths > 0) {
          duration += `${diffYears > 0 ? ' and ' : ''}${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`;
       }
+      // console.log('duration', duration);
       return duration;
    };
+
+   const screenSize = useScreenSize();
+   console.log('screenSize :>> ', screenSize);
 
    return (
       <SectionBlock id="experience">
@@ -45,10 +70,10 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
             return (
                <div
                   key={index}
-                  className="flex place-content-start items-start flex-none flex-row gap-2 h-auto overflow-visible p-0 relative w-full max-w-4xl mx-auto"
+                  className="flex place-content-start items-start flex-none gap-2 h-auto overflow-visible  relative w-full mx-auto flex-col max-w-screen-sm px-0 md:px-0 lg:max-w-4xl lg:flex-row "
                >
                   <motion.div
-                     className="flex flex-col justify-start  w-1/2 sticky top-4"
+                     className="flex flex-col justify-start w-full lg:w-1/2 md:sticky top-4 mb-4 lg:mb-0"
                      style={{ zIndex: 10 }}
                   >
                      <BlurFade duration={1} inView>
@@ -57,7 +82,7 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
                         </LinkPreview>
                      </BlurFade>
                   </motion.div>
-                  <div className="w-1/2 flex flex-col gap-12">
+                  <div className="w-full lg:w-1/2 flex flex-col gap-12">
                      {company.roles.map((role, roleIndex) => (
                         <div key={roleIndex} className="flex flex-col gap-2">
                            <div className="flex flex-col justify-start shrink-0">

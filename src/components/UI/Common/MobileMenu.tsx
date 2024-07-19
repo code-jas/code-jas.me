@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { LuHome, LuMenu, LuUser2, LuBraces, LuContact2, LuX } from 'react-icons/lu';
+import { TbAlignRight } from 'react-icons/tb';
 import { AiOutlineExperiment } from 'react-icons/ai';
 import { Navbar } from '@/types/profile';
 import { IconType } from 'react-icons';
@@ -41,9 +42,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ data }) => {
          <button
             aria-label="Toggle Menu"
             onClick={onToggleNav}
-            className="md:hidden rounded-full p-2"
+            className="md:hidden bg-surface-01 text-primary  border border-primary rounded-full p-2"
          >
-            <LuMenu className="text-xl" />
+            <TbAlignRight className="text-xl" />
          </button>
          <motion.div
             initial={{ x: '100%' }}
@@ -53,13 +54,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ data }) => {
          >
             <div className="flex items-center justify-between mt-6 px-8">
                <Link href="/" onClick={onToggleNav}>
-                  <Image src={'/vercel.svg'} width={35} height={35} alt="logo" />
+                  <Image src={'/logo.png'} width={35} height={35} alt="logo" />
                </Link>
 
                <button
                   aria-label="Toggle Menu"
                   onClick={onToggleNav}
-                  className={`md:hidden rounded-full p-2 duration-500 ${!navShow ? '-rotate-[360deg]' : null}`}
+                  className={`md:hidden  bg-surface-01 text-primary  border border-primary rounded-full p-2 duration-500 ${!navShow ? '-rotate-[360deg]' : null}`}
                >
                   <LuX className="text-xl" />
                </button>

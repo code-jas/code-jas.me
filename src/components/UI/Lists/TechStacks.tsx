@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Tooltip } from 'react-tooltip';
 import { renderToStaticMarkup } from 'react-dom/server';
+import useScreenSize from '@/hooks/useScreenSize';
 
 interface TechStackIconProps {
    techStacks: { icon: string; label: string }[];
@@ -31,13 +32,24 @@ const TechStacks: React.FC<TechStackIconProps> = ({ techStacks }) => {
       );
    };
 
+   const screenSize = useScreenSize();
+
+   const getTranslateXValue = (index: number) => {
+      switch (screenSize) {
+         case 'lg':
+         case 'md':
+            return `${-5 - index * 10}px`;
+         default:
+            return `${-5 - index * 5}px`;
+      }
+   };
    return (
-      <div className="flex items-center">
+      <div className="flex items-center w-10 ">
          {displayedStacks.map((stack, index) => (
             <motion.div
                key={index}
-               className="border border-primary dark:border-dark-10 bg-surface-01 rounded-full p-2 flex justify-center items-center"
-               initial={{ translateX: `${-5 - index * 5}px` }}
+               className="border border-primary dark:border-dark-10 bg-surface-01 rounded-full p-2 flex justify-center items-center "
+               animate={{ translateX: getTranslateXValue(index) }}
                whileHover={{ scale: 1.2 }}
                transition={{ type: 'spring', stiffness: 300 }}
                data-tooltip-id={`techstack-tooltip-${index}`}
@@ -62,7 +74,7 @@ const TechStacks: React.FC<TechStackIconProps> = ({ techStacks }) => {
          {remainingStacks > 0 && (
             <motion.div
                className="border border-primary dark:border-dark-10 bg-surface-01 rounded-full p-2 flex justify-center items-center"
-               initial={{ translateX: `${-5 - displayedStacks.length * 5}px` }}
+               animate={{ translateX: getTranslateXValue(displayedStacks.length) }}
                whileHover={{ scale: 1.2 }}
                transition={{ type: 'spring', stiffness: 300 }}
                data-tooltip-id="techstack-tooltip-more"

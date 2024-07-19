@@ -20,7 +20,8 @@ const SectionBlock: React.FC<SectionBlockProps> = ({
          id={id}
          className={clsx(
             {
-               'relative mx-auto px-6 py-36 flex flex-col gap-16': variant !== 'plain',
+               'relative mx-auto px-4 md:px-6 py-28 md:py-36 flex flex-col gap-16':
+                  variant !== 'plain',
             },
             className, // Custom className is applied last
          )}

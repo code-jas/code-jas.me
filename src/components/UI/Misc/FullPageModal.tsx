@@ -7,7 +7,7 @@ import LiveSiteButton from '../Buttons/LivesiteButton';
 import TechStackList from '../Lists/TechStackList';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { H1, H4, H5, Paragraph } from '../Common/Typography';
+import { H1, H4, H5, Paragraph } from '../Typography/Typography';
 import BlurFade from './BlurFade';
 
 const backgroundVariants = {
@@ -60,29 +60,31 @@ const FullPageModal: React.FC = () => {
       <AnimatePresence>
          {showModal && (
             <motion.div
-               className="fixed inset-0 glass-blur dark:bg-zinc-900 z-50 flex flex-col overflow-auto"
+               className="fixed inset-0 glass-blur  z-50 flex flex-col overflow-auto"
                variants={backgroundVariants}
                initial="hidden"
                animate="visible"
                exit="exit"
             >
+               {/* HEADER */}
                <motion.div
-                  className="w-full max-w-5xl mx-auto"
+                  className="w-[94%] sm:w-4/5 lg:w-full max-w-5xl mx-auto"
                   variants={headerVariants}
                   initial="hidden"
                   animate="visible"
                   exit="exit"
                >
                   <BlurFade duration={0.4} inView inViewMargin="50px">
-                     <div className="sticky top-0 z-50 flex items-center justify-between rounded-full border border-gray-30 bg-white p-4 my-6">
-                        <button
+                     <div className="sticky top-0 z-50 flex items-center justify-between rounded-full border border-primary bg-surface-card p-2 lg:p-4 my-6">
+                        <motion.button
                            type="button"
-                           className="group h-10 w-10 flex items-center justify-center font-medium text-base border-[1px] border-gray-30 rounded-3xl"
+                           className="group h-10 w-10 flex items-center justify-center font-medium text-base border-[1px] border-primary rounded-3xl"
                            onClick={handleClose}
+                           whileHover={{ scale: 1.1 }} // Adjust the scale value to control the pop effect
                         >
                            <MdClose className="h-6 w-6" />
                            <span className="sr-only">Close</span>
-                        </button>
+                        </motion.button>
                         <LiveSiteButton
                            liveSiteLink={content.liveSiteLink}
                            staticPreview={content.staticPreview ?? false}
@@ -91,6 +93,7 @@ const FullPageModal: React.FC = () => {
                      </div>
                   </BlurFade>
                </motion.div>
+               {/* CONTENT */}
                <motion.div
                   className="w-full max-w-5xl mx-auto"
                   variants={modalVariants}
@@ -98,7 +101,7 @@ const FullPageModal: React.FC = () => {
                   animate="visible"
                   exit="exit"
                >
-                  <div className="flex justify-center flex-col py-8 px-20">
+                  <div className="flex justify-center flex-col py-8 px-4 sm:px-20">
                      <div className="flex-grow overflow-auto">
                         <H1 duration={0.6}>{content.title}</H1>
                         <Paragraph className="font-normal mt-2">
@@ -115,13 +118,16 @@ const FullPageModal: React.FC = () => {
                            ))}
                      </div>
                      <div>
-                        <div className="my-8 text-xl">Tech Stack</div>
-                        <TechStackList techStacks={content?.techStacks ?? []} />
+                        <BlurFade duration={0.8} inView>
+                           <div className="my-8 text-xl">Tech Stack</div>
+                           <TechStackList techStacks={content?.techStacks ?? []} />
+                        </BlurFade>
                      </div>
                   </div>
                </motion.div>
+               {/* MOCKUP PREVIEW */}
                <motion.div
-                  className="w-full h-full"
+                  className="w-full h-40 sm:h-80"
                   variants={modalVariants}
                   initial="hidden"
                   animate="visible"
@@ -133,7 +139,7 @@ const FullPageModal: React.FC = () => {
                      layout="responsive"
                      width={100}
                      height={50}
-                     className="w-full h-80"
+                     className="w-full h-full"
                   />
                </motion.div>
             </motion.div>

@@ -15,14 +15,16 @@ html {
    --surface: #FFFFFF;
    --surface-01:#f7f7f7;
    --surface-02: #e7f2f9;
+   --border: #e6e9ee;
+   --glass-surface: rgba(255, 255, 255, 0.7);
+   --glass-border: rgba(255, 255, 255, 0.3);
+   --bg-gradient-start: rgba(255, 255, 255, 1);
+   --bg-gradient-middle: rgba(255, 255, 255, 0.7);
+   --bg-gradient-end: transparent;
    --accent-red: #f24e1e;
    --accent-orange: #ff7262;
    --accent-green: #0acf83;
    --accent-purple: #a259ff;
-   --bg-gradient-start: rgba(255, 255, 255, 1);
-   --bg-gradient-middle: rgba(255, 255, 255, 0.7);
-   --bg-gradient-end: transparent;
-   --border: #e6e9ee
 }
 
 .dark { 
@@ -34,10 +36,12 @@ html {
    --surface:#1f2028;
    --surface-01: #2e3039;
    --surface-02: #3E3E3E;
+   --border: #4b4c53;
+   --glass-surface: rgba(31, 32, 40, 0.95);
+   --glass-border: rgba(31, 32, 40, 0.3);
    --bg-gradient-start: rgba(31, 32, 40, 1);
    --bg-gradient-middle: rgba(31, 32, 40, 0.7);
    --bg-gradient-end: transparent;
-   --border: #4b4c53
 }
 
 
@@ -67,10 +71,10 @@ h6 {
 
 /* Full page modal */
 .glass-blur {
-   background-color: rgba(255, 255, 255, 0.7); 
-   backdrop-filter: blur(40px); 
-   -webkit-backdrop-filter: blur(40px); 
-   border: 1px solid rgba(255, 255, 255, 0.3); 
+   background-color: var(--glass-surface);
+   backdrop-filter: blur(40px);
+   -webkit-backdrop-filter: blur(40px);
+   border: 1px solid var(--glass-border);
  }
  
 
@@ -101,12 +105,9 @@ h6 {
    filter: brightness(0) invert(1);
 }
 
-.segmented-control {
-   --background: rgba(239, 239, 240, 1);
-}
 
 .segmented-control .selection {
-   background: rgba(255, 255, 255, 1);
+   background: var(--surface-01);
    border: 0.5px solid rgba(0, 0, 0, 0.04);
    box-shadow:
       0 3px 8px 0 rgba(0, 0, 0, 0.12),
@@ -119,7 +120,20 @@ h6 {
 
 .highlight {
    /* background-color: var(--primary); */
-   color: white;
+   color: red;
    padding: 4px 8px;
    border-radius: 4px;
+}
+
+.bg-accent-red {
+   background-color: #f24e1e !important;
+}
+.bg-accent-orange {
+   background-color: #ff7262 !important;
+}
+.bg-accent-green {
+   background-color: #0acf83 !important;
+}
+.bg-accent-purple {
+   background-color: #a259ff !important;
 }
