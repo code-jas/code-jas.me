@@ -19,15 +19,19 @@ const getScreenSize = (width: number) => {
 };
 
 const useScreenSize = () => {
-   const [screenSize, setScreenSize] = useState(() => getScreenSize(window.innerWidth));
+   const [screenSize, setScreenSize] = useState(() =>
+      typeof window !== 'undefined' ? getScreenSize(window.innerWidth) : 'default',
+   );
 
    useEffect(() => {
-      const handleResize = () => {
-         setScreenSize(getScreenSize(window.innerWidth));
-      };
+      if (typeof window !== 'undefined') {
+         const handleResize = () => {
+            setScreenSize(getScreenSize(window.innerWidth));
+         };
 
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
+         window.addEventListener('resize', handleResize);
+         return () => window.removeEventListener('resize', handleResize);
+      }
    }, []);
 
    return screenSize;
