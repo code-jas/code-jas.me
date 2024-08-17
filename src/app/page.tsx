@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 import data from '@/data/data.json';
 import { About, Home, Projects, Contact, Experience, Technologies } from '@/components/Modules';
 import { GridPatterns } from '@/components/UI/Patterns';
-import { H1, H2, H3, H4, H5, H6, Paragraph } from '@/components/UI/Common/Typography';
 import { BlurFade } from '@/components/UI/Misc';
 
 const HomePage: React.FC = () => {

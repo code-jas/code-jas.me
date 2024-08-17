@@ -11,9 +11,9 @@ html {
    --clr-txt-primary: #282828;
    --clr-txt-secondary: #636465;
    --clr-txt-tertiary: #939393;
-   --surface-card: #FFFFFF;
-   --surface: #FFFFFF;
-   --surface-01:#f7f7f7;
+   --surface-card: #ffffff;
+   --surface: #ffffff;
+   --surface-01: #f7f7f7;
    --surface-02: #e7f2f9;
    --border: #e6e9ee;
    --glass-surface: rgba(255, 255, 255, 0.7);
@@ -27,15 +27,15 @@ html {
    --accent-purple: #a259ff;
 }
 
-.dark { 
+.dark {
    --clr-branding-primary: #33b8ff;
-   --clr-txt-primary: #FFFFFF;
+   --clr-txt-primary: #ffffff;
    --clr-txt-secondary: #a9adc1;
    --clr-txt-tertiary: #9397a5;
-   --surface-card:#2e3039;
-   --surface:#1f2028;
+   --surface-card: #2e3039;
+   --surface: #1f2028;
    --surface-01: #2e3039;
-   --surface-02: #3E3E3E;
+   --surface-02: #3e3e3e;
    --border: #4b4c53;
    --glass-surface: rgba(31, 32, 40, 0.95);
    --glass-border: rgba(31, 32, 40, 0.3);
@@ -43,7 +43,6 @@ html {
    --bg-gradient-middle: rgba(31, 32, 40, 0.7);
    --bg-gradient-end: transparent;
 }
-
 
 body {
    background-size: 200px 200px;
@@ -54,10 +53,6 @@ body {
    /* cursor: none; */
 }
 
-
-
-
-
 h1,
 h2,
 h3,
@@ -67,16 +62,13 @@ h6 {
    font-family: var(--tt-norms), sans-serif;
 }
 
-
-
 /* Full page modal */
 .glass-blur {
    background-color: var(--glass-surface);
    backdrop-filter: blur(40px);
    -webkit-backdrop-filter: blur(40px);
    border: 1px solid var(--glass-border);
- }
- 
+}
 
 /* Footer */
 
@@ -104,7 +96,6 @@ h6 {
 .dark .next-icon img {
    filter: brightness(0) invert(1);
 }
-
 
 .segmented-control .selection {
    background: var(--surface-01);
