@@ -38,37 +38,16 @@
                "Developed with a modern tech stack including Nuxt 3, TypeScript, Tailwind CSS, and Ant Design."
             ],
             "techStacks": [
-               {
-                  "label": "Nuxt 3",
-                  "icon": "/brand/nuxt3.svg"
-               },
-               {
-                  "label": "Shadcn",
-                  "icon": "/brand/shadcn.svg"
-               },
-               {
-                  "label": "TypeScript",
-                  "icon": "/brand/typescript.svg"
-               },
-               {
-                  "label": "Tailwind CSS",
-                  "icon": "/brand/tailwind-css.svg"
-               },
-               {
-                  "label": "Pinia",
-                  "icon": "/brand/pinia.svg"
-               },
-               {
-                  "label": "Clockify API",
-                  "icon": "/brand/clockify.svg"
-               },
-               {
-                  "label": "Google Drive API",
-                  "icon": "/brand/google-drive.svg"
-               }
+               { "label": "Nuxt 3", "icon": "/brand/nuxt.svg" },
+               { "label": "Shadcn", "icon": "/brand/shadcn.svg" },
+               { "label": "TypeScript", "icon": "/brand/typescript.svg" },
+               { "label": "Tailwind CSS", "icon": "/brand/tailwindcss.svg" },
+               { "label": "Pinia", "icon": "/brand/pinia.svg" },
+               { "label": "Clockify API", "icon": "/brand/clockify.svg" },
+               { "label": "Google Drive API", "icon": "/brand/google-drive.svg" }
             ],
             "liveSiteLink": "https://example.com/live-site-link-3",
-            "bgImage": "/backgrounds/war-generator-bg.png",
+            "bgImage": "/gradient-part-bg.png",
             "coverImage": "/covers/war-generator-cover.png",
             "mockupImage": "/mockups/war-generator-mockup.png",
             "staticPreview": false
@@ -101,10 +80,10 @@
             ],
             "liveSiteLink": "https://example.com/live-site-link-2",
             "bgImage": "/gradient-part-bg.png",
-            "coverImage": "COMINGSOON",
-            "mockupImage": "/test.jpg",
+            "coverImage": "/covers/bookly-cover.png",
+            "mockupImage": "/mockups/bookly-mockup.png",
             "staticPreview": true,
-            "srcPreview": "/link-preview/bookly.png"
+            "srcPreview": "/covers/bookly-cover.png"
          },
          {
             "id": 1,
@@ -130,8 +109,8 @@
             ],
             "liveSiteLink": "https://ph-festival.code-jas.me",
             "bgImage": "/gradient-part-bg.png",
-            "coverImage": "/ph-festival-screenshot.png",
-            "mockupImage": "/ph-festival-mockup.jpg"
+            "coverImage": "/covers/ph-festival-cover.png",
+            "mockupImage": "/mockups/ph-festival-mockup.jpg"
          }
       ]
    },
