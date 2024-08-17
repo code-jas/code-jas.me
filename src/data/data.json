@@ -23,6 +23,57 @@
       "subheader": "Discover my user-focused digital solutions that solve real-world problems and streamline processes.",
       "projects": [
          {
+            "id": 3,
+            "title": "War Generator",
+            "projectType": ["Web App", "Automation", "Report Generator", "Business Tool"],
+            "description": "A web application designed to automate the generation of weekly accomplishment reports by retrieving data from the Clockify API and formatting it into standardized Excel reports.",
+            "informations": [
+               "Integrates with the Clockify API to automate data retrieval for report generation.",
+               "Seamlessly integrates with Google Drive API for automated storage and management of generated reports.",
+               "Automatically sends generated reports to HR or other stakeholders in real-time via email.",
+               "Utilizes dynamic UI components that adapt based on user input and data for a personalized experience.",
+               "Employs robust state management using Pinia to ensure data consistency across components.",
+               "Implements comprehensive error handling with real-time notifications to alert users of issues during report generation or data retrieval.",
+               "Future plans to integrate Slack Webhook for automatic report distribution to designated Slack channels.",
+               "Developed with a modern tech stack including Nuxt 3, TypeScript, Tailwind CSS, and Ant Design."
+            ],
+            "techStacks": [
+               {
+                  "label": "Nuxt 3",
+                  "icon": "/brand/nuxt3.svg"
+               },
+               {
+                  "label": "Shadcn",
+                  "icon": "/brand/shadcn.svg"
+               },
+               {
+                  "label": "TypeScript",
+                  "icon": "/brand/typescript.svg"
+               },
+               {
+                  "label": "Tailwind CSS",
+                  "icon": "/brand/tailwind-css.svg"
+               },
+               {
+                  "label": "Pinia",
+                  "icon": "/brand/pinia.svg"
+               },
+               {
+                  "label": "Clockify API",
+                  "icon": "/brand/clockify.svg"
+               },
+               {
+                  "label": "Google Drive API",
+                  "icon": "/brand/google-drive.svg"
+               }
+            ],
+            "liveSiteLink": "https://example.com/live-site-link-3",
+            "bgImage": "/backgrounds/war-generator-bg.png",
+            "coverImage": "/covers/war-generator-cover.png",
+            "mockupImage": "/mockups/war-generator-mockup.png",
+            "staticPreview": false
+         },
+         {
             "id": 2,
             "title": "Bookly",
             "projectType": ["Web App", "E-commerce", "Marketplace", "Bookstore"],
@@ -54,7 +105,6 @@
             "mockupImage": "/test.jpg",
             "staticPreview": true,
             "srcPreview": "/link-preview/bookly.png"
-
          },
          {
             "id": 1,
