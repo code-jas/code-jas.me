@@ -23,7 +23,7 @@
       "subheader": "Discover my user-focused digital solutions that solve real-world problems and streamline processes.",
       "projects": [
          {
-            "id": 3,
+            "id": 4,
             "title": "War Generator",
             "projectType": ["Web App", "Automation", "Report Generator", "Business Tool"],
             "description": "A web application designed to automate the generation of weekly accomplishment reports by retrieving data from the Clockify API and formatting it into standardized Excel reports.",
@@ -52,6 +52,101 @@
             "mockupImage": "/mockups/war-generator-mockup.jpg",
             "staticPreview": false
          },
+         {
+            "id": 3,
+            "title": "Internship Project Compilation",
+            "projectType": ["Web App", "Mobile App", "Game Development", "API Integration"],
+            "description": "A collection of small projects developed during my internship, showcasing a diverse range of skills including web and mobile app development, game development, and API integration.",
+            "subprojects": [
+               {
+                  "title": "WIM Game Project",
+                  "projectType": ["Web App", "Game Development", "Educational"],
+                  "description": "An engaging and fun game to challenge your matching skills! Word/Image Match is a visual puzzle game where players match images to corresponding words. This project was developed as part of my internship, focusing on creating an educational web application that tests and improves visual and vocabulary skills.",
+                  "informations": [
+                     "Developed with Vue.js and Nuxt.js to ensure a fast and responsive user experience.",
+                     "Implemented various levels of difficulty to cater to both beginners and advanced players.",
+                     "Features a ranking dashboard to view user ranks and compare scores.",
+                     "Includes dark mode and light mode to reduce eye strain and accommodate different lighting preferences.",
+                     "Uses Local Storage to save your score between sessions.",
+                     "Elaborate user interface designed for a seamless and engaging user experience."
+                  ],
+                  "techStacks": [
+                     { "label": "Vue.js", "icon": "/brand/vue-js.svg" },
+                     { "label": "Nuxt.js", "icon": "/brand/nuxt.svg" },
+                     { "label": "Tailwind CSS", "icon": "/brand/tailwindcss.svg" }
+                  ],
+                  "liveSiteLink": "https://github.com/code-jas/wim-game-project",
+                  "mockupImage": "/mockups/wim-game-mockup.png",
+                  "coverImage": "/covers/wim-game-cover.png",
+                  "staticPreview": true
+               },
+               {
+                  "title": "Flutter LMS App",
+                  "projectType": ["Mobile App", "Learning Management System", "Educational"],
+                  "description": "A Learning Management System built using Flutter, designed to offer a comprehensive platform for managing and exploring educational courses. This app provides users with the ability to sign up, explore courses, track progress, and manage their profiles with a seamless and user-friendly interface.",
+                  "informations": [
+                     "Implemented user authentication using the Google Sign-In library for easy and secure login.",
+                     "Features a bottom navigation bar for easy navigation between Home, Explore, My Courses, and Account screens.",
+                     "Home screen includes StatusCard widgets and a list of courses, providing an overview of the user's progress.",
+                     "Explore screen offers search and filtering capabilities, allowing users to find courses based on categories.",
+                     "My Courses screen features tabs for In Progress and Completed courses, with detailed tracking of user progress.",
+                     "Account screen includes profile management, account settings, support, and sign-out options.",
+                     "Course Details screen provides comprehensive information about each course, including the course header, description, author profile, and options to join or view more details.",
+                     "Implemented a structured project directory for easy management and scalability of the application."
+                  ],
+                  "techStacks": [
+                     { "label": "Flutter", "icon": "/brand/flutter.svg" },
+                     { "label": "Dart", "icon": "/brand/dart.svg" },
+                     { "label": "Firebase", "icon": "/brand/firebase.svg" }
+                  ],
+                  "liveSiteLink": "https://github.com/code-jas/flutter_lms_app",
+                  "coverImage": "/covers/flutter-lms-cover.png",
+                  "mockupImage": "/mockups/flutter-lms-mockup.png",
+                  "staticPreview": true
+               },
+               {
+                  "title": "File Uploader (Vue & Express)",
+                  "projectType": ["Web App", "API Integration"],
+                  "description": "A web application for chunked file uploads, integrating Vue.js for the frontend and Express.js for the backend. This project demonstrates efficient file handling and server-client communication.",
+                  "informations": [
+                     "Implemented chunked file uploads to handle large files efficiently.",
+                     "Frontend developed with Vue.js for a reactive and dynamic user interface.",
+                     "Backend built with Express.js to handle file processing and storage.",
+                     "Ensured secure file handling with validation and error handling mechanisms."
+                  ],
+                  "techStacks": [
+                     { "label": "Vue.js", "icon": "/brand/vue-js.svg" },
+                     { "label": "Express.js", "icon": "/brand/express.svg" },
+                     { "label": "Node.js", "icon": "/brand/node-js.svg" }
+                  ],
+                  "liveSiteLink": "https://github.com/code-jas/file-uploader-vue-express",
+                  "coverImage": "/covers/file-uploader-cover.png",
+                  "mockupImage": "/mockups/file-uploader-mockup.png",
+                  "staticPreview": true
+               },
+               {
+                  "title": "Flutter Profile",
+                  "projectType": ["Mobile App", "Portfolio"],
+                  "description": "A portfolio application developed using Flutter, showcasing my skills, projects, and experience in a sleek and responsive design.",
+                  "informations": [
+                     "Designed and developed using Flutter, ensuring cross-platform compatibility.",
+                     "Includes sections for skills, experience, and project showcases.",
+                     "Focused on creating a user-friendly and visually appealing interface.",
+                     "Implemented responsive layouts to adapt to various screen sizes."
+                  ],
+                  "techStacks": [
+                     { "label": "Flutter", "icon": "/brand/flutter.svg" },
+                     { "label": "Dart", "icon": "/brand/dart.svg" },
+                     { "label": "Firebase", "icon": "/brand/firebase.svg" }
+                  ],
+                  "liveSiteLink": "https://github.com/code-jas/flutter_profile",
+                  "coverImage": "/covers/flutter-profile-cover.png",
+                  "mockupImage": "/mockups/flutter-profile-mockup.png",
+                  "staticPreview": true
+               }
+            ]
+         },
+
          {
             "id": 2,
             "title": "Bookly",
