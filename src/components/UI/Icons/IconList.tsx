@@ -57,7 +57,7 @@ const IconCard = ({ iconSlugs }: IconCardProps) => {
    const [data, setData] = useState<IconData | null>(null);
    const { theme } = useTheme();
    const screenSize = useScreenSize();
-   console.log('icon card screenSize :>> ', screenSize);
+   // console.log('icon card screenSize :>> ', screenSize);
 
    useEffect(() => {
       fetchSimpleIcons({ slugs: iconSlugs.flat() }).then(setData);

@@ -46,10 +46,10 @@
                { "label": "Clockify API", "icon": "/brand/clockify.svg" },
                { "label": "Google Drive API", "icon": "/brand/google-drive.svg" }
             ],
-            "liveSiteLink": "https://example.com/live-site-link-3",
-            "bgImage": "/gradient-part-bg.png",
+            "liveSiteLink": "https://war-generator.code-jas.me/",
+            "bgImage": "/backgrounds/gradient-part-bg.png",
             "coverImage": "/covers/war-generator-cover.png",
-            "mockupImage": "/mockups/war-generator-mockup.png",
+            "mockupImage": "/mockups/war-generator-mockup.jpg",
             "staticPreview": false
          },
          {
@@ -78,8 +78,8 @@
                { "label": "PostgreSQL", "icon": "/brand/postgresql.svg" },
                { "label": "Docker", "icon": "/brand/docker.svg" }
             ],
-            "liveSiteLink": "https://example.com/live-site-link-2",
-            "bgImage": "/gradient-part-bg.png",
+            "liveSiteLink": "#",
+            "bgImage": "/backgrounds/gradient-part-bg.png",
             "coverImage": "/covers/bookly-cover.png",
             "mockupImage": "/mockups/bookly-mockup.png",
             "staticPreview": true,
@@ -108,7 +108,7 @@
                { "label": "Vercel", "icon": "/brand/vercel.svg" }
             ],
             "liveSiteLink": "https://ph-festival.code-jas.me",
-            "bgImage": "/gradient-part-bg.png",
+            "bgImage": "/backgrounds/gradient-part-bg.png",
             "coverImage": "/covers/ph-festival-cover.png",
             "mockupImage": "/mockups/ph-festival-mockup.jpg"
          }
@@ -190,7 +190,7 @@
             "text": [
                "I started my creative journey in high school, using Photoshop to create graphic designs, edit and retouch photos, and design print and marketing materials. The magic of **highlight**transforming ideas into captivating visuals**highlight** sparked my passion for visual art and design."
             ],
-            "image": "/about-01.jpg"
+            "image": "/about-images/about-01.jpg"
          },
          {
             "title": "Jumping into Web Development",
@@ -198,7 +198,7 @@
                "One day, while diving deep into the design world, I discovered UI/UX design in web applications, which immediately caught my interest. I began studying how to design simple applications and became curious about bringing these designs to life, **highlight**leading me to explore web development driven by my curiosity, creativity, and willingness to learn.**highlight**",
                "I started with HTML, CSS, and JavaScript, then advanced to frameworks like React and Vue, and also learned Android development. Eventually, I expanded my skills to back-end technologies like Node.js and Java Spring. This comprehensive knowledge helped me secure my first full-time job as a full-stack developer, a pivotal moment in my career."
             ],
-            "image": "/about-02.jpg"
+            "image": "/about-images/about-02.jpg"
          },
          {
             "title": "What I’m Focused on Now",
@@ -206,7 +206,7 @@
                "These days, I work as a Full Stack Developer at Centralized Cloud Computing International Inc., where I **highlight**help deliver digital solutions for our clients’ web and mobile applications.**highlight**",
                "In my free time, I enjoy creative coding and reading, always exploring new technologies and honing my coding skills. I also love spending time with my friends and family, savoring life’s pleasures away from the computer screen when I’m not deeply immersed in coding or working out."
             ],
-            "image": "/about-03.jpg"
+            "image": "/about-images/about-03.jpg"
          },
          {
             "title": "My Roadmap Ahead",
@@ -214,7 +214,7 @@
                "My aim is to **highlight**lead large-scale and secure projects, mentor junior developers, and make critical architectural decisions**highlight**. I strive to oversee development teams effectively, contribute impactful tech strategies aligned with business goals, and help establish the company as a leader in its field.",
                "To achieve this, I am passionate about continuously thinking of and developing innovative digital solutions. My focus is on creating as many valuable projects as possible, honing my skills, and expanding my knowledge. By doing so, I can lay a solid foundation for leading major initiatives and driving technological advancements within the organization."
             ],
-            "image": "/about-04.jpg"
+            "image": "/about-images/about-04.jpg"
          }
       ]
    },

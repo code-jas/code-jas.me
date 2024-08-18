@@ -36,6 +36,7 @@ const config: Config = {
             'accent-orange': 'var(--accent-orange)',
             'accent-green': 'var(--accent-green)',
             'accent-purple': 'var(--accent-purple)',
+            highlight: 'var(--clr-highlight)',
          },
          textColor: {
             primary: 'var(--clr-txt-primary)',
@@ -43,6 +44,7 @@ const config: Config = {
             tertiary: 'var(--clr-txt-tertiary)',
             quaternary: 'var(--clr-txt-quaternary)',
             'branding-primary': 'var(--clr-branding-primary)',
+            highlight: 'var(--clr-txt-highlight)',
          },
          borderColor: {
             primary: 'var(--border)',

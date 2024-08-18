@@ -27,7 +27,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
                            <H4 className="leading-relaxed my-4">{item.title}</H4>
                            <div className="flex flex-col gap-5">
                               {item.text.map((paragraph, i) => (
-                                 <Paragraph key={i}>
+                                 <Paragraph key={i} textColorClassName="text-highlight">
                                     {replaceHighlightPlaceholders(paragraph)}
                                  </Paragraph>
                               ))}
@@ -66,7 +66,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
                            <H4 className="leading-relaxed my-4">{item.title}</H4>
                            <div className="flex flex-col gap-5">
                               {item.text.map((paragraph, i) => (
-                                 <Paragraph key={i}>
+                                 <Paragraph key={i} textColorClassName="text-highlight">
                                     {replaceHighlightPlaceholders(paragraph)}
                                  </Paragraph>
                               ))}

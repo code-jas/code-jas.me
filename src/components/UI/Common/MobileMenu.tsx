@@ -54,7 +54,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ data }) => {
          >
             <div className="flex items-center justify-between mt-6 px-8">
                <Link href="/" onClick={onToggleNav}>
-                  <Image src={'/logo.png'} width={35} height={35} alt="logo" />
+                  <Image
+                     src={'/logo.png'}
+                     width={35}
+                     height={35}
+                     alt="logo"
+                     style={{ width: 'auto', height: 'auto' }}
+                  />
                </Link>
 
                <button

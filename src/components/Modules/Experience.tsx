@@ -55,8 +55,8 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
       return duration;
    };
 
-   const screenSize = useScreenSize();
-   console.log('screenSize :>> ', screenSize);
+   // const screenSize = useScreenSize();
+   // console.log('screenSize :>> ', screenSize);
 
    return (
       <SectionBlock id="experience">

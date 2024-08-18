@@ -25,6 +25,9 @@ html {
    --accent-orange: #ff7262;
    --accent-green: #0acf83;
    --accent-purple: #a259ff;
+   --clr-txt-highlight: #242424;
+   --clr-highlight: rgb(10, 165, 255, 0.30);
+   
 }
 
 .dark {
@@ -42,6 +45,9 @@ html {
    --bg-gradient-start: rgba(31, 32, 40, 1);
    --bg-gradient-middle: rgba(31, 32, 40, 0.7);
    --bg-gradient-end: transparent;
+   /* --clr-txt-highlight: #E6E6E6; */
+   --clr-txt-highlight: #FFFFFF;
+   --clr-highlight: rgba(53, 175, 246, 0.881);
 }
 
 body {

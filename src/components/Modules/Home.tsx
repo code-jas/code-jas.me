@@ -1,3 +1,5 @@
+'use client';
+
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -16,11 +18,25 @@ const Home: React.FC<HomeProps> = ({ home }) => {
    const screenSize = useScreenSize();
    const isBelowMd = screenSize === 'default' || screenSize === 'sm';
 
-   const [hovered, setHovered] = useState(false); // originally it's for hover effect
+   const [hovered, setHovered] = useState(false);
+   const [mounted, setMounted] = useState(false);
+   const [dimensions, setDimensions] = useState({ width: 350, height: 275 });
 
    useEffect(() => {
-      setTimeout(() => setHovered(true), 1000);
-   }, [hovered]);
+      setMounted(true);
+      setHovered(true);
+      // Set the dimensions after the component has mounted
+      const screenDimensions: { [key: string]: { width: number; height: number } } = {
+         default: { width: 350, height: 275 },
+         sm: { width: 350, height: 325 },
+         md: { width: 300, height: 400 },
+         lg: { width: 350, height: 475 },
+         xl: { width: 400, height: 550 },
+         '2xl': { width: 450, height: 625 },
+      };
+
+      setDimensions(screenDimensions[screenSize] || screenDimensions.default);
+   }, [screenSize]);
 
    const textClass = 'text-white rounded-lg shadow-lg';
    const bubbleMessages = [
@@ -62,16 +78,16 @@ const Home: React.FC<HomeProps> = ({ home }) => {
       },
    ];
 
-   const dimensions: { [key: string]: { width: number; height: number } } = {
-      default: { width: 350, height: 275 },
-      sm: { width: 350, height: 325 },
-      md: { width: 300, height: 400 },
-      lg: { width: 350, height: 475 },
-      xl: { width: 400, height: 550 },
-      '2xl': { width: 450, height: 625 },
-   };
+   // const dimensions: { [key: string]: { width: number; height: number } } = {
+   //    default: { width: 350, height: 275 },
+   //    sm: { width: 350, height: 325 },
+   //    md: { width: 300, height: 400 },
+   //    lg: { width: 350, height: 475 },
+   //    xl: { width: 400, height: 550 },
+   //    '2xl': { width: 450, height: 625 },
+   // };
 
-   const { width, height } = dimensions[screenSize] || dimensions.default;
+   // const { width, height } = dimensions[screenSize] || dimensions.default;
 
    return (
       <SectionBlock id="home" variant="plain" className="relative">
@@ -80,7 +96,7 @@ const Home: React.FC<HomeProps> = ({ home }) => {
                <H1 duration={0.2} className="text-center">
                   {header}
                </H1>
-               {!isBelowMd && (
+               {mounted && !isBelowMd && (
                   <div className="absolute right-3 top-2 z-10 flex items-center justify-center py-11">
                      <motion.svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -105,42 +121,38 @@ const Home: React.FC<HomeProps> = ({ home }) => {
             <H1 duration={0.3} className="text-center max-w-3xl leading-loose">
                {subheader}
             </H1>
-            <div
-               className="relative mt-10 avatar-container"
-               // onMouseEnter={() => setHovered(true)}
-               // onMouseLeave={() => setTimeout(() => setHovered(false), 500)}
-            >
+            <div className="relative mt-10 avatar-container">
                <BlurFade delay={0.2} inView>
                   <Image
                      src={avatar}
                      alt="3D Avatar"
-                     // width={400}
-                     // height={550}
-                     width={width}
-                     height={height}
+                     width={dimensions.width}
+                     height={dimensions.height}
                      className="relative z-10 avatar"
+                     priority
                   />
                </BlurFade>
-               <AnimatePresence>
-                  {!isBelowMd &&
-                     hovered &&
-                     bubbleMessages.map(
-                        ({ key, initial, animate, exit, transition, className, message }) => (
-                           <motion.div
-                              key={key}
-                              initial={initial}
-                              animate={animate}
-                              exit={exit}
-                              transition={transition}
-                              className={className}
-                           >
-                              {message}
-                           </motion.div>
-                        ),
-                     )}
-               </AnimatePresence>
+               {mounted && (
+                  <AnimatePresence>
+                     {!isBelowMd &&
+                        hovered &&
+                        bubbleMessages.map(
+                           ({ key, initial, animate, exit, transition, className, message }) => (
+                              <motion.div
+                                 key={key}
+                                 initial={initial}
+                                 animate={animate}
+                                 exit={exit}
+                                 transition={transition}
+                                 className={className}
+                              >
+                                 {message}
+                              </motion.div>
+                           ),
+                        )}
+                  </AnimatePresence>
+               )}
             </div>
-            );
          </div>
          <div
             className="z-10 pointer-events-none absolute inset-y-0 bottom-0 w-full bg-gradient-to-t"

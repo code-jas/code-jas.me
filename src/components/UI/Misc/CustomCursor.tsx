@@ -5,8 +5,11 @@ import '@/styles/cursor.css';
 
 const CustomCursor = () => {
    const [position, setPosition] = useState({ x: 0, y: 0 });
+   const [isClient, setIsClient] = useState(false);
 
    useEffect(() => {
+      setIsClient(true);
+
       const handleMouseMove = (event: MouseEvent) => {
          setPosition({ x: event.clientX, y: event.clientY });
       };
@@ -18,6 +21,8 @@ const CustomCursor = () => {
       };
    }, []);
 
+   if (!isClient) return null; // Return null on server-side
+
    return (
       <div
          id="pointer f-cursor"
@@ -25,8 +30,8 @@ const CustomCursor = () => {
             position: 'fixed',
             top: position.y,
             left: position.x,
-            width: '.5cm',
-            height: '.5cm',
+            width: '.1cm',
+            height: '.1cm',
             transform: 'translate(-50%, -50%)',
             pointerEvents: 'none',
             zIndex: 9999,
@@ -43,9 +48,6 @@ const CustomCursor = () => {
                />
             </g>
          </svg>
-         {/* <div className="bubble">
-            <p>you</p>
-         </div> */}
       </div>
    );
 };

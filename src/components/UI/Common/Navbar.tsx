@@ -39,7 +39,13 @@ export default function Navbar() {
       >
          <div className="max-w-6xl mx-auto flex items-center justify-between ">
             <Link href="/">
-               <Image src={'/logo.png'} width={35} height={35} alt="logo" />
+               <Image
+                  src={'/logo.png'}
+                  width={35}
+                  height={35}
+                  alt="logo"
+                  style={{ width: 'auto', height: 'auto' }}
+               />
             </Link>
 
             <nav className="md:block hidden">
