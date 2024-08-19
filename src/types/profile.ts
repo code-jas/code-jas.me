@@ -46,11 +46,11 @@ export interface Subproject {
    title: string;
    projectType: string[];
    description: string;
-   informations: string[];
+   informations?: string[];
    techStacks: TechStack[];
    githubLink?: string;
    liveSiteLink?: string;
-   coverImage: string;
+   coverImage?: string;
    mockupImage?: string;
    staticPreview?: boolean;
 }
@@ -62,8 +62,8 @@ export interface Project {
    description: string;
    informations: string[];
    techStacks: TechStack[];
-   githubLink: string;
-   liveSiteLink: string;
+   githubLink?: string;
+   liveSiteLink?: string;
    bgImage: string;
    coverImage: string;
    mockupImage?: string;

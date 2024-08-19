@@ -70,6 +70,7 @@
             ],
             "bgImage": "/backgrounds/gradient-part-bg.png",
             "coverImage": "/mockups/wim-game-mockup.png",
+            "informations": [""],
             "subprojects": [
                {
                   "title": "WIM Game Project",

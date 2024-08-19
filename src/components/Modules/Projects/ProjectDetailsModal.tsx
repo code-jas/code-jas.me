@@ -140,7 +140,8 @@ const FullPageModal: React.FC = () => {
                                           {subproject.projectType.length > 0 &&
                                              subproject.projectType.join(', ')}
                                        </Paragraph>
-                                       {subproject.informations.length > 0 &&
+                                       {subproject.informations &&
+                                          subproject.informations.length > 0 &&
                                           subproject.informations.map((info, subIdx) => (
                                              <Paragraph
                                                 duration={0.6 + subIdx * 0.1}

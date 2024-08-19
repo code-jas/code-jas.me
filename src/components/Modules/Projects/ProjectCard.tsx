@@ -8,7 +8,6 @@ import { openModal, setModalContent } from '@/store/modalSlice';
 import { Project } from '@/types/profile';
 import useScreenSize from '@/hooks/useScreenSize';
 import { TechStacks } from '@/components/UI/Lists';
-import LiveSiteButton from '@/components/UI/Buttons/LivesiteButton';
 import { H2, H4, Paragraph } from '@/components/UI/Typography/Typography';
 import { BlurFade } from '@/components/UI/Misc';
 
