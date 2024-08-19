@@ -8,7 +8,10 @@ const LiveSiteButton: React.FC<{
    liveSiteLink: string;
    staticPreview?: boolean;
    srcPreview?: string;
-}> = ({ liveSiteLink, staticPreview, srcPreview }) => {
+   isOrdinary?: boolean;
+   text?: string;
+   icon?: React.ReactNode;
+}> = ({ liveSiteLink, staticPreview, srcPreview, isOrdinary, text = 'Check Live Site', icon }) => {
    const controls = useAnimation();
    const linkControls = useAnimation();
 
@@ -48,9 +51,9 @@ const LiveSiteButton: React.FC<{
                animate={controls}
                transition={{ duration: 0.3, ease: [0.1, 0, 0, 1] }}
             />
-            <h1 className="relative z-10 text-lg font-medium md:text-xl">Check Live Site</h1>
+            <h1 className="relative z-10 text-lg font-medium md:text-xl">{text}</h1>
             <motion.div animate={linkControls} className="relative z-10">
-               <MdOutlineArrowOutward size={24} />
+               {icon || <MdOutlineArrowOutward size={24} />}
             </motion.div>
          </motion.div>
       </LinkPreview>

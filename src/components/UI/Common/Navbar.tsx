@@ -41,8 +41,8 @@ export default function Navbar() {
             <Link href="/">
                <Image
                   src={'/logo.png'}
-                  width={35}
-                  height={35}
+                  width={30}
+                  height={30}
                   alt="logo"
                   style={{ width: 'auto', height: 'auto' }}
                />

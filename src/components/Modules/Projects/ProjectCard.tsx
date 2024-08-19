@@ -3,14 +3,14 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
-import TechStacks from './Lists/TechStacks';
 import { useDispatch } from 'react-redux';
 import { openModal, setModalContent } from '@/store/modalSlice';
 import { Project } from '@/types/profile';
-import LiveSiteButton from './Buttons/LivesiteButton';
-import { H2, H4, Paragraph } from './Typography/Typography';
-import { BlurFade } from './Misc';
 import useScreenSize from '@/hooks/useScreenSize';
+import { TechStacks } from '@/components/UI/Lists';
+import LiveSiteButton from '@/components/UI/Buttons/LivesiteButton';
+import { H2, H4, Paragraph } from '@/components/UI/Typography/Typography';
+import { BlurFade } from '@/components/UI/Misc';
 
 const Card: React.FC<Project> = (details) => {
    const dispatch = useDispatch();
@@ -106,11 +106,33 @@ const Card: React.FC<Project> = (details) => {
                <BlurFade duration={0.6} inView>
                   <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-y-5 md:gap-y-0 mt-7 mb-0 md:mb-3">
                      <TechStacks techStacks={details.techStacks} />
-                     <LiveSiteButton
+                     <button
+                        className="inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-10 px-8 whitespace-pre md:flex group relative w-1/3 gap-1 overflow-hidden rounded-full text-sm font-semibold tracking-tighter transition-all duration-150 ease-in-out hover:ring-1 hover:ring-neutral-300 hover:ring-offset-2 hover:ring-offset-inherit dark:hover:ring-surface-2 dark:hover:ring-offset-surface-card"
+                        onClick={handleClick}
+                     >
+                        See Project
+                        <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           width="24"
+                           height="24"
+                           viewBox="0 0 24 24"
+                           fill="none"
+                           stroke="currentColor"
+                           strokeWidth="2"
+                           strokeLinecap="round"
+                           strokeLinejoin="round"
+                           className="lucide lucide-chevron-right ml-1 size-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-1"
+                        >
+                           <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                     </button>
+                     {/* <LiveSiteButton
+                        isOrdinary={true}
+                        text="View Project"
                         liveSiteLink={details.liveSiteLink}
                         staticPreview={details.staticPreview ?? false}
                         srcPreview={details.srcPreview ?? ''}
-                     />
+                     /> */}
                   </div>
                </BlurFade>
             </div>

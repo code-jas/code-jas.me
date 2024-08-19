@@ -1,10 +1,10 @@
 import React from 'react';
-import ProjectCard from '../UI/ProjectCard';
 import { ProjectSection } from '@/types/profile';
-import { H2, H4 } from '../UI/Typography/Typography';
-import { SectionBlock } from '../UI/Common';
-import { FadeText } from '../UI/Misc/FadeText';
-import { BlurFade } from '../UI/Misc';
+import { H2, H4 } from '../../UI/Typography/Typography';
+import { SectionBlock } from '../../UI/Common';
+import { FadeText } from '../../UI/Misc/FadeText';
+import { BlurFade } from '../../UI/Misc';
+import ProjectCard from './ProjectCard';
 
 interface ProjectsProps {
    projects: ProjectSection;

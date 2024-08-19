@@ -46,6 +46,7 @@
                { "label": "Clockify API", "icon": "/brand/clockify.svg" },
                { "label": "Google Drive API", "icon": "/brand/google-drive.svg" }
             ],
+            "githubLink": "https://github.com/code-jas/war-generator",
             "liveSiteLink": "https://war-generator.code-jas.me/",
             "bgImage": "/backgrounds/gradient-part-bg.png",
             "coverImage": "/covers/war-generator-cover.png",
@@ -57,6 +58,18 @@
             "title": "Internship Project Compilation",
             "projectType": ["Web App", "Mobile App", "Game Development", "API Integration"],
             "description": "A collection of small projects developed during my internship, showcasing a diverse range of skills including web and mobile app development, game development, and API integration.",
+            "isCollection": true,
+            "techStacks": [
+               { "label": "Vue.js", "icon": "/brand/vue-js.svg" },
+               { "label": "Nuxt.js", "icon": "/brand/nuxt.svg" },
+               { "label": "Tailwind CSS", "icon": "/brand/tailwindcss.svg" },
+               { "label": "Node.js", "icon": "/brand/node-js.svg" },
+               { "label": "Flutter", "icon": "/brand/flutter.svg" },
+               { "label": "Dart", "icon": "/brand/dart.svg" },
+               { "label": "Firebase", "icon": "/brand/firebase.svg" }
+            ],
+            "bgImage": "/backgrounds/gradient-part-bg.png",
+            "coverImage": "/mockups/wim-game-mockup.png",
             "subprojects": [
                {
                   "title": "WIM Game Project",
@@ -75,9 +88,8 @@
                      { "label": "Nuxt.js", "icon": "/brand/nuxt.svg" },
                      { "label": "Tailwind CSS", "icon": "/brand/tailwindcss.svg" }
                   ],
-                  "liveSiteLink": "https://github.com/code-jas/wim-game-project",
+                  "githubLink": "https://github.com/code-jas/wim-game-project",
                   "mockupImage": "/mockups/wim-game-mockup.png",
-                  "coverImage": "/covers/wim-game-cover.png",
                   "staticPreview": true
                },
                {
@@ -99,8 +111,7 @@
                      { "label": "Dart", "icon": "/brand/dart.svg" },
                      { "label": "Firebase", "icon": "/brand/firebase.svg" }
                   ],
-                  "liveSiteLink": "https://github.com/code-jas/flutter_lms_app",
-                  "coverImage": "/covers/flutter-lms-cover.png",
+                  "githubLink": "https://github.com/code-jas/flutter_lms_app",
                   "mockupImage": "/mockups/flutter-lms-mockup.png",
                   "staticPreview": true
                },
@@ -116,12 +127,10 @@
                   ],
                   "techStacks": [
                      { "label": "Vue.js", "icon": "/brand/vue-js.svg" },
-                     { "label": "Express.js", "icon": "/brand/express.svg" },
                      { "label": "Node.js", "icon": "/brand/node-js.svg" }
                   ],
-                  "liveSiteLink": "https://github.com/code-jas/file-uploader-vue-express",
+                  "githubLink": "https://github.com/code-jas/file-uploader-vue-express",
                   "coverImage": "/covers/file-uploader-cover.png",
-                  "mockupImage": "/mockups/file-uploader-mockup.png",
                   "staticPreview": true
                },
                {
@@ -139,9 +148,8 @@
                      { "label": "Dart", "icon": "/brand/dart.svg" },
                      { "label": "Firebase", "icon": "/brand/firebase.svg" }
                   ],
-                  "liveSiteLink": "https://github.com/code-jas/flutter_profile",
+                  "githubLink": "https://github.com/code-jas/flutter_profile",
                   "coverImage": "/covers/flutter-profile-cover.png",
-                  "mockupImage": "/mockups/flutter-profile-mockup.png",
                   "staticPreview": true
                }
             ]
@@ -153,8 +161,9 @@
             "projectType": ["Web App", "E-commerce", "Marketplace", "Bookstore"],
             "description": "A digital marketplace for secondhand books in the Philippines, making affordable literature accessible through an organized online platform.",
             "informations": [
+               "Currently a work in progress as the platform is being migrated to Next.js.",
                "Built using React, Vite, Tailwind CSS, Node.js, Sequelize, and PostgreSQL, ensuring a robust and scalable platform.",
-               "Deployed on Digital Ocean with Docker for seamless and efficient hosting.",
+               "Will Deploy on Digital Ocean with Docker for seamless and efficient hosting.",
                "Supports dynamic roles for Admin, Buyer, and Seller, enhancing user experience.",
                "Real-time notifications and updates implemented using Socket.io.",
                "Efficient state management for a responsive user interface.",
@@ -173,7 +182,7 @@
                { "label": "PostgreSQL", "icon": "/brand/postgresql.svg" },
                { "label": "Docker", "icon": "/brand/docker.svg" }
             ],
-            "liveSiteLink": "#",
+            "githubLink": "https://github.com/code-jas/bookly-client",
             "bgImage": "/backgrounds/gradient-part-bg.png",
             "coverImage": "/covers/bookly-cover.png",
             "mockupImage": "/mockups/bookly-mockup.png",
@@ -222,8 +231,8 @@
                   "startDate": "August 2023",
                   "endDate": "Present",
                   "descriptions": [
-                     "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                     "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                     "I am responsible for creating reusable UI components and feature development by analyzing requirements. I assist in fixing issues and optimizing existing projects, develop solutions for clients, and build multi-role applications.",
+                     "I also handle creating server-side logic and APIs to manage application functionality, and design, develop, and manage databases to store and retrieve data efficiently."
                   ]
                },
                {
@@ -231,7 +240,7 @@
                   "startDate": "March 2023",
                   "endDate": "August 2023",
                   "descriptions": [
-                     "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                     "I gained hands-on experience in web and mobile development, and subsequently joined a client-based project using Flutter, where I successfully turned designs into functional mobile applications."
                   ]
                }
             ]

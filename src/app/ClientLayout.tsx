@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
 import { Providers } from './providers';
-import { CustomCursor, FullPageModal } from '@/components/UI/Misc';
+import { CustomCursor } from '@/components/UI/Misc';
 import { Footer, Navbar } from '@/components/UI/Common';
 import useScreenSize from '@/hooks/useScreenSize';
+import ProjectDetailsModal from '@/components/Modules/Projects/ProjectDetailsModal';
 
 const ClientLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
    const screenSize = useScreenSize();
@@ -12,7 +13,7 @@ const ClientLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => 
    return (
       <Providers>
          {isLgOrAbove && <CustomCursor />}
-         <FullPageModal />
+         <ProjectDetailsModal />
          <Navbar />
          {children}
          <Footer />

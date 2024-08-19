@@ -56,7 +56,7 @@ body {
    font-family: var(--tt-norms), sans-serif;
 }
 * {
-   /* cursor: none; */
+   cursor: none;
 }
 
 h1,
