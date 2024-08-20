@@ -232,8 +232,12 @@
                   "startDate": "August 2023",
                   "endDate": "Present",
                   "descriptions": [
-                     "I am responsible for creating reusable UI components and feature development by analyzing requirements. I assist in fixing issues and optimizing existing projects, develop solutions for clients, and build multi-role applications.",
-                     "I also handle creating server-side logic and APIs to manage application functionality, and design, develop, and manage databases to store and retrieve data efficiently."
+                     "Led the front-end migration from Nuxt 2 to Nuxt 3, creating dynamic composables and components to eliminate redundancy, and implemented TypeScript for improved code maintainability and scalability.",
+                     "Utilized a service-oriented MVC architecture with microservices using Node.js and TypeScript, enhancing code maintainability and scalability across the system.",
+                     "Architected and managed complex database structures utilizing Sequelize and PostgreSQL, including the design of relational diagrams that optimized data retrieval and enabled fast access to data.",
+                     "Designed and crafted intuitive mobile interfaces using Flutter, optimizing cross-platform usability and enhancing user engagement.",
+                     "Led the development team in deploying applications through GitLab CI/CD pipelines, containerizing applications using Docker to streamline deployment processes, and enhancing scalability and reliability in production environments.",
+                     "Resolved client issues by proactively monitoring and supporting application VMs and client apps, ensuring seamless application performance and addressing concerns as they arose."
                   ]
                },
                {
@@ -241,7 +245,11 @@
                   "startDate": "March 2023",
                   "endDate": "August 2023",
                   "descriptions": [
-                     "I gained hands-on experience in web and mobile development, and subsequently joined a client-based project using Flutter, where I successfully turned designs into functional mobile applications."
+                     "Acquired hands-on experience in both web and mobile development during an immersive internship, leveraging cutting-edge technologies to build innovative solutions.",
+                     "Mastered Vue.js and NuxtJS for front-end development, designing and implementing interactive and responsive user interfaces for a diverse array of projects, including games, portfolio websites, and chunk upload functionalities.",
+                     "Collaborated as a crucial team member on the development of a client-based Learning Management System (LMS) mobile application, contributing to the completion of essential modules and ensuring the timely delivery of high-quality features.",
+                     "Developed mobile applications using Flutter and Dart, creating cross-platform apps with a single codebase to enhance development efficiency and application performance.",
+                     "Utilized Git and GitLab for version control, maintaining code integrity and supporting seamless team collaboration throughout the development lifecycle."
                   ]
                }
             ]

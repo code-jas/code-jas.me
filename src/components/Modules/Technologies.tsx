@@ -24,7 +24,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
    return (
       <SectionBlock
          id="technologies"
-         className="!bg-surface-01 items-center justify-center !py-12 !px-0 gap-0"
+         className="!bg-surface-01 items-center justify-center !py-12 !px-0 gap-0 overflow-x-hidden"
       >
          <div className="max-w-4xl mx-auto text-center">
             <H1 variant="branding" className="text-center ">
@@ -44,13 +44,13 @@ const Technologies: React.FC<TechnologiesProps> = ({ tech }) => {
             </BlurFade>
          </div>
          <BlurFade inView duration={1}>
-            <div className="w-full">
+            <div className="w-screen overflow-x-hidden">
                {selectedValue === 'cards' ? (
-                  <div className="relative flex h-full w-screen flex-col items-center justify-center overflow-hidden py-12 md:py-20 ">
+                  <div className="relative flex h-full w-screen flex-col items-center justify-center py-12 md:py-20 ">
                      <IconList iconSlugs={technologies} />
                   </div>
                ) : (
-                  <div className="relative flex flex-col  max-w-2xl mx-auto items-center justify-center overflow-hidden  px-20 pb-12 pt-8 ">
+                  <div className="relative flex flex-col  max-w-2xl mx-auto items-center justify-center px-20 pb-12 pt-8 ">
                      <IconCloud iconSlugs={technologies.flatMap((slugs) => slugs)} />
                   </div>
                )}
