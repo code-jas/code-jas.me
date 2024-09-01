@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# John Angelo Silvestre - Personal Portfolio
 
-## Getting Started
+Welcome to my personal portfolio, showcasing my journey as a Full Stack Developer. This project is a Next.js application designed with modern web development practices to provide a seamless, user-friendly experience.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Responsive Design:** Optimized for all screen sizes, ensuring a great user experience on any device.
+- **Dark/Light Mode:** Users can toggle between dark and light themes for comfortable viewing.
+- **SEO Optimized:** Built with best practices to improve search engine visibility.
+- **Animated Transitions:** Smooth transitions and animations powered by Framer Motion.
+- **Interactive Elements:** Engaging UI components enhance user interaction.
+- **Performance Optimized:** Leveraging Next.js features for fast loading times and efficient rendering.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** Next.js
+- **Styling:** Tailwind CSS
+- **Animations and Transitions:** Framer Motion
+- **State Management:** Redux Toolkit
+- **Icons:** React Icons
+- **Deployment:** Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Code Quality Tools
 
-## Learn More
+- **ESLint:** Enforces a consistent code style and helps catch common errors. The project is configured with `eslint-config-next` and includes custom rules to ensure code quality.
+  
+- **Prettier:** Automatically formats your code to maintain a clean and readable structure. It's integrated with ESLint to ensure that the codebase is both syntactically correct and consistently formatted.
 
-To learn more about Next.js, take a look at the following resources:
+### Useful Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Linting:** Check your code for linting issues:
+    ```bash
+    npm run lint
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-   **Linting with Fix:** Automatically fix linting issues:
+    ```bash
+    npm run lint:fix
+    ``` 
+    
+-   **Formatting:** Format your code using Prettier:
+    ```bash
+    npm run format
+    ``` 
+    
 
-## Deploy on Vercel
+## Setup and Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/code-jas/portfolio-next.git
+    ```
+    
+2.  Navigate to the project directory:
+    ```bash
+    cd portfolio-next
+    ```
+    
+3.  Install dependencies:
+    ```bash
+    npm install
+    ``` 
+    
+4.  Start the development server:
+    ```bash
+    npm run dev
+    ``` 
+    
+5.  Open http://localhost:3000 to view the portfolio.
+    
+
+## Contact
+
+Feel free to reach out via Email or connect on [LinkedIn](https://www.linkedin.com/in/johnangelo-silvestre/).
