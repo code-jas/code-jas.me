@@ -35,12 +35,12 @@
                "Employs robust state management using Pinia to ensure data consistency across components.",
                "Implements comprehensive error handling with real-time notifications to alert users of issues during report generation or data retrieval.",
                "Future plans to integrate Slack Webhook for automatic report distribution to designated Slack channels.",
-               "Developed with a modern tech stack including Nuxt 3, TypeScript, Tailwind CSS, and Ant Design."
+               "Developed with a modern tech stack including Nuxt 3, TypeScript, and Tailwind CSS."
             ],
             "techStacks": [
                { "label": "Nuxt 3", "icon": "/brand/nuxt.svg" },
-               { "label": "Shadcn", "icon": "/brand/shadcn.svg" },
                { "label": "TypeScript", "icon": "/brand/typescript.svg" },
+               { "label": "Shadcn", "icon": "/brand/shadcn.svg" },
                { "label": "Tailwind CSS", "icon": "/brand/tailwindcss.svg" },
                { "label": "Pinia", "icon": "/brand/pinia.svg" },
                { "label": "Clockify API", "icon": "/brand/clockify.svg" },
@@ -324,8 +324,8 @@
          {
             "title": "My Roadmap Ahead",
             "text": [
-               "My aim is to **highlight**lead large-scale and secure projects, mentor junior developers, and make critical architectural decisions**highlight**. I strive to oversee development teams effectively, contribute impactful tech strategies aligned with business goals, and help establish the company as a leader in its field.",
-               "To achieve this, I am passionate about continuously thinking of and developing innovative digital solutions. My focus is on creating as many valuable projects as possible, honing my skills, and expanding my knowledge. By doing so, I can lay a solid foundation for leading major initiatives and driving technological advancements within the organization."
+               "My aim is to **highlight**lead large-scale and secure projects, mentor junior developers, and make critical architectural.**highlight** I strive to oversee development teams effectively, contribute impactful tech strategies aligned with business goals, and help establish the company as a leader in its field.",
+               "To achieve this, I am passionate about continuously thinking of and developing innovative digital solutions. **highlight**My focus is on creating as many valuable projects as possible, honing my skills, and expanding my knowledge.**highlight** By doing so, I can lay a solid foundation for leading major initiatives and driving technological advancements within the organization."
             ],
             "image": "/about-images/about-04.jpg"
          }

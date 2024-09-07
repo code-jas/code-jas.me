@@ -8,11 +8,12 @@ import ProjectDetailsModal from '@/components/Modules/Projects/ProjectDetailsMod
 
 const ClientLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
    const screenSize = useScreenSize();
-   const isLgOrAbove = screenSize === 'lg' || screenSize === 'xl' || screenSize === '2xl';
+   const isMdOrAbove =
+      screenSize === 'md' || screenSize === 'lg' || screenSize === 'xl' || screenSize === '2xl';
 
    return (
       <Providers>
-         {isLgOrAbove && <CustomCursor />}
+         {isMdOrAbove && <CustomCursor />}
          <ProjectDetailsModal />
          <Navbar />
          {children}

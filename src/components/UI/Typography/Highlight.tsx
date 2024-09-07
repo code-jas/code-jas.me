@@ -1,68 +1,38 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
 import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import cn from 'classnames';
 
-// const Highlight = ({
-//    children,
-//    style,
-//    className,
-// }: {
-//    children: React.ReactNode;
-//    className?: string;
-//    style?: React.CSSProperties;
-// }) => {
-//    const ref = React.useRef(null);
-//    const isInView = useInView(ref, { once: true, amount: 0.1 });
-//    return (
-//       <span ref={ref} style={{ position: 'relative', display: 'inline' }}>
-//          {isInView && (
-//             <>
-//                <motion.span
-//                   initial={{
-//                      backgroundSize: '0% 100%',
-//                   }}
-//                   animate={{
-//                      backgroundSize: '100% 100%',
-//                   }}
-//                   transition={{
-//                      duration: 2,
-//                      ease: 'linear',
-//                      delay: 0.5,
-//                   }}
-//                   style={{
-//                      backgroundRepeat: 'no-repeat',
-//                      backgroundPosition: 'left center',
-//                      display: 'inline',
-//                   }}
-//                   className={cn(
-//                      // `relative inline-block pb-1  px-1 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500`,
-//                      `relative inline-block pb-1  px-1 rounded bg-highlight`,
-//                      className,
-//                   )}
-//                >
-//                   {children}
-//                </motion.span>
-//             </>
-//          )}
-//       </span>
-//    );
-// };
+interface HighlightProps {
+   children: React.ReactNode;
+   className?: string;
+   delay?: number; // Delay prop for customizing animation delay
+   inView?: boolean; // Optional prop to control inView externally
+}
 
-// export default Highlight;
+const Highlight = ({ children, className, delay = 0.8, inView }: HighlightProps) => {
+   const ref = useRef(null);
+   const isInView = useInView(ref, { once: true });
 
-const Highlight = ({ children, className }: { children: React.ReactNode; className?: string }) => {
    return (
       <motion.span
+         ref={ref}
          initial={{
             backgroundSize: '0% 100%',
          }}
          animate={{
-            backgroundSize: '100% 100%',
+            backgroundSize:
+               inView !== undefined
+                  ? inView
+                     ? '100% 100%'
+                     : '0% 100%'
+                  : isInView
+                    ? '100% 100%'
+                    : '0% 100%',
          }}
          transition={{
             duration: 2,
             ease: 'linear',
-            delay: 0.5,
+            delay: delay,
          }}
          style={{
             backgroundRepeat: 'no-repeat',
@@ -70,8 +40,7 @@ const Highlight = ({ children, className }: { children: React.ReactNode; classNa
             display: 'inline',
          }}
          className={cn(
-            // `relative inline-block pb-1   px-1 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500`,
-            `relative inline-block pb-1  px-1 rounded bg-highlight`,
+            `relative inline-block pb-1 px-1 rounded-lg bg-gradient-to-r from-highlight to-highlight`,
             className,
          )}
       >

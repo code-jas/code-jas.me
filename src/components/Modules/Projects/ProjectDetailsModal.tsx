@@ -134,7 +134,7 @@ const FullPageModal: React.FC = () => {
                            content.subprojects.length > 0 && (
                               <div className="mt-8">
                                  {content.subprojects.map((subproject, idx) => (
-                                    <div key={idx} className="mt-6">
+                                    <div key={idx} className="mt-6 mb-20">
                                        <H3 duration={0.6}>{subproject.title}</H3>
                                        <Paragraph className="font-normal mt-2">
                                           {subproject.projectType.length > 0 &&
@@ -163,7 +163,7 @@ const FullPageModal: React.FC = () => {
                                        {/* MOCKUP PREVIEW for the subproject */}
                                        {subproject.mockupImage && (
                                           <motion.div
-                                             className="w-full h-auto  mt-6"
+                                             className="w-full h-auto mt-6"
                                              variants={modalVariants}
                                              initial="hidden"
                                              animate="visible"
@@ -175,7 +175,7 @@ const FullPageModal: React.FC = () => {
                                                 layout="responsive"
                                                 width={100}
                                                 height={50}
-                                                className="w-full h-full"
+                                                className="w-full h-full rounded-xl"
                                              />
                                           </motion.div>
                                        )}

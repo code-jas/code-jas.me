@@ -40,7 +40,7 @@ export default function Navbar() {
          <div className="max-w-6xl mx-auto flex items-center justify-between ">
             <Link href="/">
                <Image
-                  src={'/logo.png'}
+                  src={'/logo/logo-96.png'}
                   width={30}
                   height={30}
                   alt="logo"

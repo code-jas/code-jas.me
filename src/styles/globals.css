@@ -13,8 +13,8 @@ html {
    --clr-txt-tertiary: #939393;
    --surface-card: #ffffff;
    --surface: #ffffff;
-   --surface-01: #f7f7f7;
-   --surface-02: #e7f2f9;
+   --surface-01: #ffffff;
+   --surface-02: #f8f8f8;
    --border: #e6e9ee;
    --glass-surface: rgba(255, 255, 255, 0.7);
    --glass-border: rgba(255, 255, 255, 0.3);
@@ -56,7 +56,7 @@ body {
    font-family: var(--tt-norms), sans-serif;
 }
 * {
-   cursor: none;
+   /* cursor: none; */
 }
 
 h1,
@@ -134,3 +134,28 @@ h6 {
 .bg-accent-purple {
    background-color: #a259ff !important;
 }
+
+.tippy-box[data-theme~='techstack'] {
+   background-color: var(--surface-02);
+   padding: 4px 8px;
+   color: var(--clr-txt-primary);
+   border-radius: 4px; /* Rounded corners */
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   margin-bottom: 4px;
+
+ }
+
+ .tippy-box[data-theme~='techstack'][data-placement^='top'] > .tippy-arrow::before {
+   border-top-color: var(--surface-02);
+   
+ }
+ .tippy-box[data-theme~='techstack'][data-placement^='bottom'] > .tippy-arrow::before {
+   border-bottom-color: var(--surface-02);
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+ }
+ .tippy-box[data-theme~='techstack'][data-placement^='left'] > .tippy-arrow::before {
+   border-left-color: var(--surface-02);
+ }
+ .tippy-box[data-theme~='techstack'][data-placement^='right'] > .tippy-arrow::before {
+   border-right-color: var(--surface-02);
+ }

@@ -24,10 +24,11 @@ const Card: React.FC<Project> = (details) => {
 
    useEffect(() => {
       const newValues = isBelowSm
-         ? { width: '100%', height: '128px' }
+         ? { width: '100%', height: '100%' }
          : { width: '80%', height: '256px' };
       setInitialValues(newValues);
-      coverImageControls.start(newValues); // Sync the animation control with the new state
+      coverImageControls.start(newValues);
+      console.log('coverImageControls', coverImageControls);
    }, [isBelowSm, coverImageControls]);
 
    const handleClick = () => {
