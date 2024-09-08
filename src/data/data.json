@@ -162,8 +162,7 @@
             "projectType": ["Web App", "E-commerce", "Marketplace", "Bookstore"],
             "description": "A digital marketplace for secondhand books in the Philippines, making affordable literature accessible through an organized online platform.",
             "informations": [
-               "Currently a work in progress as the platform is being migrated to Next.js.",
-               "Built using React, Vite, Tailwind CSS, Node.js, Sequelize, and PostgreSQL, ensuring a robust and scalable platform.",
+               "Currently a work in progress as the technology is being upgraded from HTML, CSS, JavaScript, and PHP to React, Vite, Tailwind CSS, Node.js, Sequelize, and PostgreSQL, ensuring a robust and scalable web application.",
                "Will Deploy on Digital Ocean with Docker for seamless and efficient hosting.",
                "Supports dynamic roles for Admin, Buyer, and Seller, enhancing user experience.",
                "Real-time notifications and updates implemented using Socket.io.",
@@ -243,7 +242,7 @@
                {
                   "title": "Student Intern",
                   "startDate": "March 2023",
-                  "endDate": "August 2023",
+                  "endDate": "July 2023",
                   "descriptions": [
                      "Acquired hands-on experience in both web and mobile development during an immersive internship, leveraging cutting-edge technologies to build innovative solutions.",
                      "Mastered Vue.js and NuxtJS for front-end development, designing and implementing interactive and responsive user interfaces for a diverse array of projects, including games, portfolio websites, and chunk upload functionalities.",
