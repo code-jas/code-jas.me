@@ -27,7 +27,7 @@ html {
    --accent-purple: #a259ff;
    --clr-txt-highlight: #242424;
    --clr-highlight: rgb(10, 165, 255, 0.30);
-   
+
 }
 
 .dark {
@@ -55,8 +55,9 @@ body {
    background-position: 0 0;
    font-family: var(--tt-norms), sans-serif;
 }
+
 * {
-   /* cursor: none; */
+   cursor: none;
 }
 
 h1,
@@ -90,6 +91,7 @@ h6 {
 .dark .vercel-icon {
    background-color: black;
 }
+
 .dark .vercel-icon img {
    filter: brightness(0) invert(1);
    scale: 0.7;
@@ -110,7 +112,8 @@ h6 {
       0 3px 8px 0 rgba(0, 0, 0, 0.12),
       0 3px 1px 0 rgba(0, 0, 0, 0.04);
    border-radius: 7px;
-   z-index: 1; /* Ensure this is behind the text */
+   z-index: 1;
+   /* Ensure this is behind the text */
    will-change: transform;
    transition: transform 0.2s ease;
 }
@@ -125,12 +128,15 @@ h6 {
 .bg-accent-red {
    background-color: #f24e1e !important;
 }
+
 .bg-accent-orange {
    background-color: #ff7262 !important;
 }
+
 .bg-accent-green {
    background-color: #0acf83 !important;
 }
+
 .bg-accent-purple {
    background-color: #a259ff !important;
 }
@@ -139,23 +145,27 @@ h6 {
    background-color: var(--surface-02);
    padding: 4px 8px;
    color: var(--clr-txt-primary);
-   border-radius: 4px; /* Rounded corners */
+   border-radius: 4px;
+   /* Rounded corners */
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
    margin-bottom: 4px;
 
- }
+}
 
- .tippy-box[data-theme~='techstack'][data-placement^='top'] > .tippy-arrow::before {
+.tippy-box[data-theme~='techstack'][data-placement^='top']>.tippy-arrow::before {
    border-top-color: var(--surface-02);
-   
- }
- .tippy-box[data-theme~='techstack'][data-placement^='bottom'] > .tippy-arrow::before {
+
+}
+
+.tippy-box[data-theme~='techstack'][data-placement^='bottom']>.tippy-arrow::before {
    border-bottom-color: var(--surface-02);
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
- }
- .tippy-box[data-theme~='techstack'][data-placement^='left'] > .tippy-arrow::before {
+}
+
+.tippy-box[data-theme~='techstack'][data-placement^='left']>.tippy-arrow::before {
    border-left-color: var(--surface-02);
- }
- .tippy-box[data-theme~='techstack'][data-placement^='right'] > .tippy-arrow::before {
+}
+
+.tippy-box[data-theme~='techstack'][data-placement^='right']>.tippy-arrow::before {
    border-right-color: var(--surface-02);
- }
+}
